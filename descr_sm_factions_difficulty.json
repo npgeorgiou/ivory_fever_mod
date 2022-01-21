@@ -1,0 +1,28 @@
+{
+  "romans_julii": 0,
+  "sparta": 0,
+  "egypt": 0,
+  "bosporan": 0,
+
+  "greek_cities": 1,
+  "macedon": 1,
+  "seleucid": 1,
+  "britons": 1,
+
+  "pergamon": 1,
+  "germans": 2,
+  "spain": 2,
+  "carthage": 2,
+  "gauls": 2,
+  "numidia": 2,
+  "pontus": 2,
+  "armenia": 2,
+  "scythia": 2,
+
+  "galatians": 3,
+  "dacia": 3,
+  "parthia": 3,
+  "thrace": 3,
+
+  "slave": -1
+}

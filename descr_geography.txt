@@ -1,0 +1,1719 @@
+5   [version_val  5 = rtw, 30 = m2]
+     0.010   [Height - smooth_ratio_min  ]
+     0.250   [Height - smooth_ratio_max  ]
+     0.200   [Height - slope_flat        ]
+     0.500   [Height - slope_steep       ]
+     5.000   [Height - slope_steepest    ]
+     0.330   [Height - step_min          ]
+     2.000   [Height - step_max          ]
+     0.075   [Ground - slope_flat        ]
+     0.040   [Ground - slope_factor_flat ]
+     4.000   [Ground - slope_factor_steep]
+     2.000   [Ground - curvature_factor  ]
+     0.900   [River - valley_factor      ]
+   -10.000   [River - valley_bias        ]
+   150.000   [River - std_height         ]
+    64.000   [River - std_width          ]
+   192.000   [River - tidal_width        ]
+    60.000   [River - ford_width         ]
+# tell says = 72
+
+#----noise factors ----
+#    nsl         trans       nposmax        nrot        nrotmax       rotmax           [ noise factors for rtw ] 
+     0.250        0.100        0.100        0.250        0.050        0.250   
+# tell says = 96
+
+12   [number of climates = 12 (hard coded)]
+
+#############################################################################################
+#                                                                                           #
+#   Climate : 0 = 100
+#                                                                                           #
+#############################################################################################
+
+2   [seasons = 2 (hard coded)]
+
+#############################################################################################
+#                                                                                           #
+#   summer = 104
+#                                                                                           #
+#############################################################################################
+
+15   [rocktypes = 15 (hard coded)]
+
+# tell says = 108
+
+---------0------------------
+57 terrain/battlefield/test_climate/summer/oz_medi_rock.tga   [tga]  # tell says = 168
+ 70   103   128   
+---------1------------------
+57 terrain/battlefield/test_climate/summer/oz_medi_rock.tga   [tga]  # tell says = 231
+ 70   103   128   
+---------2------------------
+49 terrain/battlefield/test_climate/summer/sand.tga   [tga]  # tell says = 286
+111   145   168   
+---------3------------------
+49 terrain/battlefield/test_climate/summer/sand.tga   [tga]  # tell says = 341
+111   145   168   
+---------4------------------
+49 terrain/battlefield/test_climate/summer/sand.tga   [tga]  # tell says = 396
+111   145   168   
+---------5------------------
+48 terrain/battlefield/test_climate/summer/mud.tga   [tga]  # tell says = 450
+122   150   174   
+---------6------------------
+48 terrain/battlefield/test_climate/summer/mud.tga   [tga]  # tell says = 504
+122   150   174   
+---------7------------------
+48 terrain/battlefield/test_climate/summer/mud.tga   [tga]  # tell says = 558
+122   150   174   
+---------8------------------
+58 terrain/battlefield/test_climate/summer/oz_medi_grass.tga   [tga]  # tell says = 622
+ 59   107   119   
+---------9------------------
+58 terrain/battlefield/test_climate/summer/oz_medi_grass.tga   [tga]  # tell says = 686
+ 59   107   119   
+---------10------------------
+59 terrain/battlefield/test_climate/summer/oz_medi_grass1.tga   [tga]  # tell says = 751
+ 58   125   135   
+---------11------------------
+63 terrain/battlefield/test_climate/summer/oz_medi_shrub_base.tga   [tga]  # tell says = 820
+ 61   112   119   
+---------12------------------
+63 terrain/battlefield/test_climate/summer/oz_medi_shrub_base.tga   [tga]  # tell says = 889
+ 61   112   119   
+---------13------------------
+59 terrain/battlefield/test_climate/summer/oz_medi_forest.tga   [tga]  # tell says = 954
+ 67   103   112   
+---------14------------------
+59 terrain/battlefield/test_climate/summer/oz_medi_forest.tga   [tga]  # tell says = 1019
+ 67   103   112   
+# tell says = 1022
+
+30 battlefield/envmaps/grass.dds   [battlefield dds]  # tell says = 1054
+#############################################################################################
+#                                                                                           #
+#   winter = 1054
+#                                                                                           #
+#############################################################################################
+
+15   [rocktypes = 15 (hard coded)]
+
+# tell says = 1058
+
+---------0------------------
+49 terrain/battlefield/test_climate/winter/rock.tga   [tga]  # tell says = 1110
+ 89   102   113   
+---------1------------------
+49 terrain/battlefield/test_climate/winter/rock.tga   [tga]  # tell says = 1165
+ 89   102   113   
+---------2------------------
+49 terrain/battlefield/test_climate/winter/sand.tga   [tga]  # tell says = 1220
+111   145   168   
+---------3------------------
+49 terrain/battlefield/test_climate/winter/sand.tga   [tga]  # tell says = 1275
+111   145   168   
+---------4------------------
+49 terrain/battlefield/test_climate/winter/sand.tga   [tga]  # tell says = 1330
+111   145   168   
+---------5------------------
+48 terrain/battlefield/test_climate/winter/mud.tga   [tga]  # tell says = 1384
+122   150   174   
+---------6------------------
+48 terrain/battlefield/test_climate/winter/mud.tga   [tga]  # tell says = 1438
+122   150   174   
+---------7------------------
+48 terrain/battlefield/test_climate/winter/mud.tga   [tga]  # tell says = 1492
+122   150   174   
+---------8------------------
+50 terrain/battlefield/test_climate/winter/grass.tga   [tga]  # tell says = 1548
+ 60    82    90   
+---------9------------------
+50 terrain/battlefield/test_climate/winter/grass.tga   [tga]  # tell says = 1604
+ 60    82    90   
+---------10------------------
+51 terrain/battlefield/test_climate/winter/grass1.tga   [tga]  # tell says = 1661
+ 38    64    70   
+---------11------------------
+55 terrain/battlefield/test_climate/winter/shrub_base.tga   [tga]  # tell says = 1722
+ 34    60    68   
+---------12------------------
+55 terrain/battlefield/test_climate/winter/shrub_base.tga   [tga]  # tell says = 1783
+ 34    60    68   
+---------13------------------
+51 terrain/battlefield/test_climate/winter/forest.tga   [tga]  # tell says = 1840
+ 31    52    52   
+---------14------------------
+51 terrain/battlefield/test_climate/winter/forest.tga   [tga]  # tell says = 1897
+ 31    52    52   
+# tell says = 1900
+
+29 battlefield/envmaps/snow.dds   [battlefield dds]  # tell says = 1931
+# tell says = 1931
+
+  0     6     7     7     9    12   
+  0     2     3     8    12    14   
+  0     9    10    12    14    14   
+  5    10    10    10    14    14   
+  0     1     8    10    12    14   
+  0     1     8     9     9    10   
+# tell says = 2075
+
+----  conversion array ----
+  0    0    0   80  
+  0    0    1   64  
+  0    0    2   16  
+  0    0    2   16  
+  0    0    2   16  
+  0    0    0   48  
+  0    0    1    0  
+  0    0    2    0  
+  0    0    3   16  
+  0    0    1   32  
+  0    0    3   48  
+  0    0    3   32  
+  0    0    3   32  
+  0    0    5   32  
+  0    0    5   32  
+# tell says = 2135
+
+  3    1       0.000       7.000      -0.050       0.000      20.000      -0.150       7.000      -0.150       0.000       1.200  
+  4    2       0.000       7.000      -0.100       0.000      15.000      -0.150       7.000      -0.150       0.000       0.750  
+  5    3       0.000       7.000      -0.200       0.000      10.000      -0.150       7.000      -0.150       0.000       0.500  
+  5    1       0.000       5.000       0.000       0.000      30.000      -0.150       7.000      -0.150       0.000       0.800  
+  4    3       0.000       5.000       0.000     200.000     250.000       0.000       7.000      -0.150       0.000       0.500  
+  4    3       0.000       5.000       0.000      15.000      60.000       0.000       7.000      -0.150       0.000       0.500  
+  1    3      -0.500       7.000      -0.150       0.000      40.000      -0.070       7.000      -0.150       0.000       0.800  
+  2    3       0.000       5.000       0.000       0.000      10.000      -0.150       7.000      -0.150       0.000       0.700  
+  4    3       0.000       5.000       0.000       0.000      10.000      -0.150       7.000      -0.150       0.000       0.700  
+  0    3       0.000       5.000       0.000       0.000       2.000       0.000       7.000      -0.150       0.000       0.500  
+  1    3       0.000       5.000       0.000      -6.000       2.000       0.000       7.000      -0.150       0.000       0.500  
+  1    3       0.000       5.000       0.000      -4.000       2.000       0.000       7.000      -0.150       0.000       0.200  
+  1    3       0.000       5.000       0.000       0.000       2.000       0.000       7.000      -0.150       0.000       0.200  
+  1    2       0.000       5.000       0.000       0.000       2.000       0.000       7.000      -0.150       0.000       0.300  
+# tell says = 2807
+
+#############################################################################################
+#                                                                                           #
+#   Climate : 1 = 2807
+#                                                                                           #
+#############################################################################################
+
+2   [seasons = 2 (hard coded)]
+
+#############################################################################################
+#                                                                                           #
+#   summer = 2811
+#                                                                                           #
+#############################################################################################
+
+15   [rocktypes = 15 (hard coded)]
+
+# tell says = 2815
+
+---------0------------------
+49 terrain/battlefield/sandy_desert/summer/rock.tga   [tga]  # tell says = 2867
+112   120   129   
+---------1------------------
+---------2------------------
+55 terrain/battlefield/sandy_desert/summer/caked_sand.tga   [tga]  # tell says = 2929
+131   166   194   
+---------3------------------
+49 terrain/battlefield/sandy_desert/summer/sand.tga   [tga]  # tell says = 2984
+154   193   211   
+---------4------------------
+55 terrain/battlefield/sandy_desert/summer/sand_blown.tga   [tga]  # tell says = 3045
+137   170   184   
+---------5------------------
+---------6------------------
+---------7------------------
+---------8------------------
+---------9------------------
+---------10------------------
+---------11------------------
+---------12------------------
+---------13------------------
+---------14------------------
+# tell says = 3058
+
+31 battlefield/envmaps/desert.dds   [battlefield dds]  # tell says = 3091
+#############################################################################################
+#                                                                                           #
+#   winter = 3091
+#                                                                                           #
+#############################################################################################
+
+15   [rocktypes = 15 (hard coded)]
+
+# tell says = 3095
+
+---------0------------------
+49 terrain/battlefield/sandy_desert/summer/rock.tga   [tga]  # tell says = 3147
+112   120   129   
+---------1------------------
+---------2------------------
+55 terrain/battlefield/sandy_desert/summer/caked_sand.tga   [tga]  # tell says = 3209
+131   166   194   
+---------3------------------
+49 terrain/battlefield/sandy_desert/summer/sand.tga   [tga]  # tell says = 3264
+154   193   211   
+---------4------------------
+55 terrain/battlefield/sandy_desert/summer/sand_blown.tga   [tga]  # tell says = 3325
+137   170   184   
+---------5------------------
+---------6------------------
+---------7------------------
+---------8------------------
+---------9------------------
+---------10------------------
+---------11------------------
+---------12------------------
+---------13------------------
+---------14------------------
+# tell says = 3338
+
+31 battlefield/envmaps/desert.dds   [battlefield dds]  # tell says = 3371
+# tell says = 3371
+
+  2     2     2     3     3     3   
+  2     2     3     3     3     3   
+  2     3     3     3     2     2   
+  0     4     4     3     3     2   
+  0     4     4     4     3     3   
+  0     4     4     4     4     3   
+# tell says = 3515
+
+----  conversion array ----
+  1    0    0   80  
+  1    0    1   64  
+  1    0    5   48  
+  1    0    3   16  
+  1    0    2   64  
+  1    0    0   48  
+  1    0    1    0  
+  1    0    3    0  
+  1    0    1   48  
+  1    0    2   48  
+  1    0    3   48  
+  1    0    4   48  
+  1    0    3   32  
+  1    0    5   48  
+  1    0    5   32  
+# tell says = 3575
+
+  1    1      -0.500       8.000      -0.500       0.000      25.000       0.000       7.000      -0.150       0.000       0.500  
+  1    4      -0.500       8.000      -0.500       0.000      20.000       0.000       7.000      -0.150       0.000       0.500  
+  2    4      -0.500       8.000      -0.500       0.000      10.000       0.000       7.000      -0.150       0.000       0.500  
+  1    4      -0.500       8.000      -0.500       0.000      30.000       0.000       7.000      -0.150       0.000       0.500  
+  5    0      -0.100       8.000      -0.100     200.000     250.000       0.000       7.000      -0.150       0.000       0.500  
+  2    0      -0.200       8.000      -0.200      15.000      60.000       0.000       7.000      -0.150       0.000       0.500  
+  2    4      -0.500       8.000      -0.500       0.000      40.000       0.000       7.000      -0.150       0.000       0.500  
+  2    4      -0.500       8.000      -0.500       0.000      30.000       0.000       7.000      -0.150       0.000       0.500  
+  2    4      -0.500       8.000      -0.500       0.000       8.000       0.000       7.000      -0.150       0.000       0.500  
+  0    3       0.000       5.000       0.000       0.000       2.000       0.000       7.000      -0.150       0.000       0.500  
+  1    3       0.000       5.000       0.000      -6.000       2.000       0.000       7.000      -0.150       0.000       0.500  
+  1    3       0.000       5.000       0.000      -4.000       2.000       0.000       7.000      -0.150       0.000       0.500  
+  1    3       0.000       5.000       0.000       0.000       2.000       0.000       7.000      -0.150       0.000       0.500  
+  1    2       0.000       5.000       0.000       0.000       2.000       0.000       7.000      -0.150       0.000       0.500  
+# tell says = 4247
+
+#############################################################################################
+#                                                                                           #
+#   Climate : 2 = 4247
+#                                                                                           #
+#############################################################################################
+
+2   [seasons = 2 (hard coded)]
+
+#############################################################################################
+#                                                                                           #
+#   summer = 4251
+#                                                                                           #
+#############################################################################################
+
+15   [rocktypes = 15 (hard coded)]
+
+# tell says = 4255
+
+---------0------------------
+71 terrain/battlefield/rocky_desert/summer/oz_rockydesert_summer_rock.tga   [tga]  # tell says = 4329
+103   127   140   
+---------1------------------
+74 terrain/battlefield/rocky_desert/summer/oz_rockydesert_summer_pebbles.tga   [tga]  # tell says = 4409
+ 84    96   105   
+---------2------------------
+---------3------------------
+71 terrain/battlefield/rocky_desert/summer/oz_rockydesert_summer_sand.tga   [tga]  # tell says = 4487
+108   127   159   
+---------4------------------
+---------5------------------
+---------6------------------
+---------7------------------
+---------8------------------
+---------9------------------
+---------10------------------
+---------11------------------
+---------12------------------
+76 terrain/battlefield/rocky_desert/summer/oz_rockydesert_summer_shrubbase.tga   [tga]  # tell says = 4577
+ 89   106   117   
+---------13------------------
+---------14------------------
+71 terrain/battlefield/rocky_desert/summer/oz_rockydesert_summer_rock.tga   [tga]  # tell says = 4655
+103   127   140   
+# tell says = 4658
+
+29 battlefield/envmaps/rock.dds   [battlefield dds]  # tell says = 4689
+#############################################################################################
+#                                                                                           #
+#   winter = 4689
+#                                                                                           #
+#############################################################################################
+
+15   [rocktypes = 15 (hard coded)]
+
+# tell says = 4693
+
+---------0------------------
+49 terrain/battlefield/rocky_desert/summer/rock.tga   [tga]  # tell says = 4745
+115   141   155   
+---------1------------------
+51 terrain/battlefield/rocky_desert/summer/pebble.tga   [tga]  # tell says = 4802
+104   120   135   
+---------2------------------
+---------3------------------
+49 terrain/battlefield/rocky_desert/summer/sand.tga   [tga]  # tell says = 4858
+ 92   115   141   
+---------4------------------
+---------5------------------
+---------6------------------
+---------7------------------
+---------8------------------
+---------9------------------
+---------10------------------
+---------11------------------
+---------12------------------
+76 terrain/battlefield/rocky_desert/summer/oz_rockydesert_summer_shrubbase.tga   [tga]  # tell says = 4948
+ 89   106   117   
+---------13------------------
+---------14------------------
+71 terrain/battlefield/rocky_desert/summer/oz_rockydesert_summer_rock.tga   [tga]  # tell says = 5026
+103   127   140   
+# tell says = 5029
+
+29 battlefield/envmaps/rock.dds   [battlefield dds]  # tell says = 5060
+# tell says = 5060
+
+  0     0     1     3     3     3   
+  0     1     1     3     3     3   
+  0     1     1     1     3     3   
+  0     1    12     1     1     3   
+  0    14    12     1     1     1   
+ 14    14    12    12     1     1   
+# tell says = 5204
+
+----  conversion array ----
+  2    0    0   48  
+  2    0    2   32  
+  2    0    3   16  
+  2    0    3   16  
+  2    0    3   16  
+  2    0    0   48  
+  2    0    1    0  
+  2    0    3    0  
+  2    0    1   48  
+  2    0    2   48  
+  2    0    3   48  
+  2    0    4   48  
+  2    0    1   32  
+  2    0    5   48  
+  2    0    0   80  
+# tell says = 5264
+
+  5    1       0.000       7.000      -0.050       0.000      20.000      -0.150       7.000      -0.150       0.000       1.200  
+  4    1       0.000       7.000      -0.100       0.000      15.000      -0.150       7.000      -0.150       0.000       0.850  
+  3    1       0.000       7.000      -0.200       0.000      10.000      -0.150       7.000      -0.150       0.000       0.700  
+  4    1       0.000       5.000       0.000       0.000      30.000      -0.150       7.000      -0.150       0.000       0.800  
+  4    3       0.000       5.000       0.000     200.000     250.000       0.000       7.000      -0.150       0.000       0.500  
+  4    3       0.000       5.000       0.000      15.000      60.000       0.000       7.000      -0.150       0.000       0.500  
+  4    2      -0.500       7.000      -0.150       0.000      40.000      -0.070       7.000      -0.150       0.000       0.800  
+  5    1       0.000       5.000       0.000       0.000      10.000      -0.150       7.000      -0.150       0.000       0.700  
+  5    1       0.000       5.000       0.000       0.000      10.000      -0.150       7.000      -0.150       0.000       0.700  
+  2    3       0.000       5.000       0.000       0.000       2.000       0.000       7.000      -0.150       0.000       0.500  
+  1    3       0.000       5.000       0.000      -6.000       2.000       0.000       7.000      -0.150       0.000       0.500  
+  1    3       0.000       5.000       0.000      -4.000       2.000       0.000       7.000      -0.150       0.000       0.200  
+  1    3       0.000       5.000       0.000       0.000       2.000       0.000       7.000      -0.150       0.000       0.200  
+  1    2       0.000       5.000       0.000       0.000       2.000       0.000       7.000      -0.150       0.000       0.300  
+# tell says = 5936
+
+#############################################################################################
+#                                                                                           #
+#   Climate : 3 = 5936
+#                                                                                           #
+#############################################################################################
+
+2   [seasons = 2 (hard coded)]
+
+#############################################################################################
+#                                                                                           #
+#   summer = 5940
+#                                                                                           #
+#############################################################################################
+
+15   [rocktypes = 15 (hard coded)]
+
+# tell says = 5944
+
+---------0------------------
+64 terrain/battlefield/temperate_grassland_fertile/summer/rock.tga   [tga]  # tell says = 6011
+ 70   103   128   
+---------1------------------
+64 terrain/battlefield/temperate_grassland_fertile/summer/rock.tga   [tga]  # tell says = 6081
+ 70   103   128   
+---------2------------------
+64 terrain/battlefield/temperate_grassland_fertile/summer/sand.tga   [tga]  # tell says = 6151
+111   145   168   
+---------3------------------
+64 terrain/battlefield/temperate_grassland_fertile/summer/sand.tga   [tga]  # tell says = 6221
+111   145   168   
+---------4------------------
+64 terrain/battlefield/temperate_grassland_fertile/summer/sand.tga   [tga]  # tell says = 6291
+111   145   168   
+---------5------------------
+63 terrain/battlefield/temperate_grassland_fertile/summer/mud.tga   [tga]  # tell says = 6360
+122   150   174   
+---------6------------------
+63 terrain/battlefield/temperate_grassland_fertile/summer/mud.tga   [tga]  # tell says = 6429
+122   150   174   
+---------7------------------
+63 terrain/battlefield/temperate_grassland_fertile/summer/mud.tga   [tga]  # tell says = 6498
+122   150   174   
+---------8------------------
+65 terrain/battlefield/temperate_grassland_fertile/summer/grass.tga   [tga]  # tell says = 6569
+ 59   107   119   
+---------9------------------
+65 terrain/battlefield/temperate_grassland_fertile/summer/grass.tga   [tga]  # tell says = 6640
+ 59   107   119   
+---------10------------------
+66 terrain/battlefield/temperate_grassland_fertile/summer/grass1.tga   [tga]  # tell says = 6712
+ 58   125   135   
+---------11------------------
+70 terrain/battlefield/temperate_grassland_fertile/summer/shrub_base.tga   [tga]  # tell says = 6788
+ 61   112   119   
+---------12------------------
+70 terrain/battlefield/temperate_grassland_fertile/summer/shrub_base.tga   [tga]  # tell says = 6864
+ 61   112   119   
+---------13------------------
+66 terrain/battlefield/temperate_grassland_fertile/summer/forest.tga   [tga]  # tell says = 6936
+ 67   103   112   
+---------14------------------
+66 terrain/battlefield/temperate_grassland_fertile/summer/forest.tga   [tga]  # tell says = 7008
+ 67   103   112   
+# tell says = 7011
+
+30 battlefield/envmaps/grass.dds   [battlefield dds]  # tell says = 7043
+#############################################################################################
+#                                                                                           #
+#   winter = 7043
+#                                                                                           #
+#############################################################################################
+
+15   [rocktypes = 15 (hard coded)]
+
+# tell says = 7047
+
+---------0------------------
+64 terrain/battlefield/temperate_grassland_fertile/winter/rock.tga   [tga]  # tell says = 7114
+126   126   127   
+---------1------------------
+64 terrain/battlefield/temperate_grassland_fertile/winter/rock.tga   [tga]  # tell says = 7184
+126   126   127   
+---------2------------------
+64 terrain/battlefield/temperate_grassland_fertile/winter/sand.tga   [tga]  # tell says = 7254
+136   128   118   
+---------3------------------
+64 terrain/battlefield/temperate_grassland_fertile/winter/sand.tga   [tga]  # tell says = 7324
+136   128   118   
+---------4------------------
+64 terrain/battlefield/temperate_grassland_fertile/winter/sand.tga   [tga]  # tell says = 7394
+136   128   118   
+---------5------------------
+63 terrain/battlefield/temperate_grassland_fertile/winter/mud.tga   [tga]  # tell says = 7463
+174   163   147   
+---------6------------------
+63 terrain/battlefield/temperate_grassland_fertile/winter/mud.tga   [tga]  # tell says = 7532
+174   163   147   
+---------7------------------
+63 terrain/battlefield/temperate_grassland_fertile/winter/mud.tga   [tga]  # tell says = 7601
+174   163   147   
+---------8------------------
+65 terrain/battlefield/temperate_grassland_fertile/winter/grass.tga   [tga]  # tell says = 7672
+195   187   176   
+---------9------------------
+65 terrain/battlefield/temperate_grassland_fertile/winter/grass.tga   [tga]  # tell says = 7743
+195   187   176   
+---------10------------------
+69 terrain/battlefield/temperate_grassland_fertile/winter/longgrass.tga   [tga]  # tell says = 7818
+199   186   166   
+---------11------------------
+70 terrain/battlefield/temperate_grassland_fertile/winter/shrub_base.tga   [tga]  # tell says = 7894
+161   152   140   
+---------12------------------
+70 terrain/battlefield/temperate_grassland_fertile/winter/shrub_base.tga   [tga]  # tell says = 7970
+161   152   140   
+---------13------------------
+66 terrain/battlefield/temperate_grassland_fertile/winter/forest.tga   [tga]  # tell says = 8042
+193   181   163   
+---------14------------------
+66 terrain/battlefield/temperate_grassland_fertile/winter/forest.tga   [tga]  # tell says = 8114
+193   181   163   
+# tell says = 8117
+
+29 battlefield/envmaps/snow.dds   [battlefield dds]  # tell says = 8148
+# tell says = 8148
+
+  0     6     7     7     9    12   
+  0     2     3     8    12    14   
+  0     9    10    12    14    14   
+  5    10    10    10    14    14   
+  0     1     8    10    12    14   
+  0     1     8     9     9    10   
+# tell says = 8292
+
+----  conversion array ----
+  3    0    0   80  
+  3    0    1   64  
+  3    0    2   16  
+  3    0    2   16  
+  3    0    2   16  
+  3    0    0   48  
+  3    0    1    0  
+  3    0    2    0  
+  3    0    3   16  
+  3    0    1   32  
+  3    0    3   48  
+  3    0    3   32  
+  3    0    3   32  
+  3    0    5   32  
+  3    0    5   32  
+# tell says = 8352
+
+  3    1       0.000       7.000      -0.050       0.000      20.000      -0.150       7.000      -0.150       0.000       1.200  
+  4    2       0.000       7.000      -0.100       0.000      15.000      -0.150       7.000      -0.150       0.000       0.750  
+  5    3       0.000       7.000      -0.200       0.000      10.000      -0.150       7.000      -0.150       0.000       0.500  
+  5    1       0.000       5.000       0.000       0.000      30.000      -0.150       7.000      -0.150       0.000       0.800  
+  4    3       0.000       5.000       0.000     200.000     250.000       0.000       7.000      -0.150       0.000       0.500  
+  4    3       0.000       5.000       0.000      15.000      60.000       0.000       7.000      -0.150       0.000       0.500  
+  1    3      -0.500       7.000      -0.150       0.000      40.000      -0.070       7.000      -0.150       0.000       0.800  
+  2    3       0.000       5.000       0.000       0.000      10.000      -0.150       7.000      -0.150       0.000       0.700  
+  4    3       0.000       5.000       0.000       0.000      10.000      -0.150       7.000      -0.150       0.000       0.700  
+  0    3       0.000       5.000       0.000       0.000       2.000       0.000       7.000      -0.150       0.000       0.500  
+  1    3       0.000       5.000       0.000      -6.000       2.000       0.000       7.000      -0.150       0.000       0.500  
+  1    3       0.000       5.000       0.000      -4.000       2.000       0.000       7.000      -0.150       0.000       0.200  
+  1    3       0.000       5.000       0.000       0.000       2.000       0.000       7.000      -0.150       0.000       0.200  
+  1    2       0.000       5.000       0.000       0.000       2.000       0.000       7.000      -0.150       0.000       0.300  
+# tell says = 9024
+
+#############################################################################################
+#                                                                                           #
+#   Climate : 4 = 9024
+#                                                                                           #
+#############################################################################################
+
+2   [seasons = 2 (hard coded)]
+
+#############################################################################################
+#                                                                                           #
+#   summer = 9028
+#                                                                                           #
+#############################################################################################
+
+15   [rocktypes = 15 (hard coded)]
+
+# tell says = 9032
+
+---------0------------------
+66 terrain/battlefield/temperate_grassland_infertile/summer/rock.tga   [tga]  # tell says = 9101
+ 56    58    60   
+---------1------------------
+66 terrain/battlefield/temperate_grassland_infertile/summer/rock.tga   [tga]  # tell says = 9173
+ 56    58    60   
+---------2------------------
+66 terrain/battlefield/temperate_grassland_infertile/summer/sand.tga   [tga]  # tell says = 9245
+ 85   115   140   
+---------3------------------
+66 terrain/battlefield/temperate_grassland_infertile/summer/sand.tga   [tga]  # tell says = 9317
+ 85   115   140   
+---------4------------------
+66 terrain/battlefield/temperate_grassland_infertile/summer/sand.tga   [tga]  # tell says = 9389
+ 85   115   140   
+---------5------------------
+65 terrain/battlefield/temperate_grassland_infertile/summer/mud.tga   [tga]  # tell says = 9460
+ 68    86    99   
+---------6------------------
+65 terrain/battlefield/temperate_grassland_infertile/summer/mud.tga   [tga]  # tell says = 9531
+ 68    86    99   
+---------7------------------
+65 terrain/battlefield/temperate_grassland_infertile/summer/mud.tga   [tga]  # tell says = 9602
+ 68    86    99   
+---------8------------------
+67 terrain/battlefield/temperate_grassland_infertile/summer/grass.tga   [tga]  # tell says = 9675
+ 41    65    62   
+---------9------------------
+67 terrain/battlefield/temperate_grassland_infertile/summer/grass.tga   [tga]  # tell says = 9748
+ 41    65    62   
+---------10------------------
+68 terrain/battlefield/temperate_grassland_infertile/summer/grass1.tga   [tga]  # tell says = 9822
+ 52    83    78   
+---------11------------------
+72 terrain/battlefield/temperate_grassland_infertile/summer/shrub_base.tga   [tga]  # tell says = 9900
+ 37    54    55   
+---------12------------------
+72 terrain/battlefield/temperate_grassland_infertile/summer/shrub_base.tga   [tga]  # tell says = 9978
+ 37    54    55   
+---------13------------------
+68 terrain/battlefield/temperate_grassland_infertile/summer/forest.tga   [tga]  # tell says = 10052
+ 47    76    77   
+---------14------------------
+68 terrain/battlefield/temperate_grassland_infertile/summer/forest.tga   [tga]  # tell says = 10126
+ 47    76    77   
+# tell says = 10129
+
+30 battlefield/envmaps/grass.dds   [battlefield dds]  # tell says = 10161
+#############################################################################################
+#                                                                                           #
+#   winter = 10161
+#                                                                                           #
+#############################################################################################
+
+15   [rocktypes = 15 (hard coded)]
+
+# tell says = 10165
+
+---------0------------------
+66 terrain/battlefield/temperate_grassland_infertile/winter/rock.tga   [tga]  # tell says = 10234
+ 91    96   102   
+---------1------------------
+66 terrain/battlefield/temperate_grassland_infertile/winter/rock.tga   [tga]  # tell says = 10306
+ 91    96   102   
+---------2------------------
+66 terrain/battlefield/temperate_grassland_infertile/winter/sand.tga   [tga]  # tell says = 10378
+144   149   145   
+---------3------------------
+66 terrain/battlefield/temperate_grassland_infertile/winter/sand.tga   [tga]  # tell says = 10450
+144   149   145   
+---------4------------------
+66 terrain/battlefield/temperate_grassland_infertile/winter/sand.tga   [tga]  # tell says = 10522
+144   149   145   
+---------5------------------
+65 terrain/battlefield/temperate_grassland_infertile/winter/mud.tga   [tga]  # tell says = 10593
+136   145   145   
+---------6------------------
+65 terrain/battlefield/temperate_grassland_infertile/winter/mud.tga   [tga]  # tell says = 10664
+136   145   145   
+---------7------------------
+65 terrain/battlefield/temperate_grassland_infertile/winter/mud.tga   [tga]  # tell says = 10735
+136   145   145   
+---------8------------------
+67 terrain/battlefield/temperate_grassland_infertile/winter/grass.tga   [tga]  # tell says = 10808
+142   145   138   
+---------9------------------
+67 terrain/battlefield/temperate_grassland_infertile/winter/grass.tga   [tga]  # tell says = 10881
+142   145   138   
+---------10------------------
+68 terrain/battlefield/temperate_grassland_infertile/winter/grass1.tga   [tga]  # tell says = 10955
+133   142   146   
+---------11------------------
+72 terrain/battlefield/temperate_grassland_infertile/winter/shrub_base.tga   [tga]  # tell says = 11033
+149   161   158   
+---------12------------------
+72 terrain/battlefield/temperate_grassland_infertile/winter/shrub_base.tga   [tga]  # tell says = 11111
+149   161   158   
+---------13------------------
+68 terrain/battlefield/temperate_grassland_infertile/winter/forest.tga   [tga]  # tell says = 11185
+105   107   101   
+---------14------------------
+68 terrain/battlefield/temperate_grassland_infertile/winter/forest.tga   [tga]  # tell says = 11259
+105   107   101   
+# tell says = 11262
+
+29 battlefield/envmaps/snow.dds   [battlefield dds]  # tell says = 11293
+# tell says = 11293
+
+  0     6     7     7     9    12   
+  0     2     3     8    12    14   
+  0     9    10    12    14    14   
+  5    10    10    10    14    14   
+  0     1     8    10    12    14   
+  0     1     8     9     9    10   
+# tell says = 11437
+
+----  conversion array ----
+  4    0    0   80  
+  4    0    1   64  
+  4    0    2   16  
+  4    0    2   16  
+  4    0    2   16  
+  4    0    0   48  
+  4    0    1    0  
+  4    0    2    0  
+  4    0    3   16  
+  4    0    1   32  
+  4    0    3   48  
+  4    0    3   32  
+  4    0    3   32  
+  4    0    5   32  
+  4    0    5   32  
+# tell says = 11497
+
+  0    2       0.000       7.000      -0.100       0.000      15.000       0.000       7.000      -0.150       0.000       0.750  
+  3    2       0.000       7.000      -0.150       0.000      13.000       0.000       7.000      -0.150       0.000       0.400  
+  2    2       0.000       7.000      -0.200       0.000      10.000       0.000       7.000      -0.150       0.000       0.250  
+  0    3       0.000       5.000       0.000       0.000      30.000       0.000       7.000      -0.150       0.000       0.500  
+  5    3       0.000       5.000       0.000     200.000     250.000       0.000       7.000      -0.150       0.000       0.500  
+  4    3       0.000       5.000       0.000      15.000      60.000       0.000       7.000      -0.150       0.000       0.500  
+  5    3      -0.500       7.000      -0.150       0.000      40.000       0.000       7.000      -0.150       0.000       0.700  
+  4    3       0.000       5.000       0.000       0.000      30.000       0.000       7.000      -0.150       0.000       0.700  
+  4    2       0.000       5.000       0.000       0.000       8.000       0.000       7.000      -0.150       0.000       0.700  
+  0    3       0.000       5.000       0.000       0.000       2.000       0.000       7.000      -0.150       0.000       0.500  
+  1    3       0.000       5.000       0.000      -6.000       2.000       0.000       7.000      -0.150       0.000       0.500  
+  1    3       0.000       5.000       0.000      -4.000       2.000       0.000       7.000      -0.150       0.000       0.200  
+  1    3       0.000       5.000       0.000       0.000       2.000       0.000       7.000      -0.150       0.000       0.200  
+  1    2       0.000       5.000       0.000       0.000       2.000       0.000       7.000      -0.150       0.000       0.300  
+# tell says = 12169
+
+#############################################################################################
+#                                                                                           #
+#   Climate : 5 = 12169
+#                                                                                           #
+#############################################################################################
+
+2   [seasons = 2 (hard coded)]
+
+#############################################################################################
+#                                                                                           #
+#   summer = 12173
+#                                                                                           #
+#############################################################################################
+
+15   [rocktypes = 15 (hard coded)]
+
+# tell says = 12177
+
+---------0------------------
+58 terrain/battlefield/temperate_forest_open/summer/rock.tga   [tga]  # tell says = 12238
+114   140   139   
+---------1------------------
+---------2------------------
+---------3------------------
+58 terrain/battlefield/temperate_forest_open/summer/sand.tga   [tga]  # tell says = 12304
+154   193   211   
+---------4------------------
+---------5------------------
+---------6------------------
+57 terrain/battlefield/temperate_forest_open/summer/mud.tga   [tga]  # tell says = 12369
+ 48    77    89   
+---------7------------------
+---------8------------------
+---------9------------------
+59 terrain/battlefield/temperate_forest_open/summer/grass.tga   [tga]  # tell says = 12436
+ 60   104   110   
+---------10------------------
+60 terrain/battlefield/temperate_forest_open/summer/grass1.tga   [tga]  # tell says = 12502
+ 51    83    85   
+---------11------------------
+---------12------------------
+64 terrain/battlefield/temperate_forest_open/summer/shrub_base.tga   [tga]  # tell says = 12573
+ 92   119   125   
+---------13------------------
+---------14------------------
+60 terrain/battlefield/temperate_forest_open/summer/forest.tga   [tga]  # tell says = 12640
+ 33    51    60   
+# tell says = 12643
+
+30 battlefield/envmaps/grass.dds   [battlefield dds]  # tell says = 12675
+#############################################################################################
+#                                                                                           #
+#   winter = 12675
+#                                                                                           #
+#############################################################################################
+
+15   [rocktypes = 15 (hard coded)]
+
+# tell says = 12679
+
+---------0------------------
+58 terrain/battlefield/temperate_forest_open/winter/rock.tga   [tga]  # tell says = 12740
+127   132   131   
+---------1------------------
+---------2------------------
+---------3------------------
+58 terrain/battlefield/temperate_forest_open/winter/sand.tga   [tga]  # tell says = 12806
+152   160   176   
+---------4------------------
+---------5------------------
+---------6------------------
+57 terrain/battlefield/temperate_forest_open/winter/mud.tga   [tga]  # tell says = 12871
+ 99   112   105   
+---------7------------------
+---------8------------------
+---------9------------------
+59 terrain/battlefield/temperate_forest_open/winter/grass.tga   [tga]  # tell says = 12938
+215   203   188   
+---------10------------------
+60 terrain/battlefield/temperate_forest_open/winter/grass1.tga   [tga]  # tell says = 13004
+168   179   170   
+---------11------------------
+---------12------------------
+64 terrain/battlefield/temperate_forest_open/winter/shrub_base.tga   [tga]  # tell says = 13075
+169   171   158   
+---------13------------------
+---------14------------------
+60 terrain/battlefield/temperate_forest_open/winter/forest.tga   [tga]  # tell says = 13142
+141   144   139   
+# tell says = 13145
+
+29 battlefield/envmaps/snow.dds   [battlefield dds]  # tell says = 13176
+# tell says = 13176
+
+  6     6     6     6     6    10   
+  6     3     3     9    12    12   
+  6     9    10    12    14    14   
+  6     9    10    12    14    14   
+  0     0     9    10    12    14   
+  0     0     0     9     9    12   
+# tell says = 13320
+
+----  conversion array ----
+  5    0    0   80  
+  5    0    1   64  
+  5    0    1   16  
+  5    0    2   16  
+  5    0    2   16  
+  5    0    0   48  
+  5    0    1    0  
+  5    0    3    0  
+  5    0    2   64  
+  5    0    2   48  
+  5    0    3   48  
+  5    0    4   48  
+  5    0    4   64  
+  5    0    5   48  
+  5    0    5   32  
+# tell says = 13380
+
+  3    1       0.000       7.000      -0.050       0.000      20.000      -0.150       7.000      -0.150       0.000       1.200  
+  4    2       0.000       7.000      -0.100       0.000      15.000      -0.150       7.000      -0.150       0.000       0.750  
+  5    3       0.000       7.000      -0.200       0.000      10.000      -0.150       7.000      -0.150       0.000       0.500  
+  5    2       0.000       5.000       0.000       0.000      30.000      -0.150       7.000      -0.150       0.000       0.750  
+  4    3       0.000       5.000       0.000     200.000     250.000       0.000       7.000      -0.150       0.000       0.500  
+  4    3       0.000       5.000       0.000      15.000      60.000       0.000       7.000      -0.150       0.000       0.500  
+  2    3      -0.500       7.000      -0.150       0.000      40.000      -0.070       7.000      -0.150       0.000       0.800  
+  2    3       0.000       5.000       0.000       0.000      10.000      -0.150       7.000      -0.150       0.000       0.700  
+  4    3       0.000       5.000       0.000       0.000      10.000      -0.150       7.000      -0.150       0.000       0.700  
+  0    2       0.000       5.000       0.000       0.000       1.000       0.000       7.000      -0.150       0.000       0.500  
+  1    3       0.000       5.000       0.000      -6.000       2.000       0.000       7.000      -0.150       0.000       0.500  
+  1    3       0.000       5.000       0.000      -4.000       2.000       0.000       7.000      -0.150       0.000       0.200  
+  1    3       0.000       5.000       0.000       0.000       2.000       0.000       7.000      -0.150       0.000       0.200  
+  1    2       0.000       5.000       0.000       0.000       2.000       0.000       7.000      -0.150       0.000       0.300  
+# tell says = 14052
+
+#############################################################################################
+#                                                                                           #
+#   Climate : 6 = 14052
+#                                                                                           #
+#############################################################################################
+
+2   [seasons = 2 (hard coded)]
+
+#############################################################################################
+#                                                                                           #
+#   summer = 14056
+#                                                                                           #
+#############################################################################################
+
+15   [rocktypes = 15 (hard coded)]
+
+# tell says = 14060
+
+---------0------------------
+58 terrain/battlefield/temperate_forest_deep/summer/rock.tga   [tga]  # tell says = 14121
+ 52    75    84   
+---------1------------------
+---------2------------------
+---------3------------------
+58 terrain/battlefield/temperate_forest_deep/summer/sand.tga   [tga]  # tell says = 14187
+ 76    93   100   
+---------4------------------
+---------5------------------
+---------6------------------
+57 terrain/battlefield/temperate_forest_deep/summer/mud.tga   [tga]  # tell says = 14252
+ 49    69    76   
+---------7------------------
+---------8------------------
+---------9------------------
+59 terrain/battlefield/temperate_forest_deep/summer/grass.tga   [tga]  # tell says = 14319
+ 59    91    93   
+---------10------------------
+60 terrain/battlefield/temperate_forest_deep/summer/grass1.tga   [tga]  # tell says = 14385
+ 53    79    82   
+---------11------------------
+---------12------------------
+64 terrain/battlefield/temperate_forest_deep/summer/shrub_base.tga   [tga]  # tell says = 14456
+ 46    69    77   
+---------13------------------
+---------14------------------
+60 terrain/battlefield/temperate_forest_deep/summer/forest.tga   [tga]  # tell says = 14523
+ 32    50    58   
+# tell says = 14526
+
+30 battlefield/envmaps/grass.dds   [battlefield dds]  # tell says = 14558
+#############################################################################################
+#                                                                                           #
+#   winter = 14558
+#                                                                                           #
+#############################################################################################
+
+15   [rocktypes = 15 (hard coded)]
+
+# tell says = 14562
+
+---------0------------------
+58 terrain/battlefield/temperate_forest_deep/winter/rock.tga   [tga]  # tell says = 14623
+126   126   127   
+---------1------------------
+---------2------------------
+---------3------------------
+58 terrain/battlefield/temperate_forest_deep/winter/sand.tga   [tga]  # tell says = 14689
+136   128   118   
+---------4------------------
+---------5------------------
+---------6------------------
+57 terrain/battlefield/temperate_forest_deep/winter/mud.tga   [tga]  # tell says = 14754
+174   163   147   
+---------7------------------
+---------8------------------
+---------9------------------
+59 terrain/battlefield/temperate_forest_deep/winter/grass.tga   [tga]  # tell says = 14821
+195   187   176   
+---------10------------------
+63 terrain/battlefield/temperate_forest_deep/winter/longgrass.tga   [tga]  # tell says = 14890
+199   186   166   
+---------11------------------
+---------12------------------
+64 terrain/battlefield/temperate_forest_deep/winter/shrub_base.tga   [tga]  # tell says = 14961
+161   152   140   
+---------13------------------
+---------14------------------
+60 terrain/battlefield/temperate_forest_deep/winter/forest.tga   [tga]  # tell says = 15028
+193   181   163   
+# tell says = 15031
+
+29 battlefield/envmaps/snow.dds   [battlefield dds]  # tell says = 15062
+# tell says = 15062
+
+  6     6     6     6    10    12   
+  6     3     3     9    12    14   
+  6     9    10    12    14    14   
+  0     9    10    12    12    14   
+  0     0     9    10    12    12   
+  0     0     0     9     9    12   
+# tell says = 15206
+
+----  conversion array ----
+  6    0    0   80  
+  6    0    1   64  
+  6    0    1   16  
+  6    0    2   16  
+  6    0    2   16  
+  6    0    0   48  
+  6    0    1    0  
+  6    0    3    0  
+  6    0    2   64  
+  6    0    1   48  
+  6    0    2   48  
+  6    0    4   48  
+  6    0    4   64  
+  6    0    5   48  
+  6    0    5   32  
+# tell says = 15266
+
+  3    1       0.000       7.000      -0.050       0.000      20.000      -0.150       7.000      -0.150       0.000       1.200  
+  4    2       0.000       7.000      -0.100       0.000      15.000      -0.150       7.000      -0.150       0.000       0.750  
+  5    3       0.000       7.000      -0.200       0.000      10.000      -0.150       7.000      -0.150       0.000       0.500  
+  5    2       0.000       5.000       0.000       0.000      30.000      -0.150       7.000      -0.150       0.000       0.950  
+  4    3       0.000       5.000       0.000     200.000     250.000       0.000       7.000      -0.150       0.000       0.500  
+  4    3       0.000       5.000       0.000      15.000      60.000       0.000       7.000      -0.150       0.000       0.500  
+  2    3      -0.500       7.000      -0.150       0.000      40.000      -0.070       7.000      -0.150       0.000       0.800  
+  2    3       0.000       5.000       0.000       0.000      10.000      -0.150       7.000      -0.150       0.000       0.700  
+  3    3       0.000       5.000       0.000       0.000      10.000      -0.150       7.000      -0.150       0.000       0.700  
+  0    2       0.000       5.000       0.000       0.000       1.000       0.000       7.000      -0.150       0.000       0.500  
+  1    3       0.000       5.000       0.000      -6.000       2.000       0.000       7.000      -0.150       0.000       0.500  
+  1    3       0.000       5.000       0.000      -4.000       2.000       0.000       7.000      -0.150       0.000       0.200  
+  1    3       0.000       5.000       0.000       0.000       2.000       0.000       7.000      -0.150       0.000       0.200  
+  1    2       0.000       5.000       0.000       0.000       2.000       0.000       7.000      -0.150       0.000       0.300  
+# tell says = 15938
+
+#############################################################################################
+#                                                                                           #
+#   Climate : 7 = 15938
+#                                                                                           #
+#############################################################################################
+
+2   [seasons = 2 (hard coded)]
+
+#############################################################################################
+#                                                                                           #
+#   summer = 15942
+#                                                                                           #
+#############################################################################################
+
+15   [rocktypes = 15 (hard coded)]
+
+# tell says = 15946
+
+---------0------------------
+---------1------------------
+---------2------------------
+---------3------------------
+42 terrain/battlefield/swamp/summer/sand.tga   [tga]  # tell says = 15994
+ 76    93   100   
+---------4------------------
+---------5------------------
+---------6------------------
+41 terrain/battlefield/swamp/summer/mud.tga   [tga]  # tell says = 16043
+ 52    81    81   
+---------7------------------
+43 terrain/battlefield/swamp/summer/swamp.tga   [tga]  # tell says = 16092
+ 73    99   101   
+---------8------------------
+---------9------------------
+43 terrain/battlefield/swamp/summer/grass.tga   [tga]  # tell says = 16142
+ 59    96    92   
+---------10------------------
+---------11------------------
+---------12------------------
+---------13------------------
+---------14------------------
+# tell says = 16150
+
+30 battlefield/envmaps/grass.dds   [battlefield dds]  # tell says = 16182
+#############################################################################################
+#                                                                                           #
+#   winter = 16182
+#                                                                                           #
+#############################################################################################
+
+15   [rocktypes = 15 (hard coded)]
+
+# tell says = 16186
+
+---------0------------------
+---------1------------------
+---------2------------------
+---------3------------------
+42 terrain/battlefield/swamp/summer/sand.tga   [tga]  # tell says = 16234
+ 76    93   100   
+---------4------------------
+---------5------------------
+---------6------------------
+41 terrain/battlefield/swamp/summer/mud.tga   [tga]  # tell says = 16283
+ 52    81    81   
+---------7------------------
+43 terrain/battlefield/swamp/summer/swamp.tga   [tga]  # tell says = 16332
+ 73    99   101   
+---------8------------------
+---------9------------------
+43 terrain/battlefield/swamp/summer/grass.tga   [tga]  # tell says = 16382
+ 59    96    92   
+---------10------------------
+---------11------------------
+---------12------------------
+---------13------------------
+---------14------------------
+# tell says = 16390
+
+29 battlefield/envmaps/snow.dds   [battlefield dds]  # tell says = 16421
+# tell says = 16421
+
+  7     7     7     7     7     6   
+  7     7     7     3     3     9   
+  7     7     7     9     9     9   
+  6     7     9     9     9     9   
+  6     6     9     9     9     9   
+  6     6     6     6     9     9   
+# tell says = 16565
+
+----  conversion array ----
+  7    0    0   80  
+  7    0    1   64  
+  7    0    1   16  
+  7    0    3   16  
+  7    0    2   16  
+  7    0    0   48  
+  7    0    0   80  
+  7    0    1    0  
+  7    0    2   64  
+  7    0    4   64  
+  7    0    3   48  
+  7    0    4   48  
+  7    0    4   64  
+  7    0    5   48  
+  7    0    5   32  
+# tell says = 16625
+
+  3    1       0.000       5.000       0.000       0.000       2.000       0.000       7.000      -0.150       0.000       0.500  
+  2    2       0.000       5.000       0.000       0.000       2.000       0.000       7.000      -0.150       0.000       0.500  
+  2    3       0.000       5.000       0.000       0.000       2.000       0.000       7.000      -0.150       0.000       0.500  
+  3    3       0.000       5.000       0.000       0.000       2.000       0.000       7.000      -0.150       0.000       0.500  
+  4    3       0.000       5.000       0.000       0.000       2.000       0.000       7.000      -0.150       0.000       0.500  
+  4    3       0.000       5.000       0.000       0.000       2.000       0.000       7.000      -0.150       0.000       0.500  
+  2    2       0.000       5.000       0.000       0.000       2.000       0.000       7.000      -0.150       0.000       0.500  
+  2    4       0.000       5.000       0.000       0.000       2.000       0.000       7.000      -0.150       0.000       0.500  
+  2    3       0.000       5.000       0.000       0.000       2.000       0.000       7.000      -0.150       0.000       0.500  
+  0    3       0.000       5.000       0.000       0.000       2.000       0.000       7.000      -0.150       0.000       0.500  
+  1    3       0.000       5.000       0.000      -6.000       2.000       0.000       7.000      -0.150       0.000       0.500  
+  1    3       0.000       5.000       0.000      -4.000       2.000       0.000       7.000      -0.150       0.000       0.500  
+  1    3       0.000       5.000       0.000       0.000       2.000       0.000       7.000      -0.150       0.000       0.500  
+  1    2       0.000       5.000       0.000       0.000       2.000       0.000       7.000      -0.150       0.000       0.500  
+# tell says = 17297
+
+#############################################################################################
+#                                                                                           #
+#   Climate : 8 = 17297
+#                                                                                           #
+#############################################################################################
+
+2   [seasons = 2 (hard coded)]
+
+#############################################################################################
+#                                                                                           #
+#   summer = 17301
+#                                                                                           #
+#############################################################################################
+
+15   [rocktypes = 15 (hard coded)]
+
+# tell says = 17305
+
+---------0------------------
+45 terrain/battlefield/highland/summer/rock.tga   [tga]  # tell says = 17353
+ 81    98   102   
+---------1------------------
+---------2------------------
+---------3------------------
+---------4------------------
+---------5------------------
+---------6------------------
+44 terrain/battlefield/highland/summer/mud.tga   [tga]  # tell says = 17408
+ 43    60    76   
+---------7------------------
+---------8------------------
+---------9------------------
+46 terrain/battlefield/highland/summer/grass.tga   [tga]  # tell says = 17462
+ 44    83    81   
+---------10------------------
+47 terrain/battlefield/highland/summer/grass1.tga   [tga]  # tell says = 17515
+ 69   113   113   
+---------11------------------
+---------12------------------
+51 terrain/battlefield/highland/summer/shrub_base.tga   [tga]  # tell says = 17573
+ 44    66    73   
+---------13------------------
+---------14------------------
+47 terrain/battlefield/highland/summer/forest.tga   [tga]  # tell says = 17627
+ 15    45    49   
+# tell says = 17630
+
+30 battlefield/envmaps/grass.dds   [battlefield dds]  # tell says = 17662
+#############################################################################################
+#                                                                                           #
+#   winter = 17662
+#                                                                                           #
+#############################################################################################
+
+15   [rocktypes = 15 (hard coded)]
+
+# tell says = 17666
+
+---------0------------------
+45 terrain/battlefield/highland/winter/rock.tga   [tga]  # tell says = 17714
+108   124   126   
+---------1------------------
+---------2------------------
+---------3------------------
+---------4------------------
+---------5------------------
+---------6------------------
+44 terrain/battlefield/highland/winter/mud.tga   [tga]  # tell says = 17769
+ 43    60    76   
+---------7------------------
+---------8------------------
+---------9------------------
+46 terrain/battlefield/highland/winter/grass.tga   [tga]  # tell says = 17823
+177   169   154   
+---------10------------------
+47 terrain/battlefield/highland/winter/grass1.tga   [tga]  # tell says = 17876
+185   184   169   
+---------11------------------
+---------12------------------
+51 terrain/battlefield/highland/winter/shrub_base.tga   [tga]  # tell says = 17934
+163   160   143   
+---------13------------------
+---------14------------------
+47 terrain/battlefield/highland/winter/forest.tga   [tga]  # tell says = 17988
+199   200   200   
+# tell says = 17991
+
+29 battlefield/envmaps/snow.dds   [battlefield dds]  # tell says = 18022
+# tell says = 18022
+
+  6     6     6     6     9     9   
+  6     6     6     9    10    12   
+  6     9     9    12    14    14   
+  0     9     9    10    12    14   
+  0     0     9     9    12    12   
+  0     0     0     9     9    10   
+# tell says = 18166
+
+----  conversion array ----
+  8    0    0   80  
+  8    0    1   64  
+  8    0    1   16  
+  8    0    3   16  
+  8    0    2   16  
+  8    0    0   48  
+  8    0    1    0  
+  8    0    1    0  
+  8    0    2   64  
+  8    0    2   48  
+  8    0    3   48  
+  8    0    4   48  
+  8    0    4   64  
+  8    0    5   48  
+  8    0    5   32  
+# tell says = 18226
+
+  4    2       0.000       7.000      -0.050       0.000      20.000      -0.150       7.000      -0.150       0.000       1.200  
+  4    3       0.000       7.000      -0.100       0.000      15.000      -0.150       7.000      -0.150       0.000       0.750  
+  3    3       0.000       7.000      -0.200       0.000      10.000      -0.150       7.000      -0.150       0.000       0.500  
+  5    1       0.000       5.000       0.000       0.000      30.000      -0.150       7.000      -0.150       0.000       0.800  
+  4    3       0.000       5.000       0.000     200.000     250.000       0.000       7.000      -0.150       0.000       0.500  
+  4    3       0.000       5.000       0.000      15.000      60.000       0.000       7.000      -0.150       0.000       0.500  
+  3    5      -0.500       7.000      -0.150       0.000      40.000      -0.070       7.000      -0.150       0.000       0.300  
+  3    4       0.000       5.000       0.000       0.000      10.000      -0.150       7.000      -0.150       0.000       0.700  
+  4    4       0.000       5.000       0.000       0.000      10.000      -0.150       7.000      -0.150       0.000       0.850  
+  0    3       0.000       5.000       0.000       0.000       2.000       0.000       7.000      -0.150       0.000       0.500  
+  1    3       0.000       5.000       0.000      -6.000       2.000       0.000       7.000      -0.150       0.000       0.500  
+  1    3       0.000       5.000       0.000      -4.000       2.000       0.000       7.000      -0.150       0.000       0.200  
+  1    3       0.000       5.000       0.000       0.000       2.000       0.000       7.000      -0.150       0.000       0.200  
+  1    2       0.000       5.000       0.000       0.000       2.000       0.000       7.000      -0.150       0.000       0.300  
+# tell says = 18898
+
+#############################################################################################
+#                                                                                           #
+#   Climate : 9 = 18898
+#                                                                                           #
+#############################################################################################
+
+2   [seasons = 2 (hard coded)]
+
+#############################################################################################
+#                                                                                           #
+#   summer = 18902
+#                                                                                           #
+#############################################################################################
+
+15   [rocktypes = 15 (hard coded)]
+
+# tell says = 18906
+
+---------0------------------
+51 terrain/battlefield/alpine/summer/oz_rockunder.tga   [tga]  # tell says = 18960
+ 93   106   114   
+---------1------------------
+---------2------------------
+---------3------------------
+---------4------------------
+---------5------------------
+---------6------------------
+45 terrain/battlefield/alpine/summer/oz_mud.tga   [tga]  # tell says = 19016
+ 66    77    84   
+---------7------------------
+---------8------------------
+---------9------------------
+52 terrain/battlefield/alpine/summer/oz_shortgrass.tga   [tga]  # tell says = 19076
+ 40    79    73   
+---------10------------------
+47 terrain/battlefield/alpine/summer/oz_grass.tga   [tga]  # tell says = 19129
+ 59    92    95   
+---------11------------------
+---------12------------------
+56 terrain/battlefield/alpine/summer/oz_brownshrubbase.tga   [tga]  # tell says = 19192
+ 41    76    71   
+---------13------------------
+---------14------------------
+48 terrain/battlefield/alpine/summer/oz_forest.tga   [tga]  # tell says = 19247
+ 33    71    70   
+# tell says = 19250
+
+30 battlefield/envmaps/grass.dds   [battlefield dds]  # tell says = 19282
+#############################################################################################
+#                                                                                           #
+#   winter = 19282
+#                                                                                           #
+#############################################################################################
+
+15   [rocktypes = 15 (hard coded)]
+
+# tell says = 19286
+
+---------0------------------
+60 terrain/battlefield/alpine/winter/oz_alpine_winter_rock.tga   [tga]  # tell says = 19349
+ 88    95   102   
+---------1------------------
+---------2------------------
+---------3------------------
+---------4------------------
+---------5------------------
+---------6------------------
+59 terrain/battlefield/alpine/winter/oz_alpine_winter_mud.tga   [tga]  # tell says = 19419
+101   104   106   
+---------7------------------
+---------8------------------
+---------9------------------
+61 terrain/battlefield/alpine/winter/oz_alpine_winter_grass.tga   [tga]  # tell says = 19488
+182   171   157   
+---------10------------------
+66 terrain/battlefield/alpine/winter/oz_alpine_winter_long_grass.tga   [tga]  # tell says = 19560
+188   176   162   
+---------11------------------
+---------12------------------
+66 terrain/battlefield/alpine/winter/oz_alpine_winter_shrub_base.tga   [tga]  # tell says = 19633
+173   164   152   
+---------13------------------
+---------14------------------
+62 terrain/battlefield/alpine/winter/oz_alpine_winter_forest.tga   [tga]  # tell says = 19702
+127   120   109   
+# tell says = 19705
+
+29 battlefield/envmaps/snow.dds   [battlefield dds]  # tell says = 19736
+# tell says = 19736
+
+  0     6     6     6     9    10   
+  0     6     9    10    10    12   
+  6     9    10    12    14    14   
+  0     9     9    10    12    14   
+  0     0     9     9    12    14   
+  0     0     0     0     9    12   
+# tell says = 19880
+
+----  conversion array ----
+  9    0    0   80  
+  9    0    1   64  
+  9    0    1   16  
+  9    0    3   16  
+  9    0    2   16  
+  9    0    0   48  
+  9    0    2    0  
+  9    0    1    0  
+  9    0    2   64  
+  9    0    2   48  
+  9    0    3   48  
+  9    0    4   48  
+  9    0    4   48  
+  9    0    5   48  
+  9    0    5   32  
+# tell says = 19940
+
+  3    1       0.000       5.000      -0.050       0.000      25.000       0.000       7.000      -0.150       0.000       0.500  
+  3    2       0.000       5.000      -0.100       0.000      15.000       0.000       7.000      -0.150       0.000       0.500  
+  1    3       0.000       5.000      -0.200       0.000      10.000       0.000       7.000      -0.150       0.000       0.350  
+  3    3       0.000       5.000       0.000       0.000      30.000       0.000       7.000      -0.150       0.000       0.500  
+  4    3       0.000       5.000       0.000     200.000     250.000       0.000       7.000      -0.150       0.000       0.500  
+  4    3       0.000       5.000       0.000      15.000      60.000       0.000       7.000      -0.150       0.000       0.500  
+  5    5      -0.500       7.000      -0.150       0.000      40.000       0.000       7.000      -0.150       0.000       0.600  
+  3    4       0.000       5.000       0.000       0.000      30.000      -0.070       7.000      -0.150       0.000       0.650  
+  4    3       0.000       5.000       0.000       0.000       8.000      -0.070       8.000      -0.150       0.000       0.450  
+  0    3       0.000       5.000       0.000       0.000       2.000       0.000       7.000      -0.150       0.000       0.500  
+  1    3       0.000       5.000       0.000      -6.000       2.000       0.000       7.000      -0.150       0.000       0.500  
+  1    3       0.000       5.000       0.000      -4.000       2.000       0.000       7.000      -0.150       0.000       0.500  
+  1    3       0.000       5.000       0.000       0.000       2.000       0.000       7.000      -0.150       0.000       0.500  
+  1    2       0.000       5.000       0.000       0.000       2.000       0.000       7.000      -0.150       0.000       0.500  
+# tell says = 20612
+
+#############################################################################################
+#                                                                                           #
+#   Climate : 10 = 20612
+#                                                                                           #
+#############################################################################################
+
+2   [seasons = 2 (hard coded)]
+
+#############################################################################################
+#                                                                                           #
+#   summer = 20616
+#                                                                                           #
+#############################################################################################
+
+15   [rocktypes = 15 (hard coded)]
+
+# tell says = 20620
+
+---------0------------------
+47 terrain/battlefield/sub_arctic/summer/rock.tga   [tga]  # tell says = 20670
+ 88    95    99   
+---------1------------------
+49 terrain/battlefield/sub_arctic/summer/pebble.tga   [tga]  # tell says = 20725
+123   142   148   
+---------2------------------
+---------3------------------
+47 terrain/battlefield/sub_arctic/summer/sand.tga   [tga]  # tell says = 20779
+133   155   170   
+---------4------------------
+---------5------------------
+---------6------------------
+46 terrain/battlefield/sub_arctic/summer/mud.tga   [tga]  # tell says = 20833
+ 55   105   121   
+---------7------------------
+---------8------------------
+---------9------------------
+48 terrain/battlefield/sub_arctic/summer/grass.tga   [tga]  # tell says = 20889
+ 49   108    99   
+---------10------------------
+49 terrain/battlefield/sub_arctic/summer/grass1.tga   [tga]  # tell says = 20944
+ 81   131   129   
+---------11------------------
+---------12------------------
+53 terrain/battlefield/sub_arctic/summer/shrub_base.tga   [tga]  # tell says = 21004
+ 54    76    74   
+---------13------------------
+---------14------------------
+49 terrain/battlefield/sub_arctic/summer/forest.tga   [tga]  # tell says = 21060
+ 54    86    83   
+# tell says = 21063
+
+29 battlefield/envmaps/snow.dds   [battlefield dds]  # tell says = 21094
+#############################################################################################
+#                                                                                           #
+#   winter = 21094
+#                                                                                           #
+#############################################################################################
+
+15   [rocktypes = 15 (hard coded)]
+
+# tell says = 21098
+
+---------0------------------
+47 terrain/battlefield/sub_arctic/winter/rock.tga   [tga]  # tell says = 21148
+123   124   124   
+---------1------------------
+49 terrain/battlefield/sub_arctic/winter/pebble.tga   [tga]  # tell says = 21203
+132   153   165   
+---------2------------------
+---------3------------------
+47 terrain/battlefield/sub_arctic/winter/sand.tga   [tga]  # tell says = 21257
+207   208   203   
+---------4------------------
+---------5------------------
+---------6------------------
+46 terrain/battlefield/sub_arctic/winter/mud.tga   [tga]  # tell says = 21311
+175   200   201   
+---------7------------------
+---------8------------------
+---------9------------------
+48 terrain/battlefield/sub_arctic/winter/grass.tga   [tga]  # tell says = 21367
+183   182   183   
+---------10------------------
+49 terrain/battlefield/sub_arctic/winter/grass1.tga   [tga]  # tell says = 21422
+215   221   215   
+---------11------------------
+---------12------------------
+53 terrain/battlefield/sub_arctic/winter/shrub_base.tga   [tga]  # tell says = 21482
+156   157   148   
+---------13------------------
+---------14------------------
+49 terrain/battlefield/sub_arctic/winter/forest.tga   [tga]  # tell says = 21538
+204   207   199   
+# tell says = 21541
+
+29 battlefield/envmaps/snow.dds   [battlefield dds]  # tell says = 21572
+# tell says = 21572
+
+  6     6     6     6     9     9   
+  6     6     3     3     9    12   
+  6     9     9    12    14    14   
+  0     1     9    10    12    14   
+  0     0     1     9     9     9   
+  0     0     0     1     9     9   
+# tell says = 21716
+
+----  conversion array ----
+ 10    0    0   80  
+ 10    0    2   64  
+ 10    0    1   16  
+ 10    0    3   16  
+ 10    0    2   16  
+ 10    0    0   48  
+ 10    0    2    0  
+ 10    0    1    0  
+ 10    0    2   64  
+ 10    0    2   32  
+ 10    0    3   48  
+ 10    0    4   48  
+ 10    0    4   48  
+ 10    0    5   48  
+ 10    0    5   32  
+# tell says = 21776
+
+  3    1       0.000       7.000      -0.050       0.000      20.000      -0.150       7.000      -0.150       0.000       1.200  
+  4    2       0.000       7.000      -0.100       0.000      15.000      -0.150       7.000      -0.150       0.000       0.750  
+  5    3       0.000       7.000      -0.200       0.000      10.000      -0.150       7.000      -0.150       0.000       0.500  
+  5    1       0.000       5.000       0.000       0.000      30.000      -0.150       7.000      -0.150       0.000       0.800  
+  4    3       0.000       5.000       0.000     200.000     250.000       0.000       7.000      -0.150       0.000       0.500  
+  4    3       0.000       5.000       0.000      15.000      60.000       0.000       7.000      -0.150       0.000       0.500  
+  1    3      -0.500       7.000      -0.150       0.000      40.000      -0.070       7.000      -0.150       0.000       0.800  
+  2    3       0.000       5.000       0.000       0.000      10.000      -0.150       7.000      -0.150       0.000       0.700  
+  4    3       0.000       5.000       0.000       0.000      10.000      -0.150       7.000      -0.150       0.000       0.700  
+  0    3       0.000       5.000       0.000       0.000       2.000       0.000       7.000      -0.150       0.000       0.500  
+  1    3       0.000       5.000       0.000      -6.000       2.000       0.000       7.000      -0.150       0.000       0.500  
+  1    3       0.000       5.000       0.000      -4.000       2.000       0.000       7.000      -0.150       0.000       0.200  
+  1    3       0.000       5.000       0.000       0.000       2.000       0.000       7.000      -0.150       0.000       0.200  
+  1    2       0.000       5.000       0.000       0.000       2.000       0.000       7.000      -0.150       0.000       0.300  
+# tell says = 22448
+
+#############################################################################################
+#                                                                                           #
+#   Climate : 11 = 22448
+#                                                                                           #
+#############################################################################################
+
+2   [seasons = 2 (hard coded)]
+
+#############################################################################################
+#                                                                                           #
+#   summer = 22452
+#                                                                                           #
+#############################################################################################
+
+15   [rocktypes = 15 (hard coded)]
+
+# tell says = 22456
+
+---------0------------------
+---------1------------------
+48 terrain/battlefield/semi_arid/summer/pebble.tga   [tga]  # tell says = 22508
+ 88   116   137   
+---------2------------------
+---------3------------------
+46 terrain/battlefield/semi_arid/summer/sand.tga   [tga]  # tell says = 22561
+ 91   111   129   
+---------4------------------
+---------5------------------
+---------6------------------
+45 terrain/battlefield/semi_arid/summer/mud.tga   [tga]  # tell says = 22614
+ 61    83    98   
+---------7------------------
+---------8------------------
+47 terrain/battlefield/semi_arid/summer/grass.tga   [tga]  # tell says = 22668
+101   138   156   
+---------9------------------
+48 terrain/battlefield/semi_arid/summer/grass1.tga   [tga]  # tell says = 22722
+ 93   134   151   
+---------10------------------
+---------11------------------
+---------12------------------
+52 terrain/battlefield/semi_arid/summer/shrub_base.tga   [tga]  # tell says = 22782
+ 59    99   103   
+---------13------------------
+---------14------------------
+48 terrain/battlefield/semi_arid/summer/forest.tga   [tga]  # tell says = 22837
+ 68    92   113   
+# tell says = 22840
+
+30 battlefield/envmaps/grass.dds   [battlefield dds]  # tell says = 22872
+#############################################################################################
+#                                                                                           #
+#   winter = 22872
+#                                                                                           #
+#############################################################################################
+
+15   [rocktypes = 15 (hard coded)]
+
+# tell says = 22876
+
+---------0------------------
+---------1------------------
+48 terrain/battlefield/semi_arid/summer/pebble.tga   [tga]  # tell says = 22928
+ 88   116   137   
+---------2------------------
+---------3------------------
+46 terrain/battlefield/semi_arid/summer/sand.tga   [tga]  # tell says = 22981
+ 91   111   129   
+---------4------------------
+---------5------------------
+---------6------------------
+45 terrain/battlefield/semi_arid/summer/mud.tga   [tga]  # tell says = 23034
+ 61    83    98   
+---------7------------------
+---------8------------------
+47 terrain/battlefield/semi_arid/summer/grass.tga   [tga]  # tell says = 23088
+101   138   156   
+---------9------------------
+48 terrain/battlefield/semi_arid/summer/grass1.tga   [tga]  # tell says = 23142
+ 93   134   151   
+---------10------------------
+---------11------------------
+---------12------------------
+52 terrain/battlefield/semi_arid/summer/shrub_base.tga   [tga]  # tell says = 23202
+ 59    99   103   
+---------13------------------
+---------14------------------
+48 terrain/battlefield/semi_arid/summer/forest.tga   [tga]  # tell says = 23257
+ 68    92   113   
+# tell says = 23260
+
+30 battlefield/envmaps/grass.dds   [battlefield dds]  # tell says = 23292
+# tell says = 23292
+
+  1     6     6     6     9    12   
+  1     3     3     3     9    12   
+  1     8     8     9    12    14   
+  1     1     8    12    12    14   
+  1     1     1     8    12    12   
+  1     1     1     1     1     1   
+# tell says = 23436
+
+----  conversion array ----
+ 11    0    0   80  
+ 11    0    2   80  
+ 11    0    1   16  
+ 11    0    2   16  
+ 11    0    2   16  
+ 11    0    0   48  
+ 11    0    3    0  
+ 11    0    1    0  
+ 11    0    2   32  
+ 11    0    3   32  
+ 11    0    4   48  
+ 11    0    4   32  
+ 11    0    4   32  
+ 11    0    5   32  
+ 11    0    5   32  
+# tell says = 23496
+
+  2    2       0.000       7.000      -0.050       0.000      20.000      -0.150       7.000      -0.150       0.000       1.200  
+  3    3       0.000       7.000      -0.100       0.000      15.000      -0.150       7.000      -0.150       0.000       0.750  
+  4    4       0.000       7.000      -0.200       0.000      10.000      -0.150       7.000      -0.150       0.000       0.500  
+  5    5       0.000       5.000       0.000       0.000      30.000      -0.150       7.000      -0.150       0.000       0.800  
+  4    3       0.000       5.000       0.000     200.000     250.000       0.000       7.000      -0.150       0.000       0.500  
+  4    3       0.000       5.000       0.000      15.000      60.000       0.000       7.000      -0.150       0.000       0.500  
+  1    3      -0.500       7.000      -0.150       0.000      40.000      -0.070       7.000      -0.150       0.000       0.800  
+  3    4       0.000       5.000       0.000       0.000      10.000      -0.150       7.000      -0.150       0.000       0.700  
+  3    4       0.000       5.000       0.000       0.000      10.000      -0.150       7.000      -0.150       0.000       0.700  
+  0    3       0.000       5.000       0.000       0.000       2.000       0.000       7.000      -0.150       0.000       0.500  
+  1    3       0.000       5.000       0.000      -6.000       2.000       0.000       7.000      -0.150       0.000       0.500  
+  1    3       0.000       5.000       0.000      -4.000       2.000       0.000       7.000      -0.150       0.000       0.200  
+  1    3       0.000       5.000       0.000       0.000       2.000       0.000       7.000      -0.150       0.000       0.200  
+  1    2       0.000       5.000       0.000       0.000       2.000       0.000       7.000      -0.150       0.000       0.300  
+# tell says = 24168
+

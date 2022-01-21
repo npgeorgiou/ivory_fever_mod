@@ -1,0 +1,2937 @@
+script
+declare_counter zero
+declare_counter one
+set_counter one 1
+declare_counter two
+set_counter two 2
+
+declare_persistent_counter turn_number
+
+;; create_neighbouring_regions_conversion_pushback
+for_each settlement in world
+remove_hidden_resource local buff_nubian_1
+    remove_hidden_resource local buff_nubian_2
+    remove_hidden_resource local buff_nubian_3
+    remove_hidden_resource local buff_nubian_4
+    remove_hidden_resource local buff_nubian_5
+    remove_hidden_resource local buff_pagan_1
+    remove_hidden_resource local buff_pagan_2
+    remove_hidden_resource local buff_pagan_3
+    remove_hidden_resource local buff_pagan_4
+    remove_hidden_resource local buff_pagan_5
+    remove_hidden_resource local buff_zoroastrian_1
+    remove_hidden_resource local buff_zoroastrian_2
+    remove_hidden_resource local buff_zoroastrian_3
+    remove_hidden_resource local buff_zoroastrian_4
+    remove_hidden_resource local buff_zoroastrian_5
+    remove_hidden_resource local buff_christianity_1
+    remove_hidden_resource local buff_christianity_2
+    remove_hidden_resource local buff_christianity_3
+    remove_hidden_resource local buff_christianity_4
+    remove_hidden_resource local buff_christianity_5
+
+    declare_counter nubian_neighbours
+    declare_counter pagan_neighbours
+    declare_counter zoroastrian_neighbours
+    declare_counter christian_neighbours
+
+    if SettlementName Thebes
+        set_counter nubian_neighbours 0
+        set_counter pagan_neighbours 0
+        set_counter zoroastrian_neighbours 0
+        set_counter christian_neighbours 0
+        for_each settlement in world
+            if SettlementName Ptolemais
+                ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                if SettlementCapabilityLevel upgrade_bodyguard = 1
+                    inc_counter nubian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 2
+                    inc_counter pagan_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 3
+                    inc_counter zoroastrian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 4
+                    inc_counter christian_neighbours 1
+                end_if
+            end_if
+        end_for
+        for_each settlement in world
+            if SettlementName newCapitalTen
+                ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                if SettlementCapabilityLevel upgrade_bodyguard = 1
+                    inc_counter nubian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 2
+                    inc_counter pagan_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 3
+                    inc_counter zoroastrian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 4
+                    inc_counter christian_neighbours 1
+                end_if
+            end_if
+        end_for
+        for_each settlement in world
+            if SettlementName newCapitalNine
+                ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                if SettlementCapabilityLevel upgrade_bodyguard = 1
+                    inc_counter nubian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 2
+                    inc_counter pagan_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 3
+                    inc_counter zoroastrian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 4
+                    inc_counter christian_neighbours 1
+                end_if
+            end_if
+        end_for
+        for_each settlement in world
+            if SettlementName newCapitalEight
+                ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                if SettlementCapabilityLevel upgrade_bodyguard = 1
+                    inc_counter nubian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 2
+                    inc_counter pagan_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 3
+                    inc_counter zoroastrian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 4
+                    inc_counter christian_neighbours 1
+                end_if
+            end_if
+        end_for
+        for_each settlement in world
+            if SettlementName newCapitalEleven
+                ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                if SettlementCapabilityLevel upgrade_bodyguard = 1
+                    inc_counter nubian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 2
+                    inc_counter pagan_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 3
+                    inc_counter zoroastrian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 4
+                    inc_counter christian_neighbours 1
+                end_if
+            end_if
+        end_for
+        declare_counter max_other
+        set_counter max_other nubian_neighbours
+
+        if I_CompareCounter nubian_neighbours > max_other
+            set_counter max_other nubian_neighbours
+        end_if
+        if I_CompareCounter pagan_neighbours > max_other
+            set_counter max_other pagan_neighbours
+        end_if
+        if I_CompareCounter zoroastrian_neighbours > max_other
+            set_counter max_other zoroastrian_neighbours
+        end_if
+        if I_CompareCounter christian_neighbours > max_other
+            set_counter max_other christian_neighbours
+        end_if
+
+        if I_CompareCounter max_other > nubian_neighbours
+            declare_counter amount_resource
+            counter_operation amount_resource = max_other - nubian_neighbours
+            if I_CompareCounter amount_resource = 1
+                add_hidden_resource local buff_nubian_1
+            end_if
+            if I_CompareCounter amount_resource = 2
+                add_hidden_resource local buff_nubian_2
+            end_if
+            if I_CompareCounter amount_resource = 3
+                add_hidden_resource local buff_nubian_3
+            end_if
+            if I_CompareCounter amount_resource = 4
+                add_hidden_resource local buff_nubian_4
+            end_if
+            if I_CompareCounter amount_resource = 5
+                add_hidden_resource local buff_nubian_5
+            end_if
+        end_if
+        declare_counter max_other
+        set_counter max_other pagan_neighbours
+
+        if I_CompareCounter nubian_neighbours > max_other
+            set_counter max_other nubian_neighbours
+        end_if
+        if I_CompareCounter pagan_neighbours > max_other
+            set_counter max_other pagan_neighbours
+        end_if
+        if I_CompareCounter zoroastrian_neighbours > max_other
+            set_counter max_other zoroastrian_neighbours
+        end_if
+        if I_CompareCounter christian_neighbours > max_other
+            set_counter max_other christian_neighbours
+        end_if
+
+        if I_CompareCounter max_other > pagan_neighbours
+            declare_counter amount_resource
+            counter_operation amount_resource = max_other - pagan_neighbours
+            if I_CompareCounter amount_resource = 1
+                add_hidden_resource local buff_pagan_1
+            end_if
+            if I_CompareCounter amount_resource = 2
+                add_hidden_resource local buff_pagan_2
+            end_if
+            if I_CompareCounter amount_resource = 3
+                add_hidden_resource local buff_pagan_3
+            end_if
+            if I_CompareCounter amount_resource = 4
+                add_hidden_resource local buff_pagan_4
+            end_if
+            if I_CompareCounter amount_resource = 5
+                add_hidden_resource local buff_pagan_5
+            end_if
+        end_if
+        declare_counter max_other
+        set_counter max_other zoroastrian_neighbours
+
+        if I_CompareCounter nubian_neighbours > max_other
+            set_counter max_other nubian_neighbours
+        end_if
+        if I_CompareCounter pagan_neighbours > max_other
+            set_counter max_other pagan_neighbours
+        end_if
+        if I_CompareCounter zoroastrian_neighbours > max_other
+            set_counter max_other zoroastrian_neighbours
+        end_if
+        if I_CompareCounter christian_neighbours > max_other
+            set_counter max_other christian_neighbours
+        end_if
+
+        if I_CompareCounter max_other > zoroastrian_neighbours
+            declare_counter amount_resource
+            counter_operation amount_resource = max_other - zoroastrian_neighbours
+            if I_CompareCounter amount_resource = 1
+                add_hidden_resource local buff_zoroastrian_1
+            end_if
+            if I_CompareCounter amount_resource = 2
+                add_hidden_resource local buff_zoroastrian_2
+            end_if
+            if I_CompareCounter amount_resource = 3
+                add_hidden_resource local buff_zoroastrian_3
+            end_if
+            if I_CompareCounter amount_resource = 4
+                add_hidden_resource local buff_zoroastrian_4
+            end_if
+            if I_CompareCounter amount_resource = 5
+                add_hidden_resource local buff_zoroastrian_5
+            end_if
+        end_if
+        declare_counter max_other
+        set_counter max_other christian_neighbours
+
+        if I_CompareCounter nubian_neighbours > max_other
+            set_counter max_other nubian_neighbours
+        end_if
+        if I_CompareCounter pagan_neighbours > max_other
+            set_counter max_other pagan_neighbours
+        end_if
+        if I_CompareCounter zoroastrian_neighbours > max_other
+            set_counter max_other zoroastrian_neighbours
+        end_if
+        if I_CompareCounter christian_neighbours > max_other
+            set_counter max_other christian_neighbours
+        end_if
+
+        if I_CompareCounter max_other > christian_neighbours
+            declare_counter amount_resource
+            counter_operation amount_resource = max_other - christian_neighbours
+            if I_CompareCounter amount_resource = 1
+                add_hidden_resource local buff_christianity_1
+            end_if
+            if I_CompareCounter amount_resource = 2
+                add_hidden_resource local buff_christianity_2
+            end_if
+            if I_CompareCounter amount_resource = 3
+                add_hidden_resource local buff_christianity_3
+            end_if
+            if I_CompareCounter amount_resource = 4
+                add_hidden_resource local buff_christianity_4
+            end_if
+            if I_CompareCounter amount_resource = 5
+                add_hidden_resource local buff_christianity_5
+            end_if
+        end_if
+    end_if
+
+    if SettlementName newCapitalTen
+        set_counter nubian_neighbours 0
+        set_counter pagan_neighbours 0
+        set_counter zoroastrian_neighbours 0
+        set_counter christian_neighbours 0
+        for_each settlement in world
+            if SettlementName Ptolemais
+                ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                if SettlementCapabilityLevel upgrade_bodyguard = 1
+                    inc_counter nubian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 2
+                    inc_counter pagan_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 3
+                    inc_counter zoroastrian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 4
+                    inc_counter christian_neighbours 1
+                end_if
+            end_if
+        end_for
+        for_each settlement in world
+            if SettlementName newCapitalNine
+                ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                if SettlementCapabilityLevel upgrade_bodyguard = 1
+                    inc_counter nubian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 2
+                    inc_counter pagan_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 3
+                    inc_counter zoroastrian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 4
+                    inc_counter christian_neighbours 1
+                end_if
+            end_if
+        end_for
+        for_each settlement in world
+            if SettlementName Thebes
+                ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                if SettlementCapabilityLevel upgrade_bodyguard = 1
+                    inc_counter nubian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 2
+                    inc_counter pagan_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 3
+                    inc_counter zoroastrian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 4
+                    inc_counter christian_neighbours 1
+                end_if
+            end_if
+        end_for
+        declare_counter max_other
+        set_counter max_other nubian_neighbours
+
+        if I_CompareCounter nubian_neighbours > max_other
+            set_counter max_other nubian_neighbours
+        end_if
+        if I_CompareCounter pagan_neighbours > max_other
+            set_counter max_other pagan_neighbours
+        end_if
+        if I_CompareCounter zoroastrian_neighbours > max_other
+            set_counter max_other zoroastrian_neighbours
+        end_if
+        if I_CompareCounter christian_neighbours > max_other
+            set_counter max_other christian_neighbours
+        end_if
+
+        if I_CompareCounter max_other > nubian_neighbours
+            declare_counter amount_resource
+            counter_operation amount_resource = max_other - nubian_neighbours
+            if I_CompareCounter amount_resource = 1
+                add_hidden_resource local buff_nubian_1
+            end_if
+            if I_CompareCounter amount_resource = 2
+                add_hidden_resource local buff_nubian_2
+            end_if
+            if I_CompareCounter amount_resource = 3
+                add_hidden_resource local buff_nubian_3
+            end_if
+            if I_CompareCounter amount_resource = 4
+                add_hidden_resource local buff_nubian_4
+            end_if
+            if I_CompareCounter amount_resource = 5
+                add_hidden_resource local buff_nubian_5
+            end_if
+        end_if
+        declare_counter max_other
+        set_counter max_other pagan_neighbours
+
+        if I_CompareCounter nubian_neighbours > max_other
+            set_counter max_other nubian_neighbours
+        end_if
+        if I_CompareCounter pagan_neighbours > max_other
+            set_counter max_other pagan_neighbours
+        end_if
+        if I_CompareCounter zoroastrian_neighbours > max_other
+            set_counter max_other zoroastrian_neighbours
+        end_if
+        if I_CompareCounter christian_neighbours > max_other
+            set_counter max_other christian_neighbours
+        end_if
+
+        if I_CompareCounter max_other > pagan_neighbours
+            declare_counter amount_resource
+            counter_operation amount_resource = max_other - pagan_neighbours
+            if I_CompareCounter amount_resource = 1
+                add_hidden_resource local buff_pagan_1
+            end_if
+            if I_CompareCounter amount_resource = 2
+                add_hidden_resource local buff_pagan_2
+            end_if
+            if I_CompareCounter amount_resource = 3
+                add_hidden_resource local buff_pagan_3
+            end_if
+            if I_CompareCounter amount_resource = 4
+                add_hidden_resource local buff_pagan_4
+            end_if
+            if I_CompareCounter amount_resource = 5
+                add_hidden_resource local buff_pagan_5
+            end_if
+        end_if
+        declare_counter max_other
+        set_counter max_other zoroastrian_neighbours
+
+        if I_CompareCounter nubian_neighbours > max_other
+            set_counter max_other nubian_neighbours
+        end_if
+        if I_CompareCounter pagan_neighbours > max_other
+            set_counter max_other pagan_neighbours
+        end_if
+        if I_CompareCounter zoroastrian_neighbours > max_other
+            set_counter max_other zoroastrian_neighbours
+        end_if
+        if I_CompareCounter christian_neighbours > max_other
+            set_counter max_other christian_neighbours
+        end_if
+
+        if I_CompareCounter max_other > zoroastrian_neighbours
+            declare_counter amount_resource
+            counter_operation amount_resource = max_other - zoroastrian_neighbours
+            if I_CompareCounter amount_resource = 1
+                add_hidden_resource local buff_zoroastrian_1
+            end_if
+            if I_CompareCounter amount_resource = 2
+                add_hidden_resource local buff_zoroastrian_2
+            end_if
+            if I_CompareCounter amount_resource = 3
+                add_hidden_resource local buff_zoroastrian_3
+            end_if
+            if I_CompareCounter amount_resource = 4
+                add_hidden_resource local buff_zoroastrian_4
+            end_if
+            if I_CompareCounter amount_resource = 5
+                add_hidden_resource local buff_zoroastrian_5
+            end_if
+        end_if
+        declare_counter max_other
+        set_counter max_other christian_neighbours
+
+        if I_CompareCounter nubian_neighbours > max_other
+            set_counter max_other nubian_neighbours
+        end_if
+        if I_CompareCounter pagan_neighbours > max_other
+            set_counter max_other pagan_neighbours
+        end_if
+        if I_CompareCounter zoroastrian_neighbours > max_other
+            set_counter max_other zoroastrian_neighbours
+        end_if
+        if I_CompareCounter christian_neighbours > max_other
+            set_counter max_other christian_neighbours
+        end_if
+
+        if I_CompareCounter max_other > christian_neighbours
+            declare_counter amount_resource
+            counter_operation amount_resource = max_other - christian_neighbours
+            if I_CompareCounter amount_resource = 1
+                add_hidden_resource local buff_christianity_1
+            end_if
+            if I_CompareCounter amount_resource = 2
+                add_hidden_resource local buff_christianity_2
+            end_if
+            if I_CompareCounter amount_resource = 3
+                add_hidden_resource local buff_christianity_3
+            end_if
+            if I_CompareCounter amount_resource = 4
+                add_hidden_resource local buff_christianity_4
+            end_if
+            if I_CompareCounter amount_resource = 5
+                add_hidden_resource local buff_christianity_5
+            end_if
+        end_if
+    end_if
+
+    if SettlementName newCapitalNine
+        set_counter nubian_neighbours 0
+        set_counter pagan_neighbours 0
+        set_counter zoroastrian_neighbours 0
+        set_counter christian_neighbours 0
+        for_each settlement in world
+            if SettlementName newCapitalTen
+                ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                if SettlementCapabilityLevel upgrade_bodyguard = 1
+                    inc_counter nubian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 2
+                    inc_counter pagan_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 3
+                    inc_counter zoroastrian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 4
+                    inc_counter christian_neighbours 1
+                end_if
+            end_if
+        end_for
+        for_each settlement in world
+            if SettlementName newCapitalFive
+                ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                if SettlementCapabilityLevel upgrade_bodyguard = 1
+                    inc_counter nubian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 2
+                    inc_counter pagan_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 3
+                    inc_counter zoroastrian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 4
+                    inc_counter christian_neighbours 1
+                end_if
+            end_if
+        end_for
+        for_each settlement in world
+            if SettlementName Meroe
+                ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                if SettlementCapabilityLevel upgrade_bodyguard = 1
+                    inc_counter nubian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 2
+                    inc_counter pagan_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 3
+                    inc_counter zoroastrian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 4
+                    inc_counter christian_neighbours 1
+                end_if
+            end_if
+        end_for
+        for_each settlement in world
+            if SettlementName newCapitalEight
+                ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                if SettlementCapabilityLevel upgrade_bodyguard = 1
+                    inc_counter nubian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 2
+                    inc_counter pagan_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 3
+                    inc_counter zoroastrian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 4
+                    inc_counter christian_neighbours 1
+                end_if
+            end_if
+        end_for
+        for_each settlement in world
+            if SettlementName Thebes
+                ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                if SettlementCapabilityLevel upgrade_bodyguard = 1
+                    inc_counter nubian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 2
+                    inc_counter pagan_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 3
+                    inc_counter zoroastrian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 4
+                    inc_counter christian_neighbours 1
+                end_if
+            end_if
+        end_for
+        declare_counter max_other
+        set_counter max_other nubian_neighbours
+
+        if I_CompareCounter nubian_neighbours > max_other
+            set_counter max_other nubian_neighbours
+        end_if
+        if I_CompareCounter pagan_neighbours > max_other
+            set_counter max_other pagan_neighbours
+        end_if
+        if I_CompareCounter zoroastrian_neighbours > max_other
+            set_counter max_other zoroastrian_neighbours
+        end_if
+        if I_CompareCounter christian_neighbours > max_other
+            set_counter max_other christian_neighbours
+        end_if
+
+        if I_CompareCounter max_other > nubian_neighbours
+            declare_counter amount_resource
+            counter_operation amount_resource = max_other - nubian_neighbours
+            if I_CompareCounter amount_resource = 1
+                add_hidden_resource local buff_nubian_1
+            end_if
+            if I_CompareCounter amount_resource = 2
+                add_hidden_resource local buff_nubian_2
+            end_if
+            if I_CompareCounter amount_resource = 3
+                add_hidden_resource local buff_nubian_3
+            end_if
+            if I_CompareCounter amount_resource = 4
+                add_hidden_resource local buff_nubian_4
+            end_if
+            if I_CompareCounter amount_resource = 5
+                add_hidden_resource local buff_nubian_5
+            end_if
+        end_if
+        declare_counter max_other
+        set_counter max_other pagan_neighbours
+
+        if I_CompareCounter nubian_neighbours > max_other
+            set_counter max_other nubian_neighbours
+        end_if
+        if I_CompareCounter pagan_neighbours > max_other
+            set_counter max_other pagan_neighbours
+        end_if
+        if I_CompareCounter zoroastrian_neighbours > max_other
+            set_counter max_other zoroastrian_neighbours
+        end_if
+        if I_CompareCounter christian_neighbours > max_other
+            set_counter max_other christian_neighbours
+        end_if
+
+        if I_CompareCounter max_other > pagan_neighbours
+            declare_counter amount_resource
+            counter_operation amount_resource = max_other - pagan_neighbours
+            if I_CompareCounter amount_resource = 1
+                add_hidden_resource local buff_pagan_1
+            end_if
+            if I_CompareCounter amount_resource = 2
+                add_hidden_resource local buff_pagan_2
+            end_if
+            if I_CompareCounter amount_resource = 3
+                add_hidden_resource local buff_pagan_3
+            end_if
+            if I_CompareCounter amount_resource = 4
+                add_hidden_resource local buff_pagan_4
+            end_if
+            if I_CompareCounter amount_resource = 5
+                add_hidden_resource local buff_pagan_5
+            end_if
+        end_if
+        declare_counter max_other
+        set_counter max_other zoroastrian_neighbours
+
+        if I_CompareCounter nubian_neighbours > max_other
+            set_counter max_other nubian_neighbours
+        end_if
+        if I_CompareCounter pagan_neighbours > max_other
+            set_counter max_other pagan_neighbours
+        end_if
+        if I_CompareCounter zoroastrian_neighbours > max_other
+            set_counter max_other zoroastrian_neighbours
+        end_if
+        if I_CompareCounter christian_neighbours > max_other
+            set_counter max_other christian_neighbours
+        end_if
+
+        if I_CompareCounter max_other > zoroastrian_neighbours
+            declare_counter amount_resource
+            counter_operation amount_resource = max_other - zoroastrian_neighbours
+            if I_CompareCounter amount_resource = 1
+                add_hidden_resource local buff_zoroastrian_1
+            end_if
+            if I_CompareCounter amount_resource = 2
+                add_hidden_resource local buff_zoroastrian_2
+            end_if
+            if I_CompareCounter amount_resource = 3
+                add_hidden_resource local buff_zoroastrian_3
+            end_if
+            if I_CompareCounter amount_resource = 4
+                add_hidden_resource local buff_zoroastrian_4
+            end_if
+            if I_CompareCounter amount_resource = 5
+                add_hidden_resource local buff_zoroastrian_5
+            end_if
+        end_if
+        declare_counter max_other
+        set_counter max_other christian_neighbours
+
+        if I_CompareCounter nubian_neighbours > max_other
+            set_counter max_other nubian_neighbours
+        end_if
+        if I_CompareCounter pagan_neighbours > max_other
+            set_counter max_other pagan_neighbours
+        end_if
+        if I_CompareCounter zoroastrian_neighbours > max_other
+            set_counter max_other zoroastrian_neighbours
+        end_if
+        if I_CompareCounter christian_neighbours > max_other
+            set_counter max_other christian_neighbours
+        end_if
+
+        if I_CompareCounter max_other > christian_neighbours
+            declare_counter amount_resource
+            counter_operation amount_resource = max_other - christian_neighbours
+            if I_CompareCounter amount_resource = 1
+                add_hidden_resource local buff_christianity_1
+            end_if
+            if I_CompareCounter amount_resource = 2
+                add_hidden_resource local buff_christianity_2
+            end_if
+            if I_CompareCounter amount_resource = 3
+                add_hidden_resource local buff_christianity_3
+            end_if
+            if I_CompareCounter amount_resource = 4
+                add_hidden_resource local buff_christianity_4
+            end_if
+            if I_CompareCounter amount_resource = 5
+                add_hidden_resource local buff_christianity_5
+            end_if
+        end_if
+    end_if
+
+    if SettlementName Meroe
+        set_counter nubian_neighbours 0
+        set_counter pagan_neighbours 0
+        set_counter zoroastrian_neighbours 0
+        set_counter christian_neighbours 0
+        for_each settlement in world
+            if SettlementName newCapitalNine
+                ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                if SettlementCapabilityLevel upgrade_bodyguard = 1
+                    inc_counter nubian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 2
+                    inc_counter pagan_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 3
+                    inc_counter zoroastrian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 4
+                    inc_counter christian_neighbours 1
+                end_if
+            end_if
+        end_for
+        for_each settlement in world
+            if SettlementName newCapitalFive
+                ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                if SettlementCapabilityLevel upgrade_bodyguard = 1
+                    inc_counter nubian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 2
+                    inc_counter pagan_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 3
+                    inc_counter zoroastrian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 4
+                    inc_counter christian_neighbours 1
+                end_if
+            end_if
+        end_for
+        for_each settlement in world
+            if SettlementName newCapitalThree
+                ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                if SettlementCapabilityLevel upgrade_bodyguard = 1
+                    inc_counter nubian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 2
+                    inc_counter pagan_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 3
+                    inc_counter zoroastrian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 4
+                    inc_counter christian_neighbours 1
+                end_if
+            end_if
+        end_for
+        for_each settlement in world
+            if SettlementName newCapitalFour
+                ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                if SettlementCapabilityLevel upgrade_bodyguard = 1
+                    inc_counter nubian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 2
+                    inc_counter pagan_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 3
+                    inc_counter zoroastrian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 4
+                    inc_counter christian_neighbours 1
+                end_if
+            end_if
+        end_for
+        for_each settlement in world
+            if SettlementName newCapitalSeven
+                ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                if SettlementCapabilityLevel upgrade_bodyguard = 1
+                    inc_counter nubian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 2
+                    inc_counter pagan_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 3
+                    inc_counter zoroastrian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 4
+                    inc_counter christian_neighbours 1
+                end_if
+            end_if
+        end_for
+        for_each settlement in world
+            if SettlementName newCapitalEight
+                ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                if SettlementCapabilityLevel upgrade_bodyguard = 1
+                    inc_counter nubian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 2
+                    inc_counter pagan_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 3
+                    inc_counter zoroastrian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 4
+                    inc_counter christian_neighbours 1
+                end_if
+            end_if
+        end_for
+        declare_counter max_other
+        set_counter max_other nubian_neighbours
+
+        if I_CompareCounter nubian_neighbours > max_other
+            set_counter max_other nubian_neighbours
+        end_if
+        if I_CompareCounter pagan_neighbours > max_other
+            set_counter max_other pagan_neighbours
+        end_if
+        if I_CompareCounter zoroastrian_neighbours > max_other
+            set_counter max_other zoroastrian_neighbours
+        end_if
+        if I_CompareCounter christian_neighbours > max_other
+            set_counter max_other christian_neighbours
+        end_if
+
+        if I_CompareCounter max_other > nubian_neighbours
+            declare_counter amount_resource
+            counter_operation amount_resource = max_other - nubian_neighbours
+            if I_CompareCounter amount_resource = 1
+                add_hidden_resource local buff_nubian_1
+            end_if
+            if I_CompareCounter amount_resource = 2
+                add_hidden_resource local buff_nubian_2
+            end_if
+            if I_CompareCounter amount_resource = 3
+                add_hidden_resource local buff_nubian_3
+            end_if
+            if I_CompareCounter amount_resource = 4
+                add_hidden_resource local buff_nubian_4
+            end_if
+            if I_CompareCounter amount_resource = 5
+                add_hidden_resource local buff_nubian_5
+            end_if
+        end_if
+        declare_counter max_other
+        set_counter max_other pagan_neighbours
+
+        if I_CompareCounter nubian_neighbours > max_other
+            set_counter max_other nubian_neighbours
+        end_if
+        if I_CompareCounter pagan_neighbours > max_other
+            set_counter max_other pagan_neighbours
+        end_if
+        if I_CompareCounter zoroastrian_neighbours > max_other
+            set_counter max_other zoroastrian_neighbours
+        end_if
+        if I_CompareCounter christian_neighbours > max_other
+            set_counter max_other christian_neighbours
+        end_if
+
+        if I_CompareCounter max_other > pagan_neighbours
+            declare_counter amount_resource
+            counter_operation amount_resource = max_other - pagan_neighbours
+            if I_CompareCounter amount_resource = 1
+                add_hidden_resource local buff_pagan_1
+            end_if
+            if I_CompareCounter amount_resource = 2
+                add_hidden_resource local buff_pagan_2
+            end_if
+            if I_CompareCounter amount_resource = 3
+                add_hidden_resource local buff_pagan_3
+            end_if
+            if I_CompareCounter amount_resource = 4
+                add_hidden_resource local buff_pagan_4
+            end_if
+            if I_CompareCounter amount_resource = 5
+                add_hidden_resource local buff_pagan_5
+            end_if
+        end_if
+        declare_counter max_other
+        set_counter max_other zoroastrian_neighbours
+
+        if I_CompareCounter nubian_neighbours > max_other
+            set_counter max_other nubian_neighbours
+        end_if
+        if I_CompareCounter pagan_neighbours > max_other
+            set_counter max_other pagan_neighbours
+        end_if
+        if I_CompareCounter zoroastrian_neighbours > max_other
+            set_counter max_other zoroastrian_neighbours
+        end_if
+        if I_CompareCounter christian_neighbours > max_other
+            set_counter max_other christian_neighbours
+        end_if
+
+        if I_CompareCounter max_other > zoroastrian_neighbours
+            declare_counter amount_resource
+            counter_operation amount_resource = max_other - zoroastrian_neighbours
+            if I_CompareCounter amount_resource = 1
+                add_hidden_resource local buff_zoroastrian_1
+            end_if
+            if I_CompareCounter amount_resource = 2
+                add_hidden_resource local buff_zoroastrian_2
+            end_if
+            if I_CompareCounter amount_resource = 3
+                add_hidden_resource local buff_zoroastrian_3
+            end_if
+            if I_CompareCounter amount_resource = 4
+                add_hidden_resource local buff_zoroastrian_4
+            end_if
+            if I_CompareCounter amount_resource = 5
+                add_hidden_resource local buff_zoroastrian_5
+            end_if
+        end_if
+        declare_counter max_other
+        set_counter max_other christian_neighbours
+
+        if I_CompareCounter nubian_neighbours > max_other
+            set_counter max_other nubian_neighbours
+        end_if
+        if I_CompareCounter pagan_neighbours > max_other
+            set_counter max_other pagan_neighbours
+        end_if
+        if I_CompareCounter zoroastrian_neighbours > max_other
+            set_counter max_other zoroastrian_neighbours
+        end_if
+        if I_CompareCounter christian_neighbours > max_other
+            set_counter max_other christian_neighbours
+        end_if
+
+        if I_CompareCounter max_other > christian_neighbours
+            declare_counter amount_resource
+            counter_operation amount_resource = max_other - christian_neighbours
+            if I_CompareCounter amount_resource = 1
+                add_hidden_resource local buff_christianity_1
+            end_if
+            if I_CompareCounter amount_resource = 2
+                add_hidden_resource local buff_christianity_2
+            end_if
+            if I_CompareCounter amount_resource = 3
+                add_hidden_resource local buff_christianity_3
+            end_if
+            if I_CompareCounter amount_resource = 4
+                add_hidden_resource local buff_christianity_4
+            end_if
+            if I_CompareCounter amount_resource = 5
+                add_hidden_resource local buff_christianity_5
+            end_if
+        end_if
+    end_if
+
+    if SettlementName newCapitalEight
+        set_counter nubian_neighbours 0
+        set_counter pagan_neighbours 0
+        set_counter zoroastrian_neighbours 0
+        set_counter christian_neighbours 0
+        for_each settlement in world
+            if SettlementName Thebes
+                ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                if SettlementCapabilityLevel upgrade_bodyguard = 1
+                    inc_counter nubian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 2
+                    inc_counter pagan_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 3
+                    inc_counter zoroastrian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 4
+                    inc_counter christian_neighbours 1
+                end_if
+            end_if
+        end_for
+        for_each settlement in world
+            if SettlementName newCapitalNine
+                ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                if SettlementCapabilityLevel upgrade_bodyguard = 1
+                    inc_counter nubian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 2
+                    inc_counter pagan_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 3
+                    inc_counter zoroastrian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 4
+                    inc_counter christian_neighbours 1
+                end_if
+            end_if
+        end_for
+        for_each settlement in world
+            if SettlementName Meroe
+                ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                if SettlementCapabilityLevel upgrade_bodyguard = 1
+                    inc_counter nubian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 2
+                    inc_counter pagan_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 3
+                    inc_counter zoroastrian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 4
+                    inc_counter christian_neighbours 1
+                end_if
+            end_if
+        end_for
+        for_each settlement in world
+            if SettlementName newCapitalSeven
+                ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                if SettlementCapabilityLevel upgrade_bodyguard = 1
+                    inc_counter nubian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 2
+                    inc_counter pagan_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 3
+                    inc_counter zoroastrian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 4
+                    inc_counter christian_neighbours 1
+                end_if
+            end_if
+        end_for
+        for_each settlement in world
+            if SettlementName Moscaflacopolis
+                ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                if SettlementCapabilityLevel upgrade_bodyguard = 1
+                    inc_counter nubian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 2
+                    inc_counter pagan_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 3
+                    inc_counter zoroastrian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 4
+                    inc_counter christian_neighbours 1
+                end_if
+            end_if
+        end_for
+        for_each settlement in world
+            if SettlementName newCapitalEleven
+                ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                if SettlementCapabilityLevel upgrade_bodyguard = 1
+                    inc_counter nubian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 2
+                    inc_counter pagan_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 3
+                    inc_counter zoroastrian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 4
+                    inc_counter christian_neighbours 1
+                end_if
+            end_if
+        end_for
+        declare_counter max_other
+        set_counter max_other nubian_neighbours
+
+        if I_CompareCounter nubian_neighbours > max_other
+            set_counter max_other nubian_neighbours
+        end_if
+        if I_CompareCounter pagan_neighbours > max_other
+            set_counter max_other pagan_neighbours
+        end_if
+        if I_CompareCounter zoroastrian_neighbours > max_other
+            set_counter max_other zoroastrian_neighbours
+        end_if
+        if I_CompareCounter christian_neighbours > max_other
+            set_counter max_other christian_neighbours
+        end_if
+
+        if I_CompareCounter max_other > nubian_neighbours
+            declare_counter amount_resource
+            counter_operation amount_resource = max_other - nubian_neighbours
+            if I_CompareCounter amount_resource = 1
+                add_hidden_resource local buff_nubian_1
+            end_if
+            if I_CompareCounter amount_resource = 2
+                add_hidden_resource local buff_nubian_2
+            end_if
+            if I_CompareCounter amount_resource = 3
+                add_hidden_resource local buff_nubian_3
+            end_if
+            if I_CompareCounter amount_resource = 4
+                add_hidden_resource local buff_nubian_4
+            end_if
+            if I_CompareCounter amount_resource = 5
+                add_hidden_resource local buff_nubian_5
+            end_if
+        end_if
+        declare_counter max_other
+        set_counter max_other pagan_neighbours
+
+        if I_CompareCounter nubian_neighbours > max_other
+            set_counter max_other nubian_neighbours
+        end_if
+        if I_CompareCounter pagan_neighbours > max_other
+            set_counter max_other pagan_neighbours
+        end_if
+        if I_CompareCounter zoroastrian_neighbours > max_other
+            set_counter max_other zoroastrian_neighbours
+        end_if
+        if I_CompareCounter christian_neighbours > max_other
+            set_counter max_other christian_neighbours
+        end_if
+
+        if I_CompareCounter max_other > pagan_neighbours
+            declare_counter amount_resource
+            counter_operation amount_resource = max_other - pagan_neighbours
+            if I_CompareCounter amount_resource = 1
+                add_hidden_resource local buff_pagan_1
+            end_if
+            if I_CompareCounter amount_resource = 2
+                add_hidden_resource local buff_pagan_2
+            end_if
+            if I_CompareCounter amount_resource = 3
+                add_hidden_resource local buff_pagan_3
+            end_if
+            if I_CompareCounter amount_resource = 4
+                add_hidden_resource local buff_pagan_4
+            end_if
+            if I_CompareCounter amount_resource = 5
+                add_hidden_resource local buff_pagan_5
+            end_if
+        end_if
+        declare_counter max_other
+        set_counter max_other zoroastrian_neighbours
+
+        if I_CompareCounter nubian_neighbours > max_other
+            set_counter max_other nubian_neighbours
+        end_if
+        if I_CompareCounter pagan_neighbours > max_other
+            set_counter max_other pagan_neighbours
+        end_if
+        if I_CompareCounter zoroastrian_neighbours > max_other
+            set_counter max_other zoroastrian_neighbours
+        end_if
+        if I_CompareCounter christian_neighbours > max_other
+            set_counter max_other christian_neighbours
+        end_if
+
+        if I_CompareCounter max_other > zoroastrian_neighbours
+            declare_counter amount_resource
+            counter_operation amount_resource = max_other - zoroastrian_neighbours
+            if I_CompareCounter amount_resource = 1
+                add_hidden_resource local buff_zoroastrian_1
+            end_if
+            if I_CompareCounter amount_resource = 2
+                add_hidden_resource local buff_zoroastrian_2
+            end_if
+            if I_CompareCounter amount_resource = 3
+                add_hidden_resource local buff_zoroastrian_3
+            end_if
+            if I_CompareCounter amount_resource = 4
+                add_hidden_resource local buff_zoroastrian_4
+            end_if
+            if I_CompareCounter amount_resource = 5
+                add_hidden_resource local buff_zoroastrian_5
+            end_if
+        end_if
+        declare_counter max_other
+        set_counter max_other christian_neighbours
+
+        if I_CompareCounter nubian_neighbours > max_other
+            set_counter max_other nubian_neighbours
+        end_if
+        if I_CompareCounter pagan_neighbours > max_other
+            set_counter max_other pagan_neighbours
+        end_if
+        if I_CompareCounter zoroastrian_neighbours > max_other
+            set_counter max_other zoroastrian_neighbours
+        end_if
+        if I_CompareCounter christian_neighbours > max_other
+            set_counter max_other christian_neighbours
+        end_if
+
+        if I_CompareCounter max_other > christian_neighbours
+            declare_counter amount_resource
+            counter_operation amount_resource = max_other - christian_neighbours
+            if I_CompareCounter amount_resource = 1
+                add_hidden_resource local buff_christianity_1
+            end_if
+            if I_CompareCounter amount_resource = 2
+                add_hidden_resource local buff_christianity_2
+            end_if
+            if I_CompareCounter amount_resource = 3
+                add_hidden_resource local buff_christianity_3
+            end_if
+            if I_CompareCounter amount_resource = 4
+                add_hidden_resource local buff_christianity_4
+            end_if
+            if I_CompareCounter amount_resource = 5
+                add_hidden_resource local buff_christianity_5
+            end_if
+        end_if
+    end_if
+
+    if SettlementName newCapitalEleven
+        set_counter nubian_neighbours 0
+        set_counter pagan_neighbours 0
+        set_counter zoroastrian_neighbours 0
+        set_counter christian_neighbours 0
+        for_each settlement in world
+            if SettlementName newCapitalTwelve
+                ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                if SettlementCapabilityLevel upgrade_bodyguard = 1
+                    inc_counter nubian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 2
+                    inc_counter pagan_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 3
+                    inc_counter zoroastrian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 4
+                    inc_counter christian_neighbours 1
+                end_if
+            end_if
+        end_for
+        for_each settlement in world
+            if SettlementName Ptolemais
+                ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                if SettlementCapabilityLevel upgrade_bodyguard = 1
+                    inc_counter nubian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 2
+                    inc_counter pagan_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 3
+                    inc_counter zoroastrian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 4
+                    inc_counter christian_neighbours 1
+                end_if
+            end_if
+        end_for
+        for_each settlement in world
+            if SettlementName Thebes
+                ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                if SettlementCapabilityLevel upgrade_bodyguard = 1
+                    inc_counter nubian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 2
+                    inc_counter pagan_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 3
+                    inc_counter zoroastrian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 4
+                    inc_counter christian_neighbours 1
+                end_if
+            end_if
+        end_for
+        for_each settlement in world
+            if SettlementName newCapitalEight
+                ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                if SettlementCapabilityLevel upgrade_bodyguard = 1
+                    inc_counter nubian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 2
+                    inc_counter pagan_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 3
+                    inc_counter zoroastrian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 4
+                    inc_counter christian_neighbours 1
+                end_if
+            end_if
+        end_for
+        for_each settlement in world
+            if SettlementName Moscaflacopolis
+                ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                if SettlementCapabilityLevel upgrade_bodyguard = 1
+                    inc_counter nubian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 2
+                    inc_counter pagan_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 3
+                    inc_counter zoroastrian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 4
+                    inc_counter christian_neighbours 1
+                end_if
+            end_if
+        end_for
+        for_each settlement in world
+            if SettlementName Augila
+                ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                if SettlementCapabilityLevel upgrade_bodyguard = 1
+                    inc_counter nubian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 2
+                    inc_counter pagan_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 3
+                    inc_counter zoroastrian_neighbours 1
+                end_if
+                if SettlementCapabilityLevel upgrade_bodyguard = 4
+                    inc_counter christian_neighbours 1
+                end_if
+            end_if
+        end_for
+        declare_counter max_other
+        set_counter max_other nubian_neighbours
+
+        if I_CompareCounter nubian_neighbours > max_other
+            set_counter max_other nubian_neighbours
+        end_if
+        if I_CompareCounter pagan_neighbours > max_other
+            set_counter max_other pagan_neighbours
+        end_if
+        if I_CompareCounter zoroastrian_neighbours > max_other
+            set_counter max_other zoroastrian_neighbours
+        end_if
+        if I_CompareCounter christian_neighbours > max_other
+            set_counter max_other christian_neighbours
+        end_if
+
+        if I_CompareCounter max_other > nubian_neighbours
+            declare_counter amount_resource
+            counter_operation amount_resource = max_other - nubian_neighbours
+            if I_CompareCounter amount_resource = 1
+                add_hidden_resource local buff_nubian_1
+            end_if
+            if I_CompareCounter amount_resource = 2
+                add_hidden_resource local buff_nubian_2
+            end_if
+            if I_CompareCounter amount_resource = 3
+                add_hidden_resource local buff_nubian_3
+            end_if
+            if I_CompareCounter amount_resource = 4
+                add_hidden_resource local buff_nubian_4
+            end_if
+            if I_CompareCounter amount_resource = 5
+                add_hidden_resource local buff_nubian_5
+            end_if
+        end_if
+        declare_counter max_other
+        set_counter max_other pagan_neighbours
+
+        if I_CompareCounter nubian_neighbours > max_other
+            set_counter max_other nubian_neighbours
+        end_if
+        if I_CompareCounter pagan_neighbours > max_other
+            set_counter max_other pagan_neighbours
+        end_if
+        if I_CompareCounter zoroastrian_neighbours > max_other
+            set_counter max_other zoroastrian_neighbours
+        end_if
+        if I_CompareCounter christian_neighbours > max_other
+            set_counter max_other christian_neighbours
+        end_if
+
+        if I_CompareCounter max_other > pagan_neighbours
+            declare_counter amount_resource
+            counter_operation amount_resource = max_other - pagan_neighbours
+            if I_CompareCounter amount_resource = 1
+                add_hidden_resource local buff_pagan_1
+            end_if
+            if I_CompareCounter amount_resource = 2
+                add_hidden_resource local buff_pagan_2
+            end_if
+            if I_CompareCounter amount_resource = 3
+                add_hidden_resource local buff_pagan_3
+            end_if
+            if I_CompareCounter amount_resource = 4
+                add_hidden_resource local buff_pagan_4
+            end_if
+            if I_CompareCounter amount_resource = 5
+                add_hidden_resource local buff_pagan_5
+            end_if
+        end_if
+        declare_counter max_other
+        set_counter max_other zoroastrian_neighbours
+
+        if I_CompareCounter nubian_neighbours > max_other
+            set_counter max_other nubian_neighbours
+        end_if
+        if I_CompareCounter pagan_neighbours > max_other
+            set_counter max_other pagan_neighbours
+        end_if
+        if I_CompareCounter zoroastrian_neighbours > max_other
+            set_counter max_other zoroastrian_neighbours
+        end_if
+        if I_CompareCounter christian_neighbours > max_other
+            set_counter max_other christian_neighbours
+        end_if
+
+        if I_CompareCounter max_other > zoroastrian_neighbours
+            declare_counter amount_resource
+            counter_operation amount_resource = max_other - zoroastrian_neighbours
+            if I_CompareCounter amount_resource = 1
+                add_hidden_resource local buff_zoroastrian_1
+            end_if
+            if I_CompareCounter amount_resource = 2
+                add_hidden_resource local buff_zoroastrian_2
+            end_if
+            if I_CompareCounter amount_resource = 3
+                add_hidden_resource local buff_zoroastrian_3
+            end_if
+            if I_CompareCounter amount_resource = 4
+                add_hidden_resource local buff_zoroastrian_4
+            end_if
+            if I_CompareCounter amount_resource = 5
+                add_hidden_resource local buff_zoroastrian_5
+            end_if
+        end_if
+        declare_counter max_other
+        set_counter max_other christian_neighbours
+
+        if I_CompareCounter nubian_neighbours > max_other
+            set_counter max_other nubian_neighbours
+        end_if
+        if I_CompareCounter pagan_neighbours > max_other
+            set_counter max_other pagan_neighbours
+        end_if
+        if I_CompareCounter zoroastrian_neighbours > max_other
+            set_counter max_other zoroastrian_neighbours
+        end_if
+        if I_CompareCounter christian_neighbours > max_other
+            set_counter max_other christian_neighbours
+        end_if
+
+        if I_CompareCounter max_other > christian_neighbours
+            declare_counter amount_resource
+            counter_operation amount_resource = max_other - christian_neighbours
+            if I_CompareCounter amount_resource = 1
+                add_hidden_resource local buff_christianity_1
+            end_if
+            if I_CompareCounter amount_resource = 2
+                add_hidden_resource local buff_christianity_2
+            end_if
+            if I_CompareCounter amount_resource = 3
+                add_hidden_resource local buff_christianity_3
+            end_if
+            if I_CompareCounter amount_resource = 4
+                add_hidden_resource local buff_christianity_4
+            end_if
+            if I_CompareCounter amount_resource = 5
+                add_hidden_resource local buff_christianity_5
+            end_if
+        end_if
+        break
+    end_if
+;end_for
+
+end_for
+
+monitor_event SettlementTurnStart
+    ;adding counter to counter works
+    ;adding counter to int doenst work
+    ;comparing counter to int works
+    ;comparing counter to counter works
+
+    inc_counter turn_number 1
+
+    ;; create_neighbouring_regions_conversion_pushback
+    remove_hidden_resource local buff_nubian_1
+        remove_hidden_resource local buff_nubian_2
+        remove_hidden_resource local buff_nubian_3
+        remove_hidden_resource local buff_nubian_4
+        remove_hidden_resource local buff_nubian_5
+        remove_hidden_resource local buff_pagan_1
+        remove_hidden_resource local buff_pagan_2
+        remove_hidden_resource local buff_pagan_3
+        remove_hidden_resource local buff_pagan_4
+        remove_hidden_resource local buff_pagan_5
+        remove_hidden_resource local buff_zoroastrian_1
+        remove_hidden_resource local buff_zoroastrian_2
+        remove_hidden_resource local buff_zoroastrian_3
+        remove_hidden_resource local buff_zoroastrian_4
+        remove_hidden_resource local buff_zoroastrian_5
+        remove_hidden_resource local buff_christianity_1
+        remove_hidden_resource local buff_christianity_2
+        remove_hidden_resource local buff_christianity_3
+        remove_hidden_resource local buff_christianity_4
+        remove_hidden_resource local buff_christianity_5
+
+        declare_counter nubian_neighbours
+        declare_counter pagan_neighbours
+        declare_counter zoroastrian_neighbours
+        declare_counter christian_neighbours
+
+        if SettlementName Thebes
+            set_counter nubian_neighbours 0
+            set_counter pagan_neighbours 0
+            set_counter zoroastrian_neighbours 0
+            set_counter christian_neighbours 0
+            for_each settlement in world
+                if SettlementName Ptolemais
+                    ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                    if SettlementCapabilityLevel upgrade_bodyguard = 1
+                        inc_counter nubian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 2
+                        inc_counter pagan_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 3
+                        inc_counter zoroastrian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 4
+                        inc_counter christian_neighbours 1
+                    end_if
+                end_if
+            end_for
+            for_each settlement in world
+                if SettlementName newCapitalTen
+                    ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                    if SettlementCapabilityLevel upgrade_bodyguard = 1
+                        inc_counter nubian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 2
+                        inc_counter pagan_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 3
+                        inc_counter zoroastrian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 4
+                        inc_counter christian_neighbours 1
+                    end_if
+                end_if
+            end_for
+            for_each settlement in world
+                if SettlementName newCapitalNine
+                    ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                    if SettlementCapabilityLevel upgrade_bodyguard = 1
+                        inc_counter nubian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 2
+                        inc_counter pagan_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 3
+                        inc_counter zoroastrian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 4
+                        inc_counter christian_neighbours 1
+                    end_if
+                end_if
+            end_for
+            for_each settlement in world
+                if SettlementName newCapitalEight
+                    ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                    if SettlementCapabilityLevel upgrade_bodyguard = 1
+                        inc_counter nubian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 2
+                        inc_counter pagan_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 3
+                        inc_counter zoroastrian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 4
+                        inc_counter christian_neighbours 1
+                    end_if
+                end_if
+            end_for
+            for_each settlement in world
+                if SettlementName newCapitalEleven
+                    ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                    if SettlementCapabilityLevel upgrade_bodyguard = 1
+                        inc_counter nubian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 2
+                        inc_counter pagan_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 3
+                        inc_counter zoroastrian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 4
+                        inc_counter christian_neighbours 1
+                    end_if
+                end_if
+            end_for
+            declare_counter max_other
+            set_counter max_other nubian_neighbours
+
+            if I_CompareCounter nubian_neighbours > max_other
+                set_counter max_other nubian_neighbours
+            end_if
+            if I_CompareCounter pagan_neighbours > max_other
+                set_counter max_other pagan_neighbours
+            end_if
+            if I_CompareCounter zoroastrian_neighbours > max_other
+                set_counter max_other zoroastrian_neighbours
+            end_if
+            if I_CompareCounter christian_neighbours > max_other
+                set_counter max_other christian_neighbours
+            end_if
+
+            if I_CompareCounter max_other > nubian_neighbours
+                declare_counter amount_resource
+                counter_operation amount_resource = max_other - nubian_neighbours
+                if I_CompareCounter amount_resource = 1
+                    add_hidden_resource local buff_nubian_1
+                end_if
+                if I_CompareCounter amount_resource = 2
+                    add_hidden_resource local buff_nubian_2
+                end_if
+                if I_CompareCounter amount_resource = 3
+                    add_hidden_resource local buff_nubian_3
+                end_if
+                if I_CompareCounter amount_resource = 4
+                    add_hidden_resource local buff_nubian_4
+                end_if
+                if I_CompareCounter amount_resource = 5
+                    add_hidden_resource local buff_nubian_5
+                end_if
+            end_if
+            declare_counter max_other
+            set_counter max_other pagan_neighbours
+
+            if I_CompareCounter nubian_neighbours > max_other
+                set_counter max_other nubian_neighbours
+            end_if
+            if I_CompareCounter pagan_neighbours > max_other
+                set_counter max_other pagan_neighbours
+            end_if
+            if I_CompareCounter zoroastrian_neighbours > max_other
+                set_counter max_other zoroastrian_neighbours
+            end_if
+            if I_CompareCounter christian_neighbours > max_other
+                set_counter max_other christian_neighbours
+            end_if
+
+            if I_CompareCounter max_other > pagan_neighbours
+                declare_counter amount_resource
+                counter_operation amount_resource = max_other - pagan_neighbours
+                if I_CompareCounter amount_resource = 1
+                    add_hidden_resource local buff_pagan_1
+                end_if
+                if I_CompareCounter amount_resource = 2
+                    add_hidden_resource local buff_pagan_2
+                end_if
+                if I_CompareCounter amount_resource = 3
+                    add_hidden_resource local buff_pagan_3
+                end_if
+                if I_CompareCounter amount_resource = 4
+                    add_hidden_resource local buff_pagan_4
+                end_if
+                if I_CompareCounter amount_resource = 5
+                    add_hidden_resource local buff_pagan_5
+                end_if
+            end_if
+            declare_counter max_other
+            set_counter max_other zoroastrian_neighbours
+
+            if I_CompareCounter nubian_neighbours > max_other
+                set_counter max_other nubian_neighbours
+            end_if
+            if I_CompareCounter pagan_neighbours > max_other
+                set_counter max_other pagan_neighbours
+            end_if
+            if I_CompareCounter zoroastrian_neighbours > max_other
+                set_counter max_other zoroastrian_neighbours
+            end_if
+            if I_CompareCounter christian_neighbours > max_other
+                set_counter max_other christian_neighbours
+            end_if
+
+            if I_CompareCounter max_other > zoroastrian_neighbours
+                declare_counter amount_resource
+                counter_operation amount_resource = max_other - zoroastrian_neighbours
+                if I_CompareCounter amount_resource = 1
+                    add_hidden_resource local buff_zoroastrian_1
+                end_if
+                if I_CompareCounter amount_resource = 2
+                    add_hidden_resource local buff_zoroastrian_2
+                end_if
+                if I_CompareCounter amount_resource = 3
+                    add_hidden_resource local buff_zoroastrian_3
+                end_if
+                if I_CompareCounter amount_resource = 4
+                    add_hidden_resource local buff_zoroastrian_4
+                end_if
+                if I_CompareCounter amount_resource = 5
+                    add_hidden_resource local buff_zoroastrian_5
+                end_if
+            end_if
+            declare_counter max_other
+            set_counter max_other christian_neighbours
+
+            if I_CompareCounter nubian_neighbours > max_other
+                set_counter max_other nubian_neighbours
+            end_if
+            if I_CompareCounter pagan_neighbours > max_other
+                set_counter max_other pagan_neighbours
+            end_if
+            if I_CompareCounter zoroastrian_neighbours > max_other
+                set_counter max_other zoroastrian_neighbours
+            end_if
+            if I_CompareCounter christian_neighbours > max_other
+                set_counter max_other christian_neighbours
+            end_if
+
+            if I_CompareCounter max_other > christian_neighbours
+                declare_counter amount_resource
+                counter_operation amount_resource = max_other - christian_neighbours
+                if I_CompareCounter amount_resource = 1
+                    add_hidden_resource local buff_christianity_1
+                end_if
+                if I_CompareCounter amount_resource = 2
+                    add_hidden_resource local buff_christianity_2
+                end_if
+                if I_CompareCounter amount_resource = 3
+                    add_hidden_resource local buff_christianity_3
+                end_if
+                if I_CompareCounter amount_resource = 4
+                    add_hidden_resource local buff_christianity_4
+                end_if
+                if I_CompareCounter amount_resource = 5
+                    add_hidden_resource local buff_christianity_5
+                end_if
+            end_if
+        end_if
+
+        if SettlementName newCapitalTen
+            set_counter nubian_neighbours 0
+            set_counter pagan_neighbours 0
+            set_counter zoroastrian_neighbours 0
+            set_counter christian_neighbours 0
+            for_each settlement in world
+                if SettlementName Ptolemais
+                    ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                    if SettlementCapabilityLevel upgrade_bodyguard = 1
+                        inc_counter nubian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 2
+                        inc_counter pagan_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 3
+                        inc_counter zoroastrian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 4
+                        inc_counter christian_neighbours 1
+                    end_if
+                end_if
+            end_for
+            for_each settlement in world
+                if SettlementName newCapitalNine
+                    ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                    if SettlementCapabilityLevel upgrade_bodyguard = 1
+                        inc_counter nubian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 2
+                        inc_counter pagan_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 3
+                        inc_counter zoroastrian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 4
+                        inc_counter christian_neighbours 1
+                    end_if
+                end_if
+            end_for
+            for_each settlement in world
+                if SettlementName Thebes
+                    ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                    if SettlementCapabilityLevel upgrade_bodyguard = 1
+                        inc_counter nubian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 2
+                        inc_counter pagan_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 3
+                        inc_counter zoroastrian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 4
+                        inc_counter christian_neighbours 1
+                    end_if
+                end_if
+            end_for
+            declare_counter max_other
+            set_counter max_other nubian_neighbours
+
+            if I_CompareCounter nubian_neighbours > max_other
+                set_counter max_other nubian_neighbours
+            end_if
+            if I_CompareCounter pagan_neighbours > max_other
+                set_counter max_other pagan_neighbours
+            end_if
+            if I_CompareCounter zoroastrian_neighbours > max_other
+                set_counter max_other zoroastrian_neighbours
+            end_if
+            if I_CompareCounter christian_neighbours > max_other
+                set_counter max_other christian_neighbours
+            end_if
+
+            if I_CompareCounter max_other > nubian_neighbours
+                declare_counter amount_resource
+                counter_operation amount_resource = max_other - nubian_neighbours
+                if I_CompareCounter amount_resource = 1
+                    add_hidden_resource local buff_nubian_1
+                end_if
+                if I_CompareCounter amount_resource = 2
+                    add_hidden_resource local buff_nubian_2
+                end_if
+                if I_CompareCounter amount_resource = 3
+                    add_hidden_resource local buff_nubian_3
+                end_if
+                if I_CompareCounter amount_resource = 4
+                    add_hidden_resource local buff_nubian_4
+                end_if
+                if I_CompareCounter amount_resource = 5
+                    add_hidden_resource local buff_nubian_5
+                end_if
+            end_if
+            declare_counter max_other
+            set_counter max_other pagan_neighbours
+
+            if I_CompareCounter nubian_neighbours > max_other
+                set_counter max_other nubian_neighbours
+            end_if
+            if I_CompareCounter pagan_neighbours > max_other
+                set_counter max_other pagan_neighbours
+            end_if
+            if I_CompareCounter zoroastrian_neighbours > max_other
+                set_counter max_other zoroastrian_neighbours
+            end_if
+            if I_CompareCounter christian_neighbours > max_other
+                set_counter max_other christian_neighbours
+            end_if
+
+            if I_CompareCounter max_other > pagan_neighbours
+                declare_counter amount_resource
+                counter_operation amount_resource = max_other - pagan_neighbours
+                if I_CompareCounter amount_resource = 1
+                    add_hidden_resource local buff_pagan_1
+                end_if
+                if I_CompareCounter amount_resource = 2
+                    add_hidden_resource local buff_pagan_2
+                end_if
+                if I_CompareCounter amount_resource = 3
+                    add_hidden_resource local buff_pagan_3
+                end_if
+                if I_CompareCounter amount_resource = 4
+                    add_hidden_resource local buff_pagan_4
+                end_if
+                if I_CompareCounter amount_resource = 5
+                    add_hidden_resource local buff_pagan_5
+                end_if
+            end_if
+            declare_counter max_other
+            set_counter max_other zoroastrian_neighbours
+
+            if I_CompareCounter nubian_neighbours > max_other
+                set_counter max_other nubian_neighbours
+            end_if
+            if I_CompareCounter pagan_neighbours > max_other
+                set_counter max_other pagan_neighbours
+            end_if
+            if I_CompareCounter zoroastrian_neighbours > max_other
+                set_counter max_other zoroastrian_neighbours
+            end_if
+            if I_CompareCounter christian_neighbours > max_other
+                set_counter max_other christian_neighbours
+            end_if
+
+            if I_CompareCounter max_other > zoroastrian_neighbours
+                declare_counter amount_resource
+                counter_operation amount_resource = max_other - zoroastrian_neighbours
+                if I_CompareCounter amount_resource = 1
+                    add_hidden_resource local buff_zoroastrian_1
+                end_if
+                if I_CompareCounter amount_resource = 2
+                    add_hidden_resource local buff_zoroastrian_2
+                end_if
+                if I_CompareCounter amount_resource = 3
+                    add_hidden_resource local buff_zoroastrian_3
+                end_if
+                if I_CompareCounter amount_resource = 4
+                    add_hidden_resource local buff_zoroastrian_4
+                end_if
+                if I_CompareCounter amount_resource = 5
+                    add_hidden_resource local buff_zoroastrian_5
+                end_if
+            end_if
+            declare_counter max_other
+            set_counter max_other christian_neighbours
+
+            if I_CompareCounter nubian_neighbours > max_other
+                set_counter max_other nubian_neighbours
+            end_if
+            if I_CompareCounter pagan_neighbours > max_other
+                set_counter max_other pagan_neighbours
+            end_if
+            if I_CompareCounter zoroastrian_neighbours > max_other
+                set_counter max_other zoroastrian_neighbours
+            end_if
+            if I_CompareCounter christian_neighbours > max_other
+                set_counter max_other christian_neighbours
+            end_if
+
+            if I_CompareCounter max_other > christian_neighbours
+                declare_counter amount_resource
+                counter_operation amount_resource = max_other - christian_neighbours
+                if I_CompareCounter amount_resource = 1
+                    add_hidden_resource local buff_christianity_1
+                end_if
+                if I_CompareCounter amount_resource = 2
+                    add_hidden_resource local buff_christianity_2
+                end_if
+                if I_CompareCounter amount_resource = 3
+                    add_hidden_resource local buff_christianity_3
+                end_if
+                if I_CompareCounter amount_resource = 4
+                    add_hidden_resource local buff_christianity_4
+                end_if
+                if I_CompareCounter amount_resource = 5
+                    add_hidden_resource local buff_christianity_5
+                end_if
+            end_if
+        end_if
+
+        if SettlementName newCapitalNine
+            set_counter nubian_neighbours 0
+            set_counter pagan_neighbours 0
+            set_counter zoroastrian_neighbours 0
+            set_counter christian_neighbours 0
+            for_each settlement in world
+                if SettlementName newCapitalTen
+                    ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                    if SettlementCapabilityLevel upgrade_bodyguard = 1
+                        inc_counter nubian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 2
+                        inc_counter pagan_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 3
+                        inc_counter zoroastrian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 4
+                        inc_counter christian_neighbours 1
+                    end_if
+                end_if
+            end_for
+            for_each settlement in world
+                if SettlementName newCapitalFive
+                    ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                    if SettlementCapabilityLevel upgrade_bodyguard = 1
+                        inc_counter nubian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 2
+                        inc_counter pagan_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 3
+                        inc_counter zoroastrian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 4
+                        inc_counter christian_neighbours 1
+                    end_if
+                end_if
+            end_for
+            for_each settlement in world
+                if SettlementName Meroe
+                    ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                    if SettlementCapabilityLevel upgrade_bodyguard = 1
+                        inc_counter nubian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 2
+                        inc_counter pagan_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 3
+                        inc_counter zoroastrian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 4
+                        inc_counter christian_neighbours 1
+                    end_if
+                end_if
+            end_for
+            for_each settlement in world
+                if SettlementName newCapitalEight
+                    ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                    if SettlementCapabilityLevel upgrade_bodyguard = 1
+                        inc_counter nubian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 2
+                        inc_counter pagan_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 3
+                        inc_counter zoroastrian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 4
+                        inc_counter christian_neighbours 1
+                    end_if
+                end_if
+            end_for
+            for_each settlement in world
+                if SettlementName Thebes
+                    ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                    if SettlementCapabilityLevel upgrade_bodyguard = 1
+                        inc_counter nubian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 2
+                        inc_counter pagan_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 3
+                        inc_counter zoroastrian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 4
+                        inc_counter christian_neighbours 1
+                    end_if
+                end_if
+            end_for
+            declare_counter max_other
+            set_counter max_other nubian_neighbours
+
+            if I_CompareCounter nubian_neighbours > max_other
+                set_counter max_other nubian_neighbours
+            end_if
+            if I_CompareCounter pagan_neighbours > max_other
+                set_counter max_other pagan_neighbours
+            end_if
+            if I_CompareCounter zoroastrian_neighbours > max_other
+                set_counter max_other zoroastrian_neighbours
+            end_if
+            if I_CompareCounter christian_neighbours > max_other
+                set_counter max_other christian_neighbours
+            end_if
+
+            if I_CompareCounter max_other > nubian_neighbours
+                declare_counter amount_resource
+                counter_operation amount_resource = max_other - nubian_neighbours
+                if I_CompareCounter amount_resource = 1
+                    add_hidden_resource local buff_nubian_1
+                end_if
+                if I_CompareCounter amount_resource = 2
+                    add_hidden_resource local buff_nubian_2
+                end_if
+                if I_CompareCounter amount_resource = 3
+                    add_hidden_resource local buff_nubian_3
+                end_if
+                if I_CompareCounter amount_resource = 4
+                    add_hidden_resource local buff_nubian_4
+                end_if
+                if I_CompareCounter amount_resource = 5
+                    add_hidden_resource local buff_nubian_5
+                end_if
+            end_if
+            declare_counter max_other
+            set_counter max_other pagan_neighbours
+
+            if I_CompareCounter nubian_neighbours > max_other
+                set_counter max_other nubian_neighbours
+            end_if
+            if I_CompareCounter pagan_neighbours > max_other
+                set_counter max_other pagan_neighbours
+            end_if
+            if I_CompareCounter zoroastrian_neighbours > max_other
+                set_counter max_other zoroastrian_neighbours
+            end_if
+            if I_CompareCounter christian_neighbours > max_other
+                set_counter max_other christian_neighbours
+            end_if
+
+            if I_CompareCounter max_other > pagan_neighbours
+                declare_counter amount_resource
+                counter_operation amount_resource = max_other - pagan_neighbours
+                if I_CompareCounter amount_resource = 1
+                    add_hidden_resource local buff_pagan_1
+                end_if
+                if I_CompareCounter amount_resource = 2
+                    add_hidden_resource local buff_pagan_2
+                end_if
+                if I_CompareCounter amount_resource = 3
+                    add_hidden_resource local buff_pagan_3
+                end_if
+                if I_CompareCounter amount_resource = 4
+                    add_hidden_resource local buff_pagan_4
+                end_if
+                if I_CompareCounter amount_resource = 5
+                    add_hidden_resource local buff_pagan_5
+                end_if
+            end_if
+            declare_counter max_other
+            set_counter max_other zoroastrian_neighbours
+
+            if I_CompareCounter nubian_neighbours > max_other
+                set_counter max_other nubian_neighbours
+            end_if
+            if I_CompareCounter pagan_neighbours > max_other
+                set_counter max_other pagan_neighbours
+            end_if
+            if I_CompareCounter zoroastrian_neighbours > max_other
+                set_counter max_other zoroastrian_neighbours
+            end_if
+            if I_CompareCounter christian_neighbours > max_other
+                set_counter max_other christian_neighbours
+            end_if
+
+            if I_CompareCounter max_other > zoroastrian_neighbours
+                declare_counter amount_resource
+                counter_operation amount_resource = max_other - zoroastrian_neighbours
+                if I_CompareCounter amount_resource = 1
+                    add_hidden_resource local buff_zoroastrian_1
+                end_if
+                if I_CompareCounter amount_resource = 2
+                    add_hidden_resource local buff_zoroastrian_2
+                end_if
+                if I_CompareCounter amount_resource = 3
+                    add_hidden_resource local buff_zoroastrian_3
+                end_if
+                if I_CompareCounter amount_resource = 4
+                    add_hidden_resource local buff_zoroastrian_4
+                end_if
+                if I_CompareCounter amount_resource = 5
+                    add_hidden_resource local buff_zoroastrian_5
+                end_if
+            end_if
+            declare_counter max_other
+            set_counter max_other christian_neighbours
+
+            if I_CompareCounter nubian_neighbours > max_other
+                set_counter max_other nubian_neighbours
+            end_if
+            if I_CompareCounter pagan_neighbours > max_other
+                set_counter max_other pagan_neighbours
+            end_if
+            if I_CompareCounter zoroastrian_neighbours > max_other
+                set_counter max_other zoroastrian_neighbours
+            end_if
+            if I_CompareCounter christian_neighbours > max_other
+                set_counter max_other christian_neighbours
+            end_if
+
+            if I_CompareCounter max_other > christian_neighbours
+                declare_counter amount_resource
+                counter_operation amount_resource = max_other - christian_neighbours
+                if I_CompareCounter amount_resource = 1
+                    add_hidden_resource local buff_christianity_1
+                end_if
+                if I_CompareCounter amount_resource = 2
+                    add_hidden_resource local buff_christianity_2
+                end_if
+                if I_CompareCounter amount_resource = 3
+                    add_hidden_resource local buff_christianity_3
+                end_if
+                if I_CompareCounter amount_resource = 4
+                    add_hidden_resource local buff_christianity_4
+                end_if
+                if I_CompareCounter amount_resource = 5
+                    add_hidden_resource local buff_christianity_5
+                end_if
+            end_if
+        end_if
+
+        if SettlementName Meroe
+            set_counter nubian_neighbours 0
+            set_counter pagan_neighbours 0
+            set_counter zoroastrian_neighbours 0
+            set_counter christian_neighbours 0
+            for_each settlement in world
+                if SettlementName newCapitalNine
+                    ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                    if SettlementCapabilityLevel upgrade_bodyguard = 1
+                        inc_counter nubian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 2
+                        inc_counter pagan_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 3
+                        inc_counter zoroastrian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 4
+                        inc_counter christian_neighbours 1
+                    end_if
+                end_if
+            end_for
+            for_each settlement in world
+                if SettlementName newCapitalFive
+                    ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                    if SettlementCapabilityLevel upgrade_bodyguard = 1
+                        inc_counter nubian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 2
+                        inc_counter pagan_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 3
+                        inc_counter zoroastrian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 4
+                        inc_counter christian_neighbours 1
+                    end_if
+                end_if
+            end_for
+            for_each settlement in world
+                if SettlementName newCapitalThree
+                    ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                    if SettlementCapabilityLevel upgrade_bodyguard = 1
+                        inc_counter nubian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 2
+                        inc_counter pagan_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 3
+                        inc_counter zoroastrian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 4
+                        inc_counter christian_neighbours 1
+                    end_if
+                end_if
+            end_for
+            for_each settlement in world
+                if SettlementName newCapitalFour
+                    ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                    if SettlementCapabilityLevel upgrade_bodyguard = 1
+                        inc_counter nubian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 2
+                        inc_counter pagan_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 3
+                        inc_counter zoroastrian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 4
+                        inc_counter christian_neighbours 1
+                    end_if
+                end_if
+            end_for
+            for_each settlement in world
+                if SettlementName newCapitalSeven
+                    ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                    if SettlementCapabilityLevel upgrade_bodyguard = 1
+                        inc_counter nubian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 2
+                        inc_counter pagan_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 3
+                        inc_counter zoroastrian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 4
+                        inc_counter christian_neighbours 1
+                    end_if
+                end_if
+            end_for
+            for_each settlement in world
+                if SettlementName newCapitalEight
+                    ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                    if SettlementCapabilityLevel upgrade_bodyguard = 1
+                        inc_counter nubian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 2
+                        inc_counter pagan_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 3
+                        inc_counter zoroastrian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 4
+                        inc_counter christian_neighbours 1
+                    end_if
+                end_if
+            end_for
+            declare_counter max_other
+            set_counter max_other nubian_neighbours
+
+            if I_CompareCounter nubian_neighbours > max_other
+                set_counter max_other nubian_neighbours
+            end_if
+            if I_CompareCounter pagan_neighbours > max_other
+                set_counter max_other pagan_neighbours
+            end_if
+            if I_CompareCounter zoroastrian_neighbours > max_other
+                set_counter max_other zoroastrian_neighbours
+            end_if
+            if I_CompareCounter christian_neighbours > max_other
+                set_counter max_other christian_neighbours
+            end_if
+
+            if I_CompareCounter max_other > nubian_neighbours
+                declare_counter amount_resource
+                counter_operation amount_resource = max_other - nubian_neighbours
+                if I_CompareCounter amount_resource = 1
+                    add_hidden_resource local buff_nubian_1
+                end_if
+                if I_CompareCounter amount_resource = 2
+                    add_hidden_resource local buff_nubian_2
+                end_if
+                if I_CompareCounter amount_resource = 3
+                    add_hidden_resource local buff_nubian_3
+                end_if
+                if I_CompareCounter amount_resource = 4
+                    add_hidden_resource local buff_nubian_4
+                end_if
+                if I_CompareCounter amount_resource = 5
+                    add_hidden_resource local buff_nubian_5
+                end_if
+            end_if
+            declare_counter max_other
+            set_counter max_other pagan_neighbours
+
+            if I_CompareCounter nubian_neighbours > max_other
+                set_counter max_other nubian_neighbours
+            end_if
+            if I_CompareCounter pagan_neighbours > max_other
+                set_counter max_other pagan_neighbours
+            end_if
+            if I_CompareCounter zoroastrian_neighbours > max_other
+                set_counter max_other zoroastrian_neighbours
+            end_if
+            if I_CompareCounter christian_neighbours > max_other
+                set_counter max_other christian_neighbours
+            end_if
+
+            if I_CompareCounter max_other > pagan_neighbours
+                declare_counter amount_resource
+                counter_operation amount_resource = max_other - pagan_neighbours
+                if I_CompareCounter amount_resource = 1
+                    add_hidden_resource local buff_pagan_1
+                end_if
+                if I_CompareCounter amount_resource = 2
+                    add_hidden_resource local buff_pagan_2
+                end_if
+                if I_CompareCounter amount_resource = 3
+                    add_hidden_resource local buff_pagan_3
+                end_if
+                if I_CompareCounter amount_resource = 4
+                    add_hidden_resource local buff_pagan_4
+                end_if
+                if I_CompareCounter amount_resource = 5
+                    add_hidden_resource local buff_pagan_5
+                end_if
+            end_if
+            declare_counter max_other
+            set_counter max_other zoroastrian_neighbours
+
+            if I_CompareCounter nubian_neighbours > max_other
+                set_counter max_other nubian_neighbours
+            end_if
+            if I_CompareCounter pagan_neighbours > max_other
+                set_counter max_other pagan_neighbours
+            end_if
+            if I_CompareCounter zoroastrian_neighbours > max_other
+                set_counter max_other zoroastrian_neighbours
+            end_if
+            if I_CompareCounter christian_neighbours > max_other
+                set_counter max_other christian_neighbours
+            end_if
+
+            if I_CompareCounter max_other > zoroastrian_neighbours
+                declare_counter amount_resource
+                counter_operation amount_resource = max_other - zoroastrian_neighbours
+                if I_CompareCounter amount_resource = 1
+                    add_hidden_resource local buff_zoroastrian_1
+                end_if
+                if I_CompareCounter amount_resource = 2
+                    add_hidden_resource local buff_zoroastrian_2
+                end_if
+                if I_CompareCounter amount_resource = 3
+                    add_hidden_resource local buff_zoroastrian_3
+                end_if
+                if I_CompareCounter amount_resource = 4
+                    add_hidden_resource local buff_zoroastrian_4
+                end_if
+                if I_CompareCounter amount_resource = 5
+                    add_hidden_resource local buff_zoroastrian_5
+                end_if
+            end_if
+            declare_counter max_other
+            set_counter max_other christian_neighbours
+
+            if I_CompareCounter nubian_neighbours > max_other
+                set_counter max_other nubian_neighbours
+            end_if
+            if I_CompareCounter pagan_neighbours > max_other
+                set_counter max_other pagan_neighbours
+            end_if
+            if I_CompareCounter zoroastrian_neighbours > max_other
+                set_counter max_other zoroastrian_neighbours
+            end_if
+            if I_CompareCounter christian_neighbours > max_other
+                set_counter max_other christian_neighbours
+            end_if
+
+            if I_CompareCounter max_other > christian_neighbours
+                declare_counter amount_resource
+                counter_operation amount_resource = max_other - christian_neighbours
+                if I_CompareCounter amount_resource = 1
+                    add_hidden_resource local buff_christianity_1
+                end_if
+                if I_CompareCounter amount_resource = 2
+                    add_hidden_resource local buff_christianity_2
+                end_if
+                if I_CompareCounter amount_resource = 3
+                    add_hidden_resource local buff_christianity_3
+                end_if
+                if I_CompareCounter amount_resource = 4
+                    add_hidden_resource local buff_christianity_4
+                end_if
+                if I_CompareCounter amount_resource = 5
+                    add_hidden_resource local buff_christianity_5
+                end_if
+            end_if
+        end_if
+
+        if SettlementName newCapitalEight
+            set_counter nubian_neighbours 0
+            set_counter pagan_neighbours 0
+            set_counter zoroastrian_neighbours 0
+            set_counter christian_neighbours 0
+            for_each settlement in world
+                if SettlementName Thebes
+                    ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                    if SettlementCapabilityLevel upgrade_bodyguard = 1
+                        inc_counter nubian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 2
+                        inc_counter pagan_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 3
+                        inc_counter zoroastrian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 4
+                        inc_counter christian_neighbours 1
+                    end_if
+                end_if
+            end_for
+            for_each settlement in world
+                if SettlementName newCapitalNine
+                    ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                    if SettlementCapabilityLevel upgrade_bodyguard = 1
+                        inc_counter nubian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 2
+                        inc_counter pagan_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 3
+                        inc_counter zoroastrian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 4
+                        inc_counter christian_neighbours 1
+                    end_if
+                end_if
+            end_for
+            for_each settlement in world
+                if SettlementName Meroe
+                    ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                    if SettlementCapabilityLevel upgrade_bodyguard = 1
+                        inc_counter nubian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 2
+                        inc_counter pagan_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 3
+                        inc_counter zoroastrian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 4
+                        inc_counter christian_neighbours 1
+                    end_if
+                end_if
+            end_for
+            for_each settlement in world
+                if SettlementName newCapitalSeven
+                    ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                    if SettlementCapabilityLevel upgrade_bodyguard = 1
+                        inc_counter nubian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 2
+                        inc_counter pagan_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 3
+                        inc_counter zoroastrian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 4
+                        inc_counter christian_neighbours 1
+                    end_if
+                end_if
+            end_for
+            for_each settlement in world
+                if SettlementName Moscaflacopolis
+                    ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                    if SettlementCapabilityLevel upgrade_bodyguard = 1
+                        inc_counter nubian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 2
+                        inc_counter pagan_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 3
+                        inc_counter zoroastrian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 4
+                        inc_counter christian_neighbours 1
+                    end_if
+                end_if
+            end_for
+            for_each settlement in world
+                if SettlementName newCapitalEleven
+                    ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                    if SettlementCapabilityLevel upgrade_bodyguard = 1
+                        inc_counter nubian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 2
+                        inc_counter pagan_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 3
+                        inc_counter zoroastrian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 4
+                        inc_counter christian_neighbours 1
+                    end_if
+                end_if
+            end_for
+            declare_counter max_other
+            set_counter max_other nubian_neighbours
+
+            if I_CompareCounter nubian_neighbours > max_other
+                set_counter max_other nubian_neighbours
+            end_if
+            if I_CompareCounter pagan_neighbours > max_other
+                set_counter max_other pagan_neighbours
+            end_if
+            if I_CompareCounter zoroastrian_neighbours > max_other
+                set_counter max_other zoroastrian_neighbours
+            end_if
+            if I_CompareCounter christian_neighbours > max_other
+                set_counter max_other christian_neighbours
+            end_if
+
+            if I_CompareCounter max_other > nubian_neighbours
+                declare_counter amount_resource
+                counter_operation amount_resource = max_other - nubian_neighbours
+                if I_CompareCounter amount_resource = 1
+                    add_hidden_resource local buff_nubian_1
+                end_if
+                if I_CompareCounter amount_resource = 2
+                    add_hidden_resource local buff_nubian_2
+                end_if
+                if I_CompareCounter amount_resource = 3
+                    add_hidden_resource local buff_nubian_3
+                end_if
+                if I_CompareCounter amount_resource = 4
+                    add_hidden_resource local buff_nubian_4
+                end_if
+                if I_CompareCounter amount_resource = 5
+                    add_hidden_resource local buff_nubian_5
+                end_if
+            end_if
+            declare_counter max_other
+            set_counter max_other pagan_neighbours
+
+            if I_CompareCounter nubian_neighbours > max_other
+                set_counter max_other nubian_neighbours
+            end_if
+            if I_CompareCounter pagan_neighbours > max_other
+                set_counter max_other pagan_neighbours
+            end_if
+            if I_CompareCounter zoroastrian_neighbours > max_other
+                set_counter max_other zoroastrian_neighbours
+            end_if
+            if I_CompareCounter christian_neighbours > max_other
+                set_counter max_other christian_neighbours
+            end_if
+
+            if I_CompareCounter max_other > pagan_neighbours
+                declare_counter amount_resource
+                counter_operation amount_resource = max_other - pagan_neighbours
+                if I_CompareCounter amount_resource = 1
+                    add_hidden_resource local buff_pagan_1
+                end_if
+                if I_CompareCounter amount_resource = 2
+                    add_hidden_resource local buff_pagan_2
+                end_if
+                if I_CompareCounter amount_resource = 3
+                    add_hidden_resource local buff_pagan_3
+                end_if
+                if I_CompareCounter amount_resource = 4
+                    add_hidden_resource local buff_pagan_4
+                end_if
+                if I_CompareCounter amount_resource = 5
+                    add_hidden_resource local buff_pagan_5
+                end_if
+            end_if
+            declare_counter max_other
+            set_counter max_other zoroastrian_neighbours
+
+            if I_CompareCounter nubian_neighbours > max_other
+                set_counter max_other nubian_neighbours
+            end_if
+            if I_CompareCounter pagan_neighbours > max_other
+                set_counter max_other pagan_neighbours
+            end_if
+            if I_CompareCounter zoroastrian_neighbours > max_other
+                set_counter max_other zoroastrian_neighbours
+            end_if
+            if I_CompareCounter christian_neighbours > max_other
+                set_counter max_other christian_neighbours
+            end_if
+
+            if I_CompareCounter max_other > zoroastrian_neighbours
+                declare_counter amount_resource
+                counter_operation amount_resource = max_other - zoroastrian_neighbours
+                if I_CompareCounter amount_resource = 1
+                    add_hidden_resource local buff_zoroastrian_1
+                end_if
+                if I_CompareCounter amount_resource = 2
+                    add_hidden_resource local buff_zoroastrian_2
+                end_if
+                if I_CompareCounter amount_resource = 3
+                    add_hidden_resource local buff_zoroastrian_3
+                end_if
+                if I_CompareCounter amount_resource = 4
+                    add_hidden_resource local buff_zoroastrian_4
+                end_if
+                if I_CompareCounter amount_resource = 5
+                    add_hidden_resource local buff_zoroastrian_5
+                end_if
+            end_if
+            declare_counter max_other
+            set_counter max_other christian_neighbours
+
+            if I_CompareCounter nubian_neighbours > max_other
+                set_counter max_other nubian_neighbours
+            end_if
+            if I_CompareCounter pagan_neighbours > max_other
+                set_counter max_other pagan_neighbours
+            end_if
+            if I_CompareCounter zoroastrian_neighbours > max_other
+                set_counter max_other zoroastrian_neighbours
+            end_if
+            if I_CompareCounter christian_neighbours > max_other
+                set_counter max_other christian_neighbours
+            end_if
+
+            if I_CompareCounter max_other > christian_neighbours
+                declare_counter amount_resource
+                counter_operation amount_resource = max_other - christian_neighbours
+                if I_CompareCounter amount_resource = 1
+                    add_hidden_resource local buff_christianity_1
+                end_if
+                if I_CompareCounter amount_resource = 2
+                    add_hidden_resource local buff_christianity_2
+                end_if
+                if I_CompareCounter amount_resource = 3
+                    add_hidden_resource local buff_christianity_3
+                end_if
+                if I_CompareCounter amount_resource = 4
+                    add_hidden_resource local buff_christianity_4
+                end_if
+                if I_CompareCounter amount_resource = 5
+                    add_hidden_resource local buff_christianity_5
+                end_if
+            end_if
+        end_if
+
+        if SettlementName newCapitalEleven
+            set_counter nubian_neighbours 0
+            set_counter pagan_neighbours 0
+            set_counter zoroastrian_neighbours 0
+            set_counter christian_neighbours 0
+            for_each settlement in world
+                if SettlementName newCapitalTwelve
+                    ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                    if SettlementCapabilityLevel upgrade_bodyguard = 1
+                        inc_counter nubian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 2
+                        inc_counter pagan_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 3
+                        inc_counter zoroastrian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 4
+                        inc_counter christian_neighbours 1
+                    end_if
+                end_if
+            end_for
+            for_each settlement in world
+                if SettlementName Ptolemais
+                    ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                    if SettlementCapabilityLevel upgrade_bodyguard = 1
+                        inc_counter nubian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 2
+                        inc_counter pagan_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 3
+                        inc_counter zoroastrian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 4
+                        inc_counter christian_neighbours 1
+                    end_if
+                end_if
+            end_for
+            for_each settlement in world
+                if SettlementName Thebes
+                    ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                    if SettlementCapabilityLevel upgrade_bodyguard = 1
+                        inc_counter nubian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 2
+                        inc_counter pagan_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 3
+                        inc_counter zoroastrian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 4
+                        inc_counter christian_neighbours 1
+                    end_if
+                end_if
+            end_for
+            for_each settlement in world
+                if SettlementName newCapitalEight
+                    ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                    if SettlementCapabilityLevel upgrade_bodyguard = 1
+                        inc_counter nubian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 2
+                        inc_counter pagan_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 3
+                        inc_counter zoroastrian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 4
+                        inc_counter christian_neighbours 1
+                    end_if
+                end_if
+            end_for
+            for_each settlement in world
+                if SettlementName Moscaflacopolis
+                    ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                    if SettlementCapabilityLevel upgrade_bodyguard = 1
+                        inc_counter nubian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 2
+                        inc_counter pagan_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 3
+                        inc_counter zoroastrian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 4
+                        inc_counter christian_neighbours 1
+                    end_if
+                end_if
+            end_for
+            for_each settlement in world
+                if SettlementName Augila
+                    ;TODO: See if I can do that check with an unused capability or a dummy string instead
+                    if SettlementCapabilityLevel upgrade_bodyguard = 1
+                        inc_counter nubian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 2
+                        inc_counter pagan_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 3
+                        inc_counter zoroastrian_neighbours 1
+                    end_if
+                    if SettlementCapabilityLevel upgrade_bodyguard = 4
+                        inc_counter christian_neighbours 1
+                    end_if
+                end_if
+            end_for
+            declare_counter max_other
+            set_counter max_other nubian_neighbours
+
+            if I_CompareCounter nubian_neighbours > max_other
+                set_counter max_other nubian_neighbours
+            end_if
+            if I_CompareCounter pagan_neighbours > max_other
+                set_counter max_other pagan_neighbours
+            end_if
+            if I_CompareCounter zoroastrian_neighbours > max_other
+                set_counter max_other zoroastrian_neighbours
+            end_if
+            if I_CompareCounter christian_neighbours > max_other
+                set_counter max_other christian_neighbours
+            end_if
+
+            if I_CompareCounter max_other > nubian_neighbours
+                declare_counter amount_resource
+                counter_operation amount_resource = max_other - nubian_neighbours
+                if I_CompareCounter amount_resource = 1
+                    add_hidden_resource local buff_nubian_1
+                end_if
+                if I_CompareCounter amount_resource = 2
+                    add_hidden_resource local buff_nubian_2
+                end_if
+                if I_CompareCounter amount_resource = 3
+                    add_hidden_resource local buff_nubian_3
+                end_if
+                if I_CompareCounter amount_resource = 4
+                    add_hidden_resource local buff_nubian_4
+                end_if
+                if I_CompareCounter amount_resource = 5
+                    add_hidden_resource local buff_nubian_5
+                end_if
+            end_if
+            declare_counter max_other
+            set_counter max_other pagan_neighbours
+
+            if I_CompareCounter nubian_neighbours > max_other
+                set_counter max_other nubian_neighbours
+            end_if
+            if I_CompareCounter pagan_neighbours > max_other
+                set_counter max_other pagan_neighbours
+            end_if
+            if I_CompareCounter zoroastrian_neighbours > max_other
+                set_counter max_other zoroastrian_neighbours
+            end_if
+            if I_CompareCounter christian_neighbours > max_other
+                set_counter max_other christian_neighbours
+            end_if
+
+            if I_CompareCounter max_other > pagan_neighbours
+                declare_counter amount_resource
+                counter_operation amount_resource = max_other - pagan_neighbours
+                if I_CompareCounter amount_resource = 1
+                    add_hidden_resource local buff_pagan_1
+                end_if
+                if I_CompareCounter amount_resource = 2
+                    add_hidden_resource local buff_pagan_2
+                end_if
+                if I_CompareCounter amount_resource = 3
+                    add_hidden_resource local buff_pagan_3
+                end_if
+                if I_CompareCounter amount_resource = 4
+                    add_hidden_resource local buff_pagan_4
+                end_if
+                if I_CompareCounter amount_resource = 5
+                    add_hidden_resource local buff_pagan_5
+                end_if
+            end_if
+            declare_counter max_other
+            set_counter max_other zoroastrian_neighbours
+
+            if I_CompareCounter nubian_neighbours > max_other
+                set_counter max_other nubian_neighbours
+            end_if
+            if I_CompareCounter pagan_neighbours > max_other
+                set_counter max_other pagan_neighbours
+            end_if
+            if I_CompareCounter zoroastrian_neighbours > max_other
+                set_counter max_other zoroastrian_neighbours
+            end_if
+            if I_CompareCounter christian_neighbours > max_other
+                set_counter max_other christian_neighbours
+            end_if
+
+            if I_CompareCounter max_other > zoroastrian_neighbours
+                declare_counter amount_resource
+                counter_operation amount_resource = max_other - zoroastrian_neighbours
+                if I_CompareCounter amount_resource = 1
+                    add_hidden_resource local buff_zoroastrian_1
+                end_if
+                if I_CompareCounter amount_resource = 2
+                    add_hidden_resource local buff_zoroastrian_2
+                end_if
+                if I_CompareCounter amount_resource = 3
+                    add_hidden_resource local buff_zoroastrian_3
+                end_if
+                if I_CompareCounter amount_resource = 4
+                    add_hidden_resource local buff_zoroastrian_4
+                end_if
+                if I_CompareCounter amount_resource = 5
+                    add_hidden_resource local buff_zoroastrian_5
+                end_if
+            end_if
+            declare_counter max_other
+            set_counter max_other christian_neighbours
+
+            if I_CompareCounter nubian_neighbours > max_other
+                set_counter max_other nubian_neighbours
+            end_if
+            if I_CompareCounter pagan_neighbours > max_other
+                set_counter max_other pagan_neighbours
+            end_if
+            if I_CompareCounter zoroastrian_neighbours > max_other
+                set_counter max_other zoroastrian_neighbours
+            end_if
+            if I_CompareCounter christian_neighbours > max_other
+                set_counter max_other christian_neighbours
+            end_if
+
+            if I_CompareCounter max_other > christian_neighbours
+                declare_counter amount_resource
+                counter_operation amount_resource = max_other - christian_neighbours
+                if I_CompareCounter amount_resource = 1
+                    add_hidden_resource local buff_christianity_1
+                end_if
+                if I_CompareCounter amount_resource = 2
+                    add_hidden_resource local buff_christianity_2
+                end_if
+                if I_CompareCounter amount_resource = 3
+                    add_hidden_resource local buff_christianity_3
+                end_if
+                if I_CompareCounter amount_resource = 4
+                    add_hidden_resource local buff_christianity_4
+                end_if
+                if I_CompareCounter amount_resource = 5
+                    add_hidden_resource local buff_christianity_5
+                end_if
+            end_if
+            break
+        end_if
+    ;end_for
+
+    end_monitor
+
+; Make "assimilation" effects milder TODO: Do the same for integration, and also remove it
+; when building is destryed monitor_event GovernorBuilding just does not fire. Find another solution
+; 10e|s11e|s12e|s13
+;monitor_event BuildingCompleted SettlementBuildingFinished = assimilation
+;    console_command create_building local slow_down_conversion
+;
+;    declare_counter destroy_assimilation_slower_at
+;    counter_operation destroy_assimilation_slower_at = turn_number + two
+;	store_counter destroy_assimilation_slower_at settlement l_destroy_assimilation_slower_at
+;end_monitor
+;
+;; On turn start, if the counter is right, create or destroy the building
+;monitor_event FactionTurnStart
+;    declare_counter create_assimilation_slower_at
+;    declare_counter destroy_assimilation_slower_at
+;
+;    for_each settlement in faction
+;        if SettlementBuildingExists = assimilation
+;            retrieve_counter l_create_assimilation_slower_at settlement create_assimilation_slower_at
+;            retrieve_counter l_destroy_assimilation_slower_at settlement destroy_assimilation_slower_at
+;
+;            if I_CompareCounter create_assimilation_slower_at = turn_number
+;                console_command create_building local slow_down_conversion
+;
+;                counter_operation destroy_assimilation_slower_at = turn_number + two
+;                store_counter destroy_assimilation_slower_at settlement l_destroy_assimilation_slower_at
+;            end_if
+;
+;            if I_CompareCounter destroy_assimilation_slower_at = turn_number
+;                destroy_building "local" slow_down_conversion
+;
+;                counter_operation create_assimilation_slower_at = turn_number + one
+;                store_counter create_assimilation_slower_at settlement l_create_assimilation_slower_at
+;            end_if
+;        end_if
+;    end_for
+;end_monitor
+
+end_script

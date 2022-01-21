@@ -1,0 +1,46 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; lighting
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+min_light_intensity 						0.6
+max_light_intensity 						1.0
+ambient_reduce_proportion 					0.8
+ambient_red_increase_proportion				0.18
+ambient_green_increase_proportion			0.33
+ambient_blue_increase_proportion			0.56
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; unit lighting
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+unit_min_light_intensity					0.64
+unit_max_light_intensity					1.0
+unit_ambient_reduce_proportion				0.5
+unit_ambient_red_increase_proportion		0.43
+unit_ambient_green_increase_proportion		0.54
+unit_ambient_blue_increase_proportion		0.67
+
+unit_ambient_multiplier						1.0
+unit_diffuse_multiplier						1.0
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;
+; fog
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+settlement_exponential_modifier				0.0002
+;camera_height_exponential_modifier			-0.00025		
+;camera_exponential_modifier_max_height		100.0			
+camera_height_exponential_modifier			0.0		
+camera_exponential_modifier_max_height		0.0
+min_fog_exponential							0.00015
+min_fog_intensity							0.35
+haze_to_fog_transition_exponential			0.0004
+haze_to_fog_transition_exponential_range	0.00005
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

@@ -1,0 +1,821 @@
+; custom locations , add new locations at the bottom
+
+custom_location		British Grassland
+{
+	location		54 184
+	image			data/menu/grass1.tga
+	sett_locked		no
+	summer			no
+	sandstorm		no
+}
+
+custom_location		Gallic Countryside
+{
+	location		62 157
+	image			data/menu/grass2.tga
+	sett_locked		no
+	summer			no
+	sandstorm		no
+}
+
+custom_location		Italian Lowland
+{
+	location		110 122
+	image			data/menu/grass3.tga
+	sett_locked		no
+	summer			no
+	sandstorm		no
+}
+
+custom_location		Sahara Desert
+{
+	location		99 3
+	image			data/menu/sand1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		yes
+}
+
+custom_location		Libyan Plains
+{
+	location		152 73
+	image			data/menu/sand2.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		yes
+}
+
+custom_location		Arabian Dunes
+{
+	location		245 73
+	image			data/menu/sand3.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		yes
+}
+
+custom_location		Germanic Forest
+{
+	location		86 179
+	image			data/menu/forest1.tga
+	sett_locked		no
+	summer			no
+	sandstorm		no
+}
+
+custom_location		Nordic Woodland
+{
+	location		103 207
+	image			data/menu/forest2.tga
+	sett_locked		no
+	summer			no
+	sandstorm		no
+}
+
+custom_location		Cappadocian Forest
+{
+	location		194 130
+	image			data/menu/forest3.tga
+	sett_locked		no
+	summer			no
+	sandstorm		no
+}
+
+custom_location		Prippet Marshes
+{
+	location		149 189
+	image			data/menu/baron1.tga
+	sett_locked		no
+	summer			no
+	sandstorm		no
+}
+
+custom_location		Sierra Nevada
+{
+	location		332 146
+	image			data/menu/baron2.tga
+	sett_locked		no
+	summer			no
+	sandstorm		no
+}
+
+custom_location		Scottish Highland
+{
+	location		48 206
+	image			data/menu/baron3.tga
+	sett_locked		no
+	summer			no
+	sandstorm		no
+}
+
+custom_location		Armenian Mountains
+{
+	location		219 142
+	image			data/menu/mountain1.tga
+	sett_locked		yes
+	summer			no
+	sandstorm		no
+}
+
+custom_location		Pontic Peaks
+{
+	location		188 131
+	image			data/menu/mountain2.tga
+	sett_locked		yes
+	summer			no
+	sandstorm		no
+}
+
+custom_location		Alpine Valley
+{
+	location		78 150
+	image			data/menu/mountain3.tga
+	sett_locked		yes
+	summer			no
+	sandstorm		no
+}
+
+custom_location		Tuscan Bay
+{
+	location		86 136
+	image			data/menu/coast1.tga
+	sett_locked		no
+	summer			no
+	sandstorm		no
+
+}
+
+custom_location		Greek Shore
+{
+	location		128 113
+	image			data/menu/coast2.tga
+	sett_locked		no
+	summer			no
+	sandstorm		no
+}
+
+custom_location		African Coast
+{
+	location		86 94
+	image			data/menu/coast3.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		yes
+}
+
+custom_location		Moon River
+{
+	location		144 141
+	image			data/menu/river1.tga
+	sett_locked		yes
+	summer			no
+	sandstorm		no
+}
+custom_location		River Jordan
+{
+	location		204 90
+	image			data/menu/river2.tga
+	sett_locked		yes
+	summer			no
+	sandstorm		no
+}
+custom_location		Nile Bridge
+{
+	location		184 66
+	image			data/menu/river3.tga
+	sett_locked		yes
+	summer			yes
+	sandstorm		yes
+}
+custom_location		Iranian Plains
+{
+	location		246 123
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		yes
+}
+custom_location		Atlas Mountains
+{
+	location		39 91
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		yes
+}
+custom_location		Lusitania
+{
+	location		3 124
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		yes
+}
+custom_location		Atlas Pass
+{
+	location		75 146
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Teutoburg
+{
+	location		102 171
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Steppe
+{
+	location		302 211
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Arabia
+{
+	location		248 68
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		yes
+}
+custom_location		Babylon
+{
+	location		237 102
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		yes
+}
+custom_location		Levant
+{
+	location		200 91
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Kush
+{
+	location		195 7
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		yes
+}
+custom_location		Greece
+{
+	location		137 119
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Tunisia
+{
+	location		81 95
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		yes
+}
+custom_location		Belgae
+{
+	location		72 183
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Caucasus
+{
+	location		226 149
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Oasis
+{
+	location		91 47
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Armorica
+{
+	location		36 173
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Mygdonia
+{
+	location		222 114
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		yes
+}
+custom_location		Parthian Mountain
+{
+	location		290 158
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		yes
+}
+custom_location		Greek Isles
+{
+	location		149 106
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		India
+{
+	location		369 86
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Kapaddokia
+{
+	location		205 127
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Herakleia Pontike
+{
+	location		171 132
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Bostra
+{
+	location		205 92
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		yes
+}
+custom_location		Numidia Masaesylia - Sub_Artic
+{
+	location		54 98
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Mauretania Tingitana - Sub_Artic
+{
+	location		14 101
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Garamantia - Sub_Artic
+{
+	location		91 48
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		yes
+}
+custom_location		Mauretania - Sub_Artic
+{
+	location		24 86
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		yes
+}
+custom_location		Mauretania - Sub_Artic
+{
+	location		4 91
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Terra Incognita - Sub_Artic
+{
+	location		122 34
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		yes
+}
+custom_location		Aithiopia - Sub_Artic
+{
+	location		195 3
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		yes
+}
+custom_location		Omana - Sub_Artic
+{
+	location		316 69
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		yes
+}
+custom_location		Cyprus - Sub_Artic
+{
+	location		189 101
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Cyprus - Sub_Artic
+{
+	location		198 81
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Batavia - Swamp
+{
+	location		72 182
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Caledonia - Swamp
+{
+	location		32 200
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Caledonia - Swamp
+{
+	location		33 196
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Terra Incognita - Sandy Desert
+{
+	location		303 48
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Lazygia - Temperate Infertile
+{
+	location		207 180
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Sarmatia - Temperate Infertile
+{
+	location		220 186
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Scythia - Temperate Infertile
+{
+	location		176 181
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Massagetaia - Temperate Infertile
+{
+	location		303 223
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Rhaetia - Alpine
+{
+	location		96 162
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Hermunduria - Alpine
+{
+	location		90 165
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Helvetia - Alpine
+{
+	location		81 153
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Allobrogia - Alpine
+{
+	location		77 147
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Allobrogia - Alpine
+{
+	location		69 143
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Sahara - Sandy
+{
+	location		9 54
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		yes
+}
+custom_location		Sahara - Sandy
+{
+	location		9 55
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		yes
+}
+custom_location		Sahara - Sandy
+{
+	location		18 4
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		yes
+}
+custom_location		Sahara - Sandy
+{
+	location		118 33
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		yes
+}
+custom_location		Sahara - Sandy
+{
+	location		285 47
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		yes
+}
+custom_location		Sahara - Sandy
+{
+	location		372 80
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		yes
+}
+custom_location		Scythopolis
+{
+	location		174 187
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Vienna - Alpine
+{
+	location		68 148
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Exapolis
+{
+	location		201 176
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Bononia
+{
+	location		90 140
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Garamantia - Sub_Artic
+{
+	location		91 48
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		yes
+}
+custom_location		Mauretania - Sub_Artic
+{
+	location		24 86
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		yes
+}
+custom_location		Mauretania - Sub_Artic
+{
+	location		4 91
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Terra Incognita - Sub_Artic
+{
+	location		122 34
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		yes
+}
+custom_location		Aithiopia - Sub_Artic
+{
+	location		195 3
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		yes
+}
+custom_location		Omana - Sub_Artic
+{
+	location		316 69
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		yes
+}
+custom_location		Cyprus - Sub_Artic
+{
+	location		189 101
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Cyprus - Sub_Artic
+{
+	location		198 81
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Borysthenes - Swamp
+{
+	location		198 81
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Borysthenes - Swamp
+{
+	location		174 160
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Olbiana	- Swamp
+{
+	location		171 159
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Batavia - Swamp
+{
+	location		72 182
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Caledonia - Swamp
+{
+	location		32 200
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Caledonia - Swamp
+{
+	location		33 196
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Terra Incognita - Sandy Desert
+{
+	location		303 48
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Pontus - Temperate Fertile
+{
+	location		190 135
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Odrysia - Temperate Fertile
+{
+	location		152 131
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Sarmatia - Temperate Fertile
+{
+	location		217 188
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Media - Temperate Fertile
+{
+	location		252 136
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Budinia - Temperate Infertile
+{
+	location		248 233
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Budinia - Temperate Infertile
+{
+	location		249 216
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Massagetaia - Temperate Infertile
+{
+	location		288 227
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}
+custom_location		Sarmatia - Temperate Infertile
+{
+	location		269 231
+	image			data/menu/iran1.tga
+	sett_locked		no
+	summer			yes
+	sandstorm		no
+}

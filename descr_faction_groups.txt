@@ -1,0 +1,91 @@
+group fgroup_romans
+faction romans_julii
+faction dummies
+
+group fgroup_battle_temple
+faction dacia
+faction thrace
+faction sparta
+
+group fgroup_battleforge_temple
+faction dacia
+faction thrace
+faction sparta
+
+group fgroup_farming_temple
+faction carthage
+faction dacia
+faction macedon
+faction numidia
+
+group fgroup_fertility_temple
+faction egypt
+faction germans
+faction romans_julii
+
+group fgroup_forge_temple
+faction dacia
+faction seleucid
+
+group fgroup_fun_temple
+faction armenia
+faction egypt
+faction romans_julii
+faction seleucid
+faction thrace
+
+group fgroup_governors_temple
+faction macedon
+faction pontus
+faction galatians
+faction pergamon
+
+group fgroup_justice_temple
+faction carthage
+faction egypt
+faction gauls
+faction sparta
+
+group fgroup_law_temple
+faction egypt
+faction pergamon
+faction scythia
+
+group fgroup_leadership_temple
+faction armenia
+faction greek_cities
+faction bosporan
+faction romans_julii
+faction pergamon
+
+group fgroup_healing_temple
+faction britons
+faction galatians
+faction egypt
+faction seleucid
+
+group fgroup_horse_temple
+faction gauls
+faction spain
+
+group fgroup_hunting_temple
+faction gauls
+faction spain
+faction macedon
+
+group fgroup_love_temple
+faction greek_cities
+faction bosporan
+faction pontus
+faction scythia
+
+group fgroup_victory_temple
+faction britons
+faction greek_cities
+faction bosporan
+
+group fgroup_violence_temple
+faction galatians
+faction germans
+faction macedon
+faction pontus

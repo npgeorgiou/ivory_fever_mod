@@ -1,0 +1,2397 @@
+;
+; This file contains the vegetation definitions; it gets parsed on application
+; startup but is not otherwise referred to. The data format is:
+;
+;
+; LOD definitions
+;
+
+
+; Vegetation Records
+; ==================
+;
+; Vegetation records have the following structure:
+;
+; vegetation <record name> [ modifies <record name> ]
+; {
+;    VEGE_SPEC
+; }
+
+; where VEGE_SPEC consists of the following:
+; layout <size> <image>
+; radius <N>
+; height_range <min> <max>
+; aspect_range <min> <max>
+; lod <lod>
+; model <model>
+; <optionally more models>...
+;
+; Height and aspect range are applied as SCALING factors and so depend on original model.
+; Layout consists of a size and an image. The image is tiled across the entire world at the size specified, 
+; and dots in the image specify vegetation positions.  So, 512 means one tile of the image is 512 metres across,
+; and the density can be reduced by increasing the size.
+; NOTE that a radius of zero means items are not added to the physical grid
+
+
+; LOD Records
+; ===========
+;
+; LOD records have the following structure:
+;
+; lod <record name>
+; {
+;    LOD_SPEC
+; }
+;
+; where LOD_SPEC is one of the following:
+; model <animate stop> <stop> <model level #>          ; A 3D model
+; billboard <stop> <update tolerance>   ; A camera following quad
+; none <stop>                           ; Render nothing
+;
+; prepend animated and append <deflection %> <frame rate> for animated versions
+;
+
+; Model Records
+; =============
+;
+; Model records have the following structure:
+;
+; model <record name>
+; {
+;    level <model name>
+;    [
+;    level <model name>
+;    ... 
+;    ]
+; }
+
+; Texture variations(Rome-HD)
+; =============
+;
+; Textures that can be replaced with others at random. Currently limited to 4 per model. Probabilities are out of 100, where the chance of the default
+; is whatever is excluded from the sum. 
+; e.g. if the percentages add to 80% then the chance of no variation is 20%.
+;
+; variant base_texture
+; {
+;    <variation_tex_0> 
+;    <variation_tex_1> 
+;    <variation_tex_2> 
+;    ...
+; }
+;
+; distribution object_type
+; {
+;    <probablility_0>
+;    <probablility_1>
+;    <probablility_2>
+;    ...
+; }
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; LODs
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;model      <animate stop> <stop> <skew percentage> <fps scale> <LOD level>
+;billboard  <stop> <update tolerance>
+
+lod trees
+{
+    low 
+    {
+        model        50  0    1   15  0
+        model        50  25   1   15  1
+        model        50  500  1   15  2
+        billboard    inf 10
+    }
+
+    medium 
+    {
+        model        50  5    1   15  0
+        model        50  50   1   15  1
+        model        50  500  1   15  2
+        billboard    inf 10
+    }
+
+    high
+    {
+        model        50  10   1   15  0
+        model        50  100  1   15  1
+        model        50  500  1   15  2
+        billboard    inf 10
+    }
+
+    ultra
+    {
+        model        50  25   1   15  0
+        model        50  150  1   15  1
+        model        50  500  1   15  2
+        billboard    inf 10
+    }
+}
+
+lod shrubs
+{
+    low
+    {
+        model        50  0    1   15  0
+        model        50  25   1   15  1
+        model        50  150  1   15  2
+        none         inf
+    }
+
+	medium
+	{
+        model        50  5    1   15  0
+        model        50  50   1   15  1
+        model        50  150  1   15  2
+		none         inf
+	}
+
+	high
+	{
+        model        50  10   1   15  0
+        model        50  100  1   15  1
+        model        50  300  1   15  2
+        none         inf
+	}
+
+	ultra
+	{
+        model        50  25   1   15  0
+        model        50  150  1   15  1
+        model        50  500  1   15  2
+        none         inf
+	}
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Models
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; medi tree v1
+model medi_tree_01
+{
+    level models_vegetation/medi_tree_v1_lod0.cas
+    level models_vegetation/medi_tree_v1_lod1.cas
+    level models_vegetation/medi_tree_v1_lod2.cas
+}
+
+; medi tree v1 winter
+model medi_tree_01_winter
+{
+    level models_vegetation/medi_tree_v1_winter_lod0.cas
+    level models_vegetation/medi_tree_v1_winter_lod1.cas
+    level models_vegetation/medi_tree_v1_winter_lod2.cas
+}
+
+; medi tree v2
+model medi_tree_02
+{
+    level models_vegetation/medi_tree_v2_lod0.cas
+    level models_vegetation/medi_tree_v2_lod1.cas
+    level models_vegetation/medi_tree_v2_lod2.cas
+}
+
+; medi tree v2 winter
+model medi_tree_02_winter
+{
+    level models_vegetation/medi_tree_v2_winter_lod0.cas
+    level models_vegetation/medi_tree_v2_winter_lod1.cas
+    level models_vegetation/medi_tree_v2_winter_lod2.cas
+}
+
+; Super Tree - Variant A
+model super_tree
+{
+    level models_vegetation/supertree_lod0.cas
+    level models_vegetation/supertree_lod1.cas
+    level models_vegetation/supertree_lod2.cas
+}
+
+; Super Tree - Variant B
+model super_tree_01
+{
+    level models_vegetation/supertree_v1_lod0.cas
+    level models_vegetation/supertree_v1_lod1.cas
+    level models_vegetation/supertree_v1_lod2.cas
+}
+
+; Super Tree - Variant C
+model super_tree_02
+{
+    level models_vegetation/supertree_v2_lod0.cas
+    level models_vegetation/supertree_v2_lod1.cas
+    level models_vegetation/supertree_v2_lod2.cas
+}
+
+; Super Tree - Winter Variant
+model super_tree_winter
+{
+    level models_vegetation/supertree_winter_lod0.cas
+    level models_vegetation/supertree_winter_lod1.cas
+    level models_vegetation/supertree_winter_lod2.cas
+}
+
+; rocky desert foliage 1
+model rd_foliage_01
+{
+    level models_vegetation/rockydesert_foliage_01_lod0.cas
+    level models_vegetation/rockydesert_foliage_01_lod1.cas
+    level models_vegetation/rockydesert_foliage_01_lod2.cas
+}
+
+; rocky desert foliage 2
+model rd_foliage_02
+{
+    level models_vegetation/rockydesert_foliage_02_lod0.cas
+    level models_vegetation/rockydesert_foliage_02_lod1.cas
+    level models_vegetation/rockydesert_foliage_02_lod2.cas
+}
+
+; alpine_foliage 1
+model alpine_foliage_01
+{
+    level models_vegetation/alpine_foliage_01_lod0.cas
+    level models_vegetation/alpine_foliage_01_lod1.cas
+    level models_vegetation/alpine_foliage_01_lod2.cas
+}
+
+; alpine_foliage 1 winter
+model alpine_foliage_01_winter
+{
+    level models_vegetation/alpine_foliage_01_winter_lod0.cas
+    level models_vegetation/alpine_foliage_01_winter_lod1.cas
+    level models_vegetation/alpine_foliage_01_winter_lod2.cas
+}
+
+; alpine_foliage 2
+model alpine_foliage_02
+{
+    level models_vegetation/alpine_foliage_02_lod0.cas
+    level models_vegetation/alpine_foliage_02_lod1.cas
+    level models_vegetation/alpine_foliage_02_lod2.cas
+}
+
+; alpine_foliage 2 winter
+model alpine_foliage_02_winter
+{
+    level models_vegetation/alpine_foliage_02_winter_lod0.cas
+    level models_vegetation/alpine_foliage_02_winter_lod1.cas
+    level models_vegetation/alpine_foliage_02_winter_lod2.cas
+}
+
+; medi_foliage 3
+model medi_foliage_03
+{
+    level models_vegetation/medi_foliage_03_lod0.cas
+    level models_vegetation/medi_foliage_03_lod1.cas
+    level models_vegetation/medi_foliage_03_lod2.cas
+}
+
+; medi_foliage 3 winter
+model medi_foliage_03_winter
+{
+    level models_vegetation/medi_foliage_03_winter_lod0.cas
+    level models_vegetation/medi_foliage_03_winter_lod1.cas
+    level models_vegetation/medi_foliage_03_winter_lod2.cas
+}
+
+
+; medi_foliage 4
+model medi_foliage_04
+{
+    level models_vegetation/medi_foliage_04_lod0.cas
+    level models_vegetation/medi_foliage_04_lod1.cas
+    level models_vegetation/medi_foliage_04_lod2.cas
+}
+
+; medi_foliage 4 winter
+model medi_foliage_04_winter
+{
+    level models_vegetation/medi_foliage_05_winter_lod0.cas
+    level models_vegetation/medi_foliage_05_winter_lod1.cas
+    level models_vegetation/medi_foliage_05_winter_lod2.cas
+}
+
+
+; medi_foliage 5
+model medi_foliage_05
+{
+    level models_vegetation/medi_foliage_05_lod0.cas
+    level models_vegetation/medi_foliage_05_lod1.cas
+    level models_vegetation/medi_foliage_05_lod2.cas
+}
+
+; medi_foliage 5 winter
+model medi_foliage_05_winter
+{
+    level models_vegetation/medi_foliage_05_winter_lod0.cas
+    level models_vegetation/medi_foliage_05_winter_lod1.cas
+    level models_vegetation/medi_foliage_05_winter_lod2.cas
+}
+
+; Rocky desert rock 1
+model rd_rock_01
+{
+    level models_vegetation/rockydesert_rock_01_lod0.cas
+    level models_vegetation/rockydesert_rock_01_lod1.cas
+    level models_vegetation/rockydesert_rock_01_lod2.cas
+}
+
+; Rocky desert rock 2
+model rd_rock_02
+{
+    level models_vegetation/rockydesert_rock_02_lod0.cas
+    level models_vegetation/rockydesert_rock_02_lod1.cas
+    level models_vegetation/rockydesert_rock_02_lod2.cas
+}
+
+; Rocky desert rock 3
+model rd_rock_03
+{
+    level models_vegetation/rockydesert_rock_03_lod0.cas
+    level models_vegetation/rockydesert_rock_03_lod1.cas
+    level models_vegetation/rockydesert_rock_03_lod2.cas
+}
+
+; Rocky desert rock 4
+model rd_rock_04
+{
+    level models_vegetation/rockydesert_rock_04_lod0.cas
+    level models_vegetation/rockydesert_rock_04_lod1.cas
+    level models_vegetation/rockydesert_rock_04_lod2.cas
+}
+
+; Rocky desert rock 5
+model rd_rock_05
+{
+    level models_vegetation/rockydesert_rock_05_lod0.cas
+    level models_vegetation/rockydesert_rock_05_lod1.cas
+    level models_vegetation/rockydesert_rock_05_lod2.cas
+}
+
+; alpine_Rock 1
+model alpine_rock_01
+{
+    level models_vegetation/alpine_rock_01_lod0.cas
+    level models_vegetation/alpine_rock_01_lod1.cas
+    level models_vegetation/alpine_rock_01_lod2.cas
+}
+
+; alpine_Rock 2
+model alpine_rock_02
+{
+    level models_vegetation/alpine_rock_02_lod0.cas
+    level models_vegetation/alpine_rock_02_lod1.cas
+    level models_vegetation/alpine_rock_02_lod2.cas
+}
+
+; alpine_Rock 2 winter
+model alpine_rock_02_winter
+{
+    level models_vegetation/alpine_rock_02_winter_lod0.cas
+    level models_vegetation/alpine_rock_02_winter_lod1.cas
+    level models_vegetation/alpine_rock_02_winter_lod2.cas
+}
+
+; medi_Rock 3
+model medi_rock_03
+{
+    level models_vegetation/medi_rock_03_lod0.cas
+    level models_vegetation/medi_rock_03_lod1.cas
+    level models_vegetation/medi_rock_03_lod2.cas
+}
+
+; medi_Rock 3 winter
+model medi_rock_03_winter
+{
+    level models_vegetation/medi_rock_03_winter_lod0.cas
+    level models_vegetation/medi_rock_03_winter_lod1.cas
+    level models_vegetation/medi_rock_03_winter_lod2.cas
+}
+
+; medi_Rock 4
+model medi_rock_04
+{
+    level models_vegetation/medi_rock_04_lod0.cas
+    level models_vegetation/medi_rock_04_lod1.cas
+    level models_vegetation/medi_rock_04_lod2.cas
+}
+
+; medi_Rock 4 winter
+model medi_rock_04_winter
+{
+    level models_vegetation/medi_rock_03_winter_lod0.cas
+    level models_vegetation/medi_rock_03_winter_lod1.cas
+    level models_vegetation/medi_rock_03_winter_lod2.cas
+}
+
+; alpine_Conical tree - Variant A
+model alpine_conical_tree
+{
+    level models_vegetation/alpine_conical_tree_v1_lod0.cas
+    level models_vegetation/alpine_conical_tree_v1_lod1.cas
+    level models_vegetation/alpine_conical_tree_v1_lod2.cas
+}
+
+; alpine_Conical tree - Variant B
+model alpine_conical_tree_02
+{
+    level models_vegetation/alpine_conical_tree_v2_lod0.cas
+    level models_vegetation/alpine_conical_tree_v2_lod1.cas
+    level models_vegetation/alpine_conical_tree_v2_lod2.cas
+}
+
+; alpine_Conical tree - Variant C
+model alpine_conical_tree_03
+{
+    level models_vegetation/alpine_conical_tree_v3_lod0.cas
+    level models_vegetation/alpine_conical_tree_v3_lod1.cas
+    level models_vegetation/alpine_conical_tree_v3_lod2.cas
+}
+
+; deep forest tree - Variant A
+model df_tree_01
+{
+    level models_vegetation/deepforest_tree_v1_lod0.cas
+    level models_vegetation/deepforest_tree_v1_lod1.cas
+    level models_vegetation/deepforest_tree_v1_lod2.cas
+}
+
+; deep forest tree - Variant B
+model df_tree_02
+{
+    level models_vegetation/deepforest_tree_v2_lod0.cas
+    level models_vegetation/deepforest_tree_v2_lod1.cas
+    level models_vegetation/deepforest_tree_v2_lod2.cas
+}
+
+; deep forest tree - Winter
+model df_tree_winter
+{
+    level models_vegetation/deepforest_tree_winter_lod0.cas
+    level models_vegetation/deepforest_tree_winter_lod1.cas
+    level models_vegetation/deepforest_tree_winter_lod2.cas
+}
+
+
+;;;;RS2 TREES
+
+; pinus_pinea
+model pinus_pinea
+{
+    level models_vegetation/pinus_pinea_lod0.cas
+    level models_vegetation/pinus_pinea_lod1.cas
+    level models_vegetation/pinus_pinea_lod2.cas
+}
+
+; pinus_pinea2
+model pinus_pinea2
+{
+    level models_vegetation/pinus_pinea2_lod0.cas
+    level models_vegetation/pinus_pinea2_lod1.cas
+    level models_vegetation/pinus_pinea2_lod2.cas
+}
+
+; pinus_halepensis1
+model pinus_halepensis1
+{
+    level models_vegetation/pinus_halepensis1_lod0.cas
+    level models_vegetation/pinus_halepensis1_lod1.cas
+    level models_vegetation/pinus_halepensis1_lod2.cas
+}
+
+; almond_tree1
+model almond_tree1
+{
+    level models_vegetation/almond_tree1_lod0.cas
+    level models_vegetation/almond_tree1_lod1.cas
+    level models_vegetation/almond_tree1_lod2.cas
+}
+
+; rock2
+model rock2
+{
+    level models_vegetation/rock2_lod0.cas
+    level models_vegetation/rock2_lod1.cas
+    level models_vegetation/rock2_lod2.cas
+}
+
+; olive_tree 
+model olive_tree 
+{
+    level models_vegetation/olive_tree_lod0.cas
+    level models_vegetation/olive_tree_lod1.cas
+    level models_vegetation/olive_tree_lod2.cas
+}
+
+; spanish_broom
+model spanish_broom
+{
+    level models_vegetation/spanish_broom_lod0.cas
+    level models_vegetation/spanish_broom_lod1.cas
+    level models_vegetation/spanish_broom_lod2.cas
+}
+
+; almond_tree
+model almond_tree
+{
+    level models_vegetation/almond_tree_lod0.cas
+    level models_vegetation/almond_tree_lod1.cas
+    level models_vegetation/almond_tree_lod2.cas
+}
+
+; oak3
+model oak3
+{
+    level models_vegetation/oak3_lod0.cas
+    level models_vegetation/oak3_lod1.cas
+    level models_vegetation/oak3_lod2.cas
+}
+
+; european_beech
+model european_beech
+{
+    level models_vegetation/european_beech_lod0.cas
+    level models_vegetation/european_beech_lod1.cas
+    level models_vegetation/european_beech_lod2.cas
+}
+
+; european_hornbeam
+model european_hornbeam
+{
+    level models_vegetation/european_hornbeam_lod0.cas
+    level models_vegetation/european_hornbeam_lod1.cas
+    level models_vegetation/european_hornbeam_lod2.cas
+}
+
+; young_beech
+model young_beech
+{
+    level models_vegetation/young_beech_lod0.cas
+    level models_vegetation/young_beech_lod1.cas
+    level models_vegetation/young_beech_lod2.cas
+}
+
+; sessile_oak_winter
+model sessile_oak_winter
+{
+    level models_vegetation/sessile_oak_winter_lod0.cas
+    level models_vegetation/sessile_oak_winter_lod1.cas
+    level models_vegetation/sessile_oak_winter_lod2.cas
+}
+
+; european_beech_winter
+model european_beech_winter
+{
+    level models_vegetation/european_beech_winter_lod0.cas
+    level models_vegetation/european_beech_winter_lod1.cas
+    level models_vegetation/european_beech_winter_lod2.cas
+}
+
+; european_hornbeam_winter
+model european_hornbeam_winter
+{
+    level models_vegetation/european_hornbeam_winter_lod0.cas
+    level models_vegetation/european_hornbeam_winter_lod1.cas
+    level models_vegetation/european_hornbeam_winter_lod2.cas
+}
+
+; young_beech_winter
+model young_beech_winter
+{
+    level models_vegetation/young_beech_winter_lod0.cas
+    level models_vegetation/young_beech_winter_lod1.cas
+    level models_vegetation/young_beech_winter_lod2.cas
+}
+
+; bush4
+model bush4
+{
+    level models_vegetation/bush4_lod0.cas
+    level models_vegetation/bush4_lod1.cas
+    level models_vegetation/bush4_lod2.cas
+}
+
+; bush1
+model bush1
+{
+    level models_vegetation/bush1_lod0.cas
+    level models_vegetation/bush1_lod1.cas
+    level models_vegetation/bush1_lod2.cas
+}
+
+; bush5
+model bush5
+{
+    level models_vegetation/bush5_lod0.cas
+    level models_vegetation/bush5_lod1.cas
+    level models_vegetation/bush5_lod2.cas
+}
+
+; rock2_winter
+model rock2_winter
+{
+    level models_vegetation/rock2_winter_lod0.cas
+    level models_vegetation/rock2_winter_lod1.cas
+    level models_vegetation/rock2_winter_lod2.cas
+}
+
+; bush6_winter
+model bush6_winter
+{
+    level models_vegetation/bush6_winter_lod0.cas
+    level models_vegetation/bush6_winter_lod1.cas
+    level models_vegetation/bush6_winter_lod2.cas
+}
+
+; bush1_winter
+model bush1_winter
+{
+    level models_vegetation/bush1_winter_lod0.cas
+    level models_vegetation/bush1_winter_lod1.cas
+    level models_vegetation/bush1_winter_lod2.cas
+}
+
+; bush5_winter
+model bush5_winter
+{
+    level models_vegetation/bush5_winter_lod0.cas
+    level models_vegetation/bush5_winter_lod1.cas
+    level models_vegetation/bush5_winter_lod2.cas
+}
+
+; scots_pine2
+model scots_pine2
+{
+    level models_vegetation/scots_pine2_lod0.cas
+    level models_vegetation/scots_pine2_lod1.cas
+    level models_vegetation/scots_pine2_lod2.cas
+}
+
+; scots_pine
+model scots_pine
+{
+    level models_vegetation/scots_pine_lod0.cas
+    level models_vegetation/scots_pine_lod1.cas
+    level models_vegetation/scots_pine_lod2.cas
+}
+
+; european_larch
+model european_larch
+{
+    level models_vegetation/european_larch_lod0.cas
+    level models_vegetation/european_larch_lod1.cas
+    level models_vegetation/european_larch_lod2.cas
+}
+
+; silver_birch3
+model silver_birch3
+{
+    level models_vegetation/silver_birch3_lod0.cas
+    level models_vegetation/silver_birch3_lod1.cas
+    level models_vegetation/silver_birch3_lod2.cas
+}
+
+; norway_spruce4_winter
+model norway_spruce4_winter
+{
+    level models_vegetation/norway_spruce4_winter_lod0.cas
+    level models_vegetation/norway_spruce4_winter_lod1.cas
+    level models_vegetation/norway_spruce4_winter_lod2.cas
+}
+
+; scots_pine_winter
+model scots_pine_winter
+{
+    level models_vegetation/scots_pine_winter_lod0.cas
+    level models_vegetation/scots_pine_winter_lod1.cas
+    level models_vegetation/scots_pine_winter_lod2.cas
+}
+
+; european_larch_winter
+model european_larch_winter
+{
+    level models_vegetation/european_larch_winter_lod0.cas
+    level models_vegetation/european_larch_winter_lod1.cas
+    level models_vegetation/european_larch_winter_lod2.cas
+}
+
+; silver_birch3_winter
+model silver_birch3_winter
+{
+    level models_vegetation/silver_birch3_winter_lod0.cas
+    level models_vegetation/silver_birch3_winter_lod1.cas
+    level models_vegetation/silver_birch3_winter_lod2.cas
+}
+
+; rock1
+model rock1
+{
+    level models_vegetation/rock1_lod0.cas
+    level models_vegetation/rock1_lod1.cas
+    level models_vegetation/rock1_lod2.cas
+}
+
+; bush2
+model bush2
+{
+    level models_vegetation/bush2_lod0.cas
+    level models_vegetation/bush2_lod1.cas
+    level models_vegetation/bush2_lod2.cas
+}
+
+; rock1_winter
+model rock1_winter
+{
+    level models_vegetation/rock1_winter_lod0.cas
+    level models_vegetation/rock1_winter_lod1.cas
+    level models_vegetation/rock1_winter_lod2.cas
+}
+
+; bush2_winter
+model bush2_winter
+{
+    level models_vegetation/bush2_winter_lod0.cas
+    level models_vegetation/bush2_winter_lod1.cas
+    level models_vegetation/bush2_winter_lod2.cas
+}
+
+; european_beech3
+model european_beech3
+{
+    level models_vegetation/european_beech3_lod0.cas
+    level models_vegetation/european_beech3_lod1.cas
+    level models_vegetation/european_beech3_lod2.cas
+}
+
+; european_beech4
+model european_beech4
+{
+    level models_vegetation/european_beech4_lod0.cas
+    level models_vegetation/european_beech4_lod1.cas
+    level models_vegetation/european_beech4_lod2.cas
+}
+
+; silver_birch2
+model silver_birch2
+{
+    level models_vegetation/silver_birch2_lod0.cas
+    level models_vegetation/silver_birch2_lod1.cas
+    level models_vegetation/silver_birch2_lod2.cas
+}
+
+; european_beech3_winter
+model european_beech3_winter
+{
+    level models_vegetation/european_beech3_winter_lod0.cas
+    level models_vegetation/european_beech3_winter_lod1.cas
+    level models_vegetation/european_beech3_winter_lod2.cas
+}
+
+; european_beech4_winter
+model european_beech4_winter
+{
+    level models_vegetation/european_beech4_winter_lod0.cas
+    level models_vegetation/european_beech4_winter_lod1.cas
+    level models_vegetation/european_beech4_winter_lod2.cas
+}
+
+; silver_birch2_winter
+model silver_birch2_winter
+{
+    level models_vegetation/silver_birch2_winter_lod0.cas
+    level models_vegetation/silver_birch2_winter_lod1.cas
+    level models_vegetation/silver_birch2_winter_lod2.cas
+}
+
+; downy_birch
+model downy_birch
+{
+    level models_vegetation/downy_birch_lod0.cas
+    level models_vegetation/downy_birch_lod1.cas
+    level models_vegetation/downy_birch_lod2.cas
+}
+
+; bush4_winter_2
+model bush4_winter_2
+{
+    level models_vegetation/bush4_winter_2_lod0.cas
+    level models_vegetation/bush4_winter_2_lod1.cas
+    level models_vegetation/bush4_winter_2_lod2.cas
+}
+
+; open_forest_rock_winter
+model open_forest_rock_winter
+{
+    level models_vegetation/open_forest_rock_winter_lod0.cas
+    level models_vegetation/open_forest_rock_winter_lod1.cas
+    level models_vegetation/open_forest_rock_winter_lod2.cas
+}
+
+; oak1
+model oak1
+{
+    level models_vegetation/oak1_lod0.cas
+    level models_vegetation/oak1_lod1.cas
+    level models_vegetation/oak1_lod2.cas
+}
+
+; european_beech_deep_forest
+model european_beech_deep_forest
+{
+    level models_vegetation/european_beech_deep_forest_lod0.cas
+    level models_vegetation/european_beech_deep_forest_lod1.cas
+    level models_vegetation/european_beech_deep_forest_lod2.cas
+}
+
+; oak2
+model oak2
+{
+    level models_vegetation/oak2_lod0.cas
+    level models_vegetation/oak2_lod1.cas
+    level models_vegetation/oak2_lod2.cas
+}
+
+; deep_forest_rock
+model deep_forest_rock
+{
+    level models_vegetation/deep_forest_rock_lod0.cas
+    level models_vegetation/deep_forest_rock_lod1.cas
+    level models_vegetation/deep_forest_rock_lod2.cas
+}
+
+; oak1_winter
+model oak1_winter
+{
+    level models_vegetation/oak1_winter_lod0.cas
+    level models_vegetation/oak1_winter_lod1.cas
+    level models_vegetation/oak1_winter_lod2.cas
+}
+
+; european_beech_deep_forest_winter
+model european_beech_deep_forest_winter
+{
+    level models_vegetation/european_beech_deep_forest_winter_lod0.cas
+    level models_vegetation/european_beech_deep_forest_winter_lod1.cas
+    level models_vegetation/european_beech_deep_forest_winter_lod2.cas
+}
+
+; oak2_winter
+model oak2_winter
+{
+    level models_vegetation/oak2_winter_lod0.cas
+    level models_vegetation/oak2_winter_lod1.cas
+    level models_vegetation/oak2_winter_lod2.cas
+}
+
+; deep_forest_rock_winter
+model deep_forest_rock_winter
+{
+    level models_vegetation/deep_forest_rock_winter_lod0.cas
+    level models_vegetation/deep_forest_rock_winter_lod1.cas
+    level models_vegetation/deep_forest_rock_winter_lod2.cas
+}
+
+; bush4_winter
+model bush4_winter
+{
+    level models_vegetation/bush4_winter_lod0.cas
+    level models_vegetation/bush4_winter_lod1.cas
+    level models_vegetation/bush4_winter_lod2.cas
+}
+
+; norway_spruce
+model norway_spruce
+{
+    level models_vegetation/norway_spruce_lod0.cas
+    level models_vegetation/norway_spruce_lod1.cas
+    level models_vegetation/norway_spruce_lod2.cas
+}
+
+; norway_spruce2
+model norway_spruce2
+{
+    level models_vegetation/norway_spruce2_lod0.cas
+    level models_vegetation/norway_spruce2_lod1.cas
+    level models_vegetation/norway_spruce2_lod2.cas
+}
+
+; dead_spruce
+model dead_spruce
+{
+    level models_vegetation/dead_spruce_lod0.cas
+    level models_vegetation/dead_spruce_lod1.cas
+    level models_vegetation/dead_spruce_lod2.cas
+}
+
+; norway_spruce3
+model norway_spruce3
+{
+    level models_vegetation/norway_spruce3_lod0.cas
+    level models_vegetation/norway_spruce3_lod1.cas
+    level models_vegetation/norway_spruce3_lod2.cas
+}
+
+; norway_spruce_winter
+model norway_spruce_winter
+{
+    level models_vegetation/norway_spruce_winter_lod0.cas
+    level models_vegetation/norway_spruce_winter_lod1.cas
+    level models_vegetation/norway_spruce_winter_lod2.cas
+}
+
+; norway_spruce2_winter
+model norway_spruce2_winter
+{
+    level models_vegetation/norway_spruce2_winter_lod0.cas
+    level models_vegetation/norway_spruce2_winter_lod1.cas
+    level models_vegetation/norway_spruce2_winter_lod2.cas
+}
+
+; dead_spruce_winter
+model dead_spruce_winter
+{
+    level models_vegetation/dead_spruce_winter_lod0.cas
+    level models_vegetation/dead_spruce_winter_lod1.cas
+    level models_vegetation/dead_spruce_winter_lod2.cas
+}
+
+; norway_spruce3_winter
+model norway_spruce3_winter
+{
+    level models_vegetation/norway_spruce3_winter_lod0.cas
+    level models_vegetation/norway_spruce3_winter_lod1.cas
+    level models_vegetation/norway_spruce3_winter_lod2.cas
+}
+
+; rock1_alpine
+model rock1_alpine
+{
+    level models_vegetation/rock1_alpine_lod0.cas
+    level models_vegetation/rock1_alpine_lod1.cas
+    level models_vegetation/rock1_alpine_lod2.cas
+}
+
+; silver_fir5
+model silver_fir5
+{
+    level models_vegetation/silver_fir5_lod0.cas
+    level models_vegetation/silver_fir5_lod1.cas
+    level models_vegetation/silver_fir5_lod2.cas
+}
+
+; rock2_alpine
+model rock2_alpine
+{
+    level models_vegetation/rock2_alpine_lod0.cas
+    level models_vegetation/rock2_alpine_lod1.cas
+    level models_vegetation/rock2_alpine_lod2.cas
+}
+
+; silver_fir4
+model silver_fir4
+{
+    level models_vegetation/silver_fir4_lod0.cas
+    level models_vegetation/silver_fir4_lod1.cas
+    level models_vegetation/silver_fir4_lod2.cas
+}
+
+; rock1_alpine_winter
+model rock1_alpine_winter
+{
+    level models_vegetation/rock1_alpine_winter_lod0.cas
+    level models_vegetation/rock1_alpine_winter_lod1.cas
+    level models_vegetation/rock1_alpine_winter_lod2.cas
+}
+
+; silver_fir5_winter
+model silver_fir5_winter
+{
+    level models_vegetation/silver_fir5_winter_lod0.cas
+    level models_vegetation/silver_fir5_winter_lod1.cas
+    level models_vegetation/silver_fir5_winter_lod2.cas
+}
+
+; rock2_alpine_winter
+model rock2_alpine_winter
+{
+    level models_vegetation/rock2_alpine_winter_lod0.cas
+    level models_vegetation/rock2_alpine_winter_lod1.cas
+    level models_vegetation/rock2_alpine_winter_lod2.cas
+}
+
+; silver_fir4_winter
+model silver_fir4_winter
+{
+    level models_vegetation/silver_fir4_winter_lod0.cas
+    level models_vegetation/silver_fir4_winter_lod1.cas
+    level models_vegetation/silver_fir4_winter_lod2.cas
+}
+
+; aspen
+model aspen
+{
+    level models_vegetation/aspen_lod0.cas
+    level models_vegetation/aspen_lod1.cas
+    level models_vegetation/aspen_lod2.cas
+}
+
+; scots_pine3
+model scots_pine3
+{
+    level models_vegetation/scots_pine3_lod0.cas
+    level models_vegetation/scots_pine3_lod1.cas
+    level models_vegetation/scots_pine3_lod2.cas
+}
+
+; aspen_winter
+model aspen_winter
+{
+    level models_vegetation/aspen_winter_lod0.cas
+    level models_vegetation/aspen_winter_lod1.cas
+    level models_vegetation/aspen_winter_lod2.cas
+}
+
+; scots_pine2_winter
+model scots_pine2_winter
+{
+    level models_vegetation/scots_pine2_winter_lod0.cas
+    level models_vegetation/scots_pine2_winter_lod1.cas
+    level models_vegetation/scots_pine2_winter_lod2.cas
+}
+
+; scots_pine3_winter
+model scots_pine3_winter
+{
+    level models_vegetation/scots_pine3_winter_lod0.cas
+    level models_vegetation/scots_pine3_winter_lod1.cas
+    level models_vegetation/scots_pine3_winter_lod2.cas
+}
+
+; gorse_bush
+model gorse_bush
+{
+    level models_vegetation/gorse_bush_lod0.cas
+    level models_vegetation/gorse_bush_lod1.cas
+    level models_vegetation/gorse_bush_lod2.cas
+}
+
+; thistle
+model thistle
+{
+    level models_vegetation/thistle_lod0.cas
+    level models_vegetation/thistle_lod1.cas
+    level models_vegetation/thistle_lod2.cas
+}
+
+; thistle_winter
+model thistle_winter
+{
+    level models_vegetation/thistle_winter_lod0.cas
+    level models_vegetation/thistle_winter_lod1.cas
+    level models_vegetation/thistle_winter_lod2.cas
+}
+
+; downy_birch_winter
+model downy_birch_winter
+{
+    level models_vegetation/downy_birch_winter_lod0.cas
+    level models_vegetation/downy_birch_winter_lod1.cas
+    level models_vegetation/downy_birch_winter_lod2.cas
+}
+
+; cedar
+model cedar
+{
+    level models_vegetation/cedar_lod0.cas
+    level models_vegetation/cedar_lod1.cas
+    level models_vegetation/cedar_lod2.cas
+}
+
+; olive_tree
+model olive_tree
+{
+    level models_vegetation/olive_tree_lod0.cas
+    level models_vegetation/olive_tree_lod1.cas
+    level models_vegetation/olive_tree_lod2.cas
+}
+
+; cedar2
+model cedar2
+{
+    level models_vegetation/cedar2_lod0.cas
+    level models_vegetation/cedar2_lod1.cas
+    level models_vegetation/cedar2_lod2.cas
+}
+
+; cypress_new
+model cypress_new
+{
+    level models_vegetation/cypress_new_lod0.cas
+    level models_vegetation/cypress_new_lod1.cas
+    level models_vegetation/cypress_new_lod2.cas
+}
+
+; quercus_cerris
+model quercus_cerris
+{
+    level models_vegetation/quercus_cerris_lod0.cas
+    level models_vegetation/quercus_cerris_lod1.cas
+    level models_vegetation/quercus_cerris_lod2.cas
+}
+
+; pinus_halepensis2
+model pinus_halepensis2
+{
+    level models_vegetation/pinus_halepensis2_lod0.cas
+    level models_vegetation/pinus_halepensis2_lod1.cas
+    level models_vegetation/pinus_halepensis2_lod2.cas
+}
+
+; juniper
+model juniper
+{
+    level models_vegetation/juniper_lod0.cas
+    level models_vegetation/juniper_lod1.cas
+    level models_vegetation/juniper_lod2.cas
+}
+
+; pinus_halepensis2 
+model pinus_halepensis2 
+{
+    level models_vegetation/pinus_halepensis2 _lod0.cas
+    level models_vegetation/pinus_halepensis2 _lod1.cas
+    level models_vegetation/pinus_halepensis2 _lod2.cas
+}
+
+; medi_rock_04
+model RIS_medi_rock_04
+{
+    level models_vegetation/RIS_medi_rock_04_lod0.cas
+    level models_vegetation/RIS_medi_rock_04_lod1.cas
+    level models_vegetation/RIS_medi_rock_04_lod2.cas
+}
+
+; RIS_medi_rock_03
+model RIS_medi_rock_03
+{
+    level models_vegetation/RIS_medi_rock_03_lod0.cas
+    level models_vegetation/RIS_medi_rock_03_lod1.cas
+    level models_vegetation/RIS_medi_rock_03_lod2.cas
+}
+
+; date_palms2
+model date_palms2
+{
+    level models_vegetation/date_palms2_lod0.cas
+    level models_vegetation/date_palms2_lod1.cas
+    level models_vegetation/date_palms2_lod2.cas
+}
+
+; phoenix_dactylifera
+model phoenix_dactylifera
+{
+    level models_vegetation/phoenix_dactylifera_lod0.cas
+    level models_vegetation/phoenix_dactylifera_lod1.cas
+    level models_vegetation/phoenix_dactylifera_lod2.cas
+}
+
+; palm_1v3
+model palm_1v3
+{
+    level models_vegetation/palm_1v3_lod0.cas
+    level models_vegetation/palm_1v3_lod1.cas
+    level models_vegetation/palm_1v3_lod2.cas
+}
+
+; palm_final2
+model palm_final2
+{
+    level models_vegetation/palm_final2_lod0.cas
+    level models_vegetation/palm_final2_lod1.cas
+    level models_vegetation/palm_final2_lod2.cas
+}
+
+; desert_rock1
+model desert_rock1
+{
+    level models_vegetation/desert_rock1_lod0.cas
+    level models_vegetation/desert_rock1_lod1.cas
+    level models_vegetation/desert_rock1_lod2.cas
+}
+
+; desert_rock2
+model desert_rock2
+{
+    level models_vegetation/desert_rock2_lod0.cas
+    level models_vegetation/desert_rock2_lod1.cas
+    level models_vegetation/desert_rock2_lod2.cas
+}
+
+; desert_rock3
+model desert_rock3
+{
+    level models_vegetation/desert_rock3_lod0.cas
+    level models_vegetation/desert_rock3_lod1.cas
+    level models_vegetation/desert_rock3_lod2.cas
+}
+
+; desert_scrub1
+model desert_scrub1
+{
+    level models_vegetation/desert_scrub1_lod0.cas
+    level models_vegetation/desert_scrub1_lod1.cas
+    level models_vegetation/desert_scrub1_lod2.cas
+}
+
+; palm_short
+model palm_short
+{
+    level models_vegetation/palm_short_lod0.cas
+    level models_vegetation/palm_short_lod1.cas
+    level models_vegetation/palm_short_lod2.cas
+}
+
+;;;NEW RIS TREES
+; italianstonepine_low_var1
+model italianstonepine_low_var1
+{
+    level models_vegetation/italianstonepine_low_var1_lod0.cas
+    level models_vegetation/italianstonepine_low_var1_lod1.cas
+    level models_vegetation/italianstonepine_low_var1_lod2.cas
+}
+
+; olive_low_var1
+model olive_low_var1
+{   level models_vegetation/olive_low_var1_lod0.cas
+    level models_vegetation/olive_low_var1_lod1.cas
+    level models_vegetation/olive_low_var1_lod2.cas
+}
+
+; swisspine_low_var1
+model swisspine_low_var1
+{
+    level models_vegetation/swisspine_low_var1_lod0.cas
+    level models_vegetation/swisspine_low_var1_lod1.cas
+    level models_vegetation/swisspine_low_var1_lod2.cas
+}
+
+; silver_fir_var4
+model silver_fir_var4
+{
+    level models_vegetation/silver_fir_var4_lod0.cas
+    level models_vegetation/silver_fir_var4_lod1.cas
+    level models_vegetation/silver_fir_var4_lod2.cas
+}
+
+; europeanbeech_low_var1
+model europeanbeech_low_var1
+{
+    level models_vegetation/europeanbeech_low_var1_lod0.cas
+    level models_vegetation/europeanbeech_low_var1_lod1.cas
+    level models_vegetation/europeanbeech_low_var1_lod2.cas
+}
+
+; europeanspruce_low_var1
+model europeanspruce_low_var1
+{
+    level models_vegetation/europeanspruce_low_var1_lod0.cas
+    level models_vegetation/europeanspruce_low_var1_lod1.cas
+    level models_vegetation/europeanspruce_low_var1_lod2.cas
+}
+
+; gnarly_juniper_low_var2
+model gnarly_juniper_low_var2
+{
+    level models_vegetation/gnarly_juniper_low_var2_lod0.cas
+    level models_vegetation/gnarly_juniper_low_var2_lod1.cas
+    level models_vegetation/gnarly_juniper_low_var2_lod2.cas
+}
+
+; anatoliancherry_low_var1
+model anatoliancherry_low_var1
+{
+    level models_vegetation/anatoliancherry_low_var1_lod0.cas
+    level models_vegetation/anatoliancherry_low_var1_lod1.cas
+    level models_vegetation/anatoliancherry_low_var1_lod2.cas
+}
+
+; datepalm_low_var1
+model datepalm_low_var1
+{
+    level models_vegetation/datepalm_low_var1_lod0.cas
+    level models_vegetation/datepalm_low_var1_lod1.cas
+    level models_vegetation/datepalm_low_var1_lod2.cas
+}
+
+; datepalm_cluster_var2
+model datepalm_cluster_var2
+{
+    level models_vegetation/datepalm_cluster_var2_lod0.cas
+    level models_vegetation/datepalm_cluster_var2_lod1.cas
+    level models_vegetation/datepalm_cluster_var2_lod2.cas
+}
+
+; desertaccacia_low_var1
+model desertaccacia_low_var1
+{
+    level models_vegetation/desertaccacia_low_var1_lod0.cas
+    level models_vegetation/desertaccacia_low_var1_lod1.cas
+    level models_vegetation/desertaccacia_low_var1_lod2.cas
+}
+
+; mature_cedar_var2
+model mature_cedar_var2
+{
+    level models_vegetation/mature_cedar_var2_lod0.cas
+    level models_vegetation/mature_cedar_var2_lod1.cas
+    level models_vegetation/mature_cedar_var2_lod2.cas
+}
+
+; eastern_platanus_var4
+model eastern_platanus_var4
+{
+    level models_vegetation/eastern_platanus_var4_lod0.cas
+    level models_vegetation/eastern_platanus_var4_lod1.cas
+    level models_vegetation/eastern_platanus_var4_lod2.cas
+}
+
+; indianbanyan_low_var1
+model indianbanyan_low_var1
+{
+    level models_vegetation/indianbanyan_low_var1_lod0.cas
+    level models_vegetation/indianbanyan_low_var1_lod1.cas
+    level models_vegetation/indianbanyan_low_var1_lod2.cas
+}
+
+; european_oak_var4
+model european_oak_var4
+{
+    level models_vegetation/european_oak_var4_lod0.cas
+    level models_vegetation/european_oak_var4_lod1.cas
+    level models_vegetation/european_oak_var4_lod2.cas
+}
+
+; commonoak_var1
+model commonoak_var1
+{
+    level models_vegetation/commonoak_var1_lod0.cas
+    level models_vegetation/commonoak_var1_lod1.cas
+    level models_vegetation/commonoak_var1_lod2.cas
+}
+
+; europeanaspen_var1
+model europeanaspen_var1
+{
+    level models_vegetation/europeanaspen_var1_lod0.cas
+    level models_vegetation/europeanaspen_var1_lod1.cas
+    level models_vegetation/europeanaspen_var1_lod2.cas
+}
+
+; europeanlinden_var1
+model europeanlinden_var1
+{
+    level models_vegetation/europeanlinden_var1_lod0.cas
+    level models_vegetation/europeanlinden_var1_lod1.cas
+    level models_vegetation/europeanlinden_var1_lod2.cas
+}
+
+; scotspine_low_var3
+model scotspine_low_var3
+{
+    level models_vegetation/scotspine_low_var3_lod0.cas
+    level models_vegetation/scotspine_low_var3_lod1.cas
+    level models_vegetation/scotspine_low_var3_lod2.cas
+}
+
+; whitebirch_var2
+model whitebirch_var2
+{
+    level models_vegetation/whitebirch_var2_lod0.cas
+    level models_vegetation/whitebirch_var2_lod1.cas
+    level models_vegetation/whitebirch_var2_lod2.cas
+}
+
+; whitebirch_var5
+model whitebirch_var5
+{
+    level models_vegetation/whitebirch_low_var5_lod0.cas
+    level models_vegetation/whitebirch_low_var5_lod1.cas
+    level models_vegetation/whitebirch_low_var5_lod2.cas
+}
+
+; whitebirch_var6
+model whitebirch_var6
+{
+    level models_vegetation/whitebirch_low_var6_lod0.cas
+    level models_vegetation/whitebirch_low_var6_lod1.cas
+    level models_vegetation/whitebirch_low_var6_lod2.cas
+}
+
+; stumps_var1
+model stumps_var1
+{
+    level models_vegetation/stump_var1_lod0.cas
+    level models_vegetation/stump_var1_lod1.cas
+    level models_vegetation/stump_var1_lod2.cas
+}
+
+; stumps_var1_winter
+model stumps_var1_winter
+{
+    level models_vegetation/snowy_stump_lod0.cas
+    level models_vegetation/snowy_stump_lod1.cas
+    level models_vegetation/snowy_stump_lod2.cas
+}
+
+; acacia
+model desert_acacia
+{
+    level models_vegetation/desertaccacia_low_var1_lod0.cas
+    level models_vegetation/desertaccacia_low_var1_lod1.cas
+    level models_vegetation/desertaccacia_low_var1_lod2.cas
+}
+
+; european poplar
+model europeanpoplar_var4
+{
+    level models_vegetation/europeanpoplar_var4_lod0.cas
+    level models_vegetation/europeanpoplar_var4_lod1.cas
+    level models_vegetation/europeanpoplar_var4_lod2.cas
+}
+; eastern platanus - anatolia
+model eastern_platanus_var4
+{
+    level models_vegetation/eastern_platanus_var4_lod0.cas
+    level models_vegetation/eastern_platanus_var4_lod0.cas
+    level models_vegetation/eastern_platanus_var4_lod0.cas
+}
+; apple tree - fertile
+model apple_tree_var1
+{
+    level models_vegetation/appletree_var1_lod0.cas
+    level models_vegetation/appletree_var1_lod1.cas
+    level models_vegetation/appletree_var1_lod2.cas
+}
+;;;;; NEW BUSHES & GRASS
+
+; Rocky
+
+; dead finish weed
+model dead_finish_var8
+{
+    level models_vegetation/dead_finish_var8_lod0.cas
+    level models_vegetation/dead_finish_var8_lod1.cas
+    level models_vegetation/dead_finish_var8_lod2.cas
+}
+; Cape Weed
+model cape_weed_var1
+{
+    level models_vegetation/cape_weed_var1_lod0.cas
+    level models_vegetation/cape_weed_var1_lod1.cas
+    level models_vegetation/cape_weed_var1_lod2.cas
+}
+; dead finish weed
+model dead_finish_var8
+{
+    level models_vegetation/dead_finish_var8_lod0.cas
+    level models_vegetation/dead_finish_var8_lod1.cas
+    level models_vegetation/dead_finish_var8_lod2.cas
+}
+;Sandy
+; Dried weed 
+model dead_sandy_shrubs_lod0
+{
+    level models_vegetation/dead_sandy_shrubs_lod0.cas
+    level models_vegetation/dead_sandy_shrubs_lod1.cas
+    level models_vegetation/dead_sandy_shrubs_lod2.cas
+}
+; Dried bush
+model sandy_dried_bush_var1
+{
+    level models_vegetation/sandy_dried_bush_var1_lod0.cas
+    level models_vegetation/sandy_dried_bush_var1_lod1.cas
+    level models_vegetation/sandy_dried_bush_var1_lod2.cas
+}
+;SWAMP
+; Bog plant
+model bog_marshcress_var1
+{
+    level models_vegetation/bog_marshcress_var1_lod0.cas
+    level models_vegetation/bog_marshcress_var1_lod1.cas
+    level models_vegetation/bog_marshcress_var1_lod2.cas
+}
+;swamp grass
+model swamp_grass_var
+{
+    level models_vegetation/swamp_grass_var1_lod0.cas
+    level models_vegetation/swamp_grass_var1_lod1.cas
+    level models_vegetation/swamp_grass_var1_lod2.cas
+}
+;ARID
+; arid flowers
+model arid_dry_flowers
+{
+    level models_vegetation/arid_dry_flowers_lod0.cas
+    level models_vegetation/arid_dry_flowers_lod1.cas
+    level models_vegetation/arid_dry_flowers_lod2.cas
+}
+;arid plant
+model arid_plant_var1
+{
+    level models_vegetation/arid_plant_var1_lod0.cas
+    level models_vegetation/arid_plant_var1_lod1.cas
+    level models_vegetation/arid_plant_var1_lod2.cas
+}
+;INFERTILE
+; ribworth plants
+model ribworth_plants_var1
+{
+    level models_vegetation/ribworth_plants_var1_lod0.cas
+    level models_vegetation/ribworth_plants_var1_lod1.cas
+    level models_vegetation/ribworth_plants_var1_lod2.cas
+}
+; Dry Tundra Plant
+model dry_tundra_plant_var2
+{
+    level models_vegetation/dry_tundra_plant_var2_lod0.cas
+    level models_vegetation/dry_tundra_plant_var2_lod1.cas
+    level models_vegetation/dry_tundra_plant_var2_lod2.cas
+}
+;; winter
+; rough bluegrass
+model rough_bluegrass_var2
+{
+    level models_vegetation/rough_bluegrass_var2_lod0.cas
+    level models_vegetation/rough_bluegrass_var2_lod1.cas
+    level models_vegetation/rough_bluegrass_var2_lod2.cas
+}
+; willowherb
+model willowherb_var1_lod0
+{
+    level models_vegetation/willowherb_var1_lod0.cas
+    level models_vegetation/willowherb_var1_lod1.cas
+    level models_vegetation/willowherb_var1_lod2.cas
+}
+;Sub-Arctic - Mediterranean
+; Great Brome
+model great_brome_var1
+{
+    level models_vegetation/great_brome_var1_lod0.cas
+    level models_vegetation/great_brome_var1_lod1.cas
+    level models_vegetation/great_brome_var1_lod2.cas
+}
+; Basket Grass
+model basket_grass_var5
+{
+    level models_vegetation/basket_grass_var5_lod0.cas
+    level models_vegetation/basket_grass_var5_lod1.cas
+    level models_vegetation/basket_grass_var5_lod2.cas
+}
+;temperate_forest_deep
+; FERNS
+model fern_var2
+{
+    level models_vegetation/fern_plant_var2_lod0.cas
+    level models_vegetation/fern_plant_var2_lod1.cas
+    level models_vegetation/fern_plant_var2_lod2.cas
+}
+; White Plant
+model white_fumitory_var4
+{
+    level models_vegetation/white_fumitory_var4_lod0.cas
+    level models_vegetation/white_fumitory_var4_lod1.cas
+    level models_vegetation/white_fumitory_var4_lod2.cas
+}
+; White Windflower
+model white_windflower_var1
+{
+    level models_vegetation/white_windflower_var1_lod0.cas
+    level models_vegetation/white_windflower_var1_lod1.cas
+    level models_vegetation/white_windflower_var1_lod2.cas
+}
+
+;Alpine
+; Blue Lupin
+model blue_lupin_var2
+{
+    level models_vegetation/blue_lupin_var2_lod0.cas
+    level models_vegetation/blue_lupin_var2_lod1.cas
+    level models_vegetation/blue_lupin_var2_lod2.cas
+}
+; Thistle_var
+model thistle_var1
+{
+    level models_vegetation/thistle_var1_lod0.cas
+    level models_vegetation/thistle_var1_lod1.cas
+    level models_vegetation/thistle_var1_lod2.cas
+}
+
+;;;;; NEW ROCKS
+;rocky
+model rocky_climate_rock_var1
+{
+    level models_vegetation/rocky_climate_rock_var1_lod0.cas
+    level models_vegetation/rocky_climate_rock_var1_lod0.cas
+    level models_vegetation/rocky_climate_rock_var1_lod0.cas
+}
+model rocky_climate_rock_var2
+{
+    level models_vegetation/rocky_climate_rock_var2_lod0.cas
+    level models_vegetation/rocky_climate_rock_var2_lod0.cas
+    level models_vegetation/rocky_climate_rock_var2_lod0.cas
+}
+;sub_arctic <- mediterranean
+model mediterranean_rock_var2
+{
+    level models_vegetation/mediterranean_rock_var2_lod0.cas
+    level models_vegetation/mediterranean_rock_var2_lod1.cas
+    level models_vegetation/mediterranean_rock_var2_lod2.cas
+}
+;fertile_grass
+model fertile_grass_rock_var1
+{
+    level models_vegetation/fertile_grass_rock_var1_lod0.cas
+    level models_vegetation/fertile_grass_rock_var1_lod1.cas
+    level models_vegetation/fertile_grass_rock_var1_lod2.cas
+}
+;INFERTILE
+;infertile_grass
+model infertile_grass_rock_var1
+{
+    level models_vegetation/infertile_grass_rock_var1_lod0.cas
+    level models_vegetation/infertile_grass_rock_var1_lod1.cas
+    level models_vegetation/infertile_grass_rock_var1_lod2.cas
+}
+model infertile_grass_rock_var2
+{
+    level models_vegetation/infertile_grass_rock_var2_lod0.cas
+    level models_vegetation/infertile_grass_rock_var2_lod1.cas
+    level models_vegetation/infertile_grass_rock_var2_lod2.cas
+}
+;ARID FOREST
+model arid_forest_rock_var1
+{
+    level models_vegetation/arid_forest_rock_var1_lod0.cas
+    level models_vegetation/arid_forest_rock_var1_lod1.cas
+    level models_vegetation/arid_forest_rock_var1_lod2.cas
+}
+;ARID FOREST
+model arid_forest_rock_var1
+{
+    level models_vegetation/arid_forest_rock_var1_lod0.cas
+    level models_vegetation/arid_forest_rock_var1_lod1.cas
+    level models_vegetation/arid_forest_rock_var1_lod2.cas
+}
+;SPARSE FOREST
+;summer
+model sparse_forest_rock_summer
+{
+    level models_vegetation/sparse_forest_rock_summer_lod0.cas
+    level models_vegetation/sparse_forest_rock_summer_lod1.cas
+    level models_vegetation/sparse_forest_rock_summer_lod2.cas
+}
+;winter
+model sparse_forest_rock_winter
+{
+    level models_vegetation/sparse_forest_rock_winter_lod0.cas
+    level models_vegetation/sparse_forest_rock_winter_lod1.cas
+    level models_vegetation/sparse_forest_rock_winter_lod2.cas
+}
+;Swamp
+;dense swamp
+model swamp_dense_rock
+{
+    level models_vegetation/swamp_dense_rock_lod0.cas
+    level models_vegetation/swamp_dense_rock_lod1.cas
+    level models_vegetation/swamp_dense_rock_lod2.cas
+}
+;sparse swamp
+model swamp_sparse_rock
+{
+    level models_vegetation/swamp_sparse_rock_lod0.cas
+    level models_vegetation/swamp_sparse_rock_lod1.cas
+    level models_vegetation/swamp_sparse_rock_lod2.cas
+}
+;Sandy Desert
+model desert_rock_var1
+{
+    level models_vegetation/desert_rock_var1_lod0.cas
+    level models_vegetation/desert_rock_var1_lod0.cas
+    level models_vegetation/desert_rock_var1_lod0.cas
+}
+;Highlands
+model highland_rock_var1
+{
+    level models_vegetation/highland_rock_var1_lod0.cas
+    level models_vegetation/highland_rock_var1_lod1.cas
+    level models_vegetation/highland_rock_var1_lod2.cas
+}
+model highland_rock_var2
+{
+    level models_vegetation/highland_rock_var2_lod0.cas
+    level models_vegetation/highland_rock_var2_lod1.cas
+    level models_vegetation/highland_rock_var2_lod2.cas
+}
+;Alpine
+model alpine_rock_var1
+{
+    level models_vegetation/alpine_rock_var1_lod0.cas
+    level models_vegetation/alpine_rock_var1_lod1.cas
+    level models_vegetation/alpine_rock_var1_lod2.cas
+}
+model alpine_rock_var2
+{
+    level models_vegetation/alpine_rock_var2_lod0.cas
+    level models_vegetation/alpine_rock_var2_lod1.cas
+    level models_vegetation/alpine_rock_var2_lod2.cas
+}
+; ***************************************************
+; *** VEGETATION TYPES
+; ***************************************************
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; *** Main forest used by test_climate (Medi)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+vegetation rs3_medi_forest
+{
+    layout 384 rs_forest_dense3_layout.tga
+    radius 1
+    height_range 0.5 0.9
+    aspect_range 0.8 1.2
+    lod trees
+    model pinus_pinea
+    model pinus_pinea2
+    model pinus_halepensis1
+    model italianstonepine_low_var1
+}
+
+vegetation rs3_medi_forest_win
+{
+    layout 384 rs_forest_dense3_layout.tga
+    radius 1
+    height_range 0.5 0.9
+    aspect_range 0.8 1.2
+    lod trees
+    model pinus_pinea
+    model pinus_pinea2
+    model pinus_halepensis1
+    model italianstonepine_low_var1
+}
+
+vegetation rs3_sparse_medi_forest
+{
+    layout 384 scrub_layout_open2.tga
+    radius 1
+    height_range 0.6 0.9
+    aspect_range 0.9 1.1
+    lod trees
+    model apple_tree_var1
+    model mediterranean_rock_var2
+    model olive_tree ;olive_low_var1
+    model spanish_broom
+}
+
+vegetation rs3_sparse_medi_forest_win
+{
+    layout 384 scrub_layout_open2.tga
+    radius 1
+    height_range 0.6 0.9
+    aspect_range 0.9 1.1
+    lod trees
+    model apple_tree_var1
+    model mediterranean_rock_var2
+    model olive_tree ;olive_low_var1
+    model spanish_broom
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; *** Main forest used by fertile_grass climate
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+vegetation rs3_fertile_grass_forest
+{
+    layout 256 rs_sparse_forest_general_layout.tga
+    radius 1
+    height_range 0.8 1.2
+    aspect_range 0.8 1.2
+    lod trees
+    model europeanpoplar_var4
+    model europeanlinden_var1
+    model commonoak_var1
+    model europeanbeech_low_var1
+}
+
+vegetation rs3_fertile_grass_forest_win
+{
+    layout 256 rs_sparse_forest_general_layout.tga
+    radius 1
+    height_range 0.8 1.2
+    aspect_range 0.8 1.2
+    lod trees
+    model sessile_oak_winter
+    model european_beech_winter
+    model european_hornbeam_winter
+    model young_beech_winter
+}
+
+vegetation rs3_sparse_fert_grass_forest
+{
+    layout 256 rs_forest_layout.tga
+    radius 1.5
+    height_range 0.6 0.9
+    aspect_range 1.0 1.5
+    lod trees
+    model fertile_grass_rock_var1
+	model fern_var2
+	model white_fumitory_var4
+	model white_windflower_var1
+}
+
+vegetation rs3_sparse_fert_grass_forest_win
+{
+    layout 256 rs_forest_layout.tga
+    radius 1
+    height_range 0.6 0.9
+    aspect_range 1.0 1.5
+    lod trees
+    model fertile_grass_rock_var1 ;replace
+	model fern_var2 ;bush6_winter
+	model white_fumitory_var4 ;bush1_winter
+	model white_windflower_var1 ;bush5_winter
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; *** Main forest used by infertile_grass climate
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+vegetation rs3_infertile_grass_forest
+{
+    layout 512 rs_new_infertile_grass_forest_layout.tga  ;;rs_infertile_grass_forest_layout.tga
+    radius 1
+    height_range 0.4 0.7
+    aspect_range 1.0 1.3
+    lod trees
+    model scotspine_low_var3
+    model scots_pine
+    model europeanspruce_low_var1
+    model whitebirch_var2
+}
+
+vegetation rs3_infertile_grass_forest_win
+{
+    layout 512 rs_new_infertile_grass_forest_layout.tga  ;;rs_infertile_grass_forest_layout.tga
+    radius 1
+    height_range 0.4 0.7
+    aspect_range 1.0 1.3
+    lod trees
+    model norway_spruce4_winter
+    model scots_pine_winter
+    model european_larch_winter
+    model silver_birch3_winter
+}
+
+vegetation rs3_sparse_infert_grass_forest
+{
+    layout 512 rs_scrub_layout_open2.tga
+    radius 1.5
+    height_range 0.3 0.7
+    aspect_range 0.9 1.2
+    lod trees
+    model infertile_grass_rock_var1
+    model infertile_grass_rock_var2
+    model ribworth_plants_var1
+    model rough_bluegrass_var2
+}
+
+vegetation rs3_sparse_infert_grass_forest_win
+{
+    layout 512 rs_scrub_layout_open2.tga
+    radius 1.5
+    height_range 0.3 0.7
+    aspect_range 0.9 1.2
+    lod trees
+    model infertile_grass_rock_var1 ;replace
+    model infertile_grass_rock_var2 ;replace
+    model rough_bluegrass_var2
+    model willowherb_var1_lod0
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; *** Main forest used by open_forest
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+vegetation rs3_forest_open
+{
+    layout 256 rs_forest_dense3_layout.tga
+    radius 1
+    height_range 0.5 0.8
+    aspect_range 1.0 1.4
+    lod trees
+    model european_beech3
+    model european_beech4
+    model whitebirch_var5
+    model whitebirch_var6
+}
+
+vegetation rs3_forest_open_win
+{
+    layout 256 rs_forest_dense3_layout.tga
+    radius 1
+    height_range 0.5 0.8
+    aspect_range 1.0 1.4
+    lod trees
+    model european_beech3_winter
+    model european_beech4_winter
+    model silver_birch2_winter
+    model silver_birch3_winter
+}
+
+vegetation rs3_sparse_forest_open
+{
+    layout 256 rs_forest_open_layout.tga
+    radius 1.5
+    height_range 0.5 0.8
+    aspect_range 0.8 1.1
+    lod trees
+    model sparse_forest_rock_summer
+    model stumps_var1
+    model young_beech
+    model downy_birch
+}
+
+vegetation rs3_sparse_forest_open_win
+{
+    layout 256 rs_forest_open_layout.tga
+    radius 1.5
+    height_range 0.5 0.8
+    aspect_range 0.7 1.1
+    lod trees
+    model bush5_winter
+    model stumps_var1_winter
+    model young_beech_winter
+    model sparse_forest_rock_winter
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; *** Main forest used by deep_forest
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+vegetation rs3_forest_deep
+{
+    layout 256 rs_forest_dense3_layout.tga
+    radius 1
+    height_range 0.7 1.3
+    aspect_range 0.7 1.0
+    lod trees
+    model oak1
+    model european_beech_deep_forest
+    model oak2
+    model swamp_dense_rock
+}
+
+vegetation rs3_forest_deep_win
+{
+    layout 256 rs_forest_dense3_layout.tga
+    radius 1
+    height_range 0.7 1.3
+    aspect_range 0.7 1.0
+    lod trees
+    model oak1_winter
+    model european_beech_deep_forest_winter
+    model oak2_winter
+    model swamp_dense_rock
+}
+
+vegetation rs3_sparse_forest_deep
+{
+    layout 256 rs_sparse_forest_deep_layout.tga
+    radius 1.5
+    height_range 0.5 0.8
+    aspect_range 0.7 1.1
+    lod trees
+    model swamp_sparse_rock
+    model stumps_var1
+    model young_beech
+    model bush5
+}
+
+vegetation rs3_sparse_forest_deep_win
+{
+    layout 256 rs_sparse_forest_deep_layout.tga
+    radius 1.5
+    height_range 0.4 0.8
+    aspect_range 0.7 1.1
+    lod trees
+    model swamp_sparse_rock
+    model stumps_var1_winter
+    model young_beech_winter
+    model bush5_winter
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; *** Main forest used by rs_alpine_forest
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;redo sprites
+vegetation rs3_alpine_forest
+{
+    layout 256 rs_forest_dense3_layout.tga
+    radius 1
+    height_range 0.6 1.0
+    aspect_range 0.9 1.3
+    lod trees
+    model norway_spruce
+    model norway_spruce2
+    model swisspine_low_var1
+    model silver_fir_var4
+}
+
+vegetation rs3_alpine_forest_win
+{
+    layout 256 rs_forest_dense3_layout.tga
+    radius 1
+    height_range 0.6 1.0
+    aspect_range 0.9 1.3
+    lod trees
+    model norway_spruce_winter
+    model norway_spruce2_winter
+    model dead_spruce_winter
+    model norway_spruce4_winter
+}
+
+vegetation rs3_alpine_sparse_forest
+{
+    layout 256 rs_scrub_layout_open2.tga
+    radius 1
+    height_range 0.5 0.8
+    aspect_range 0.9 1.1
+    lod trees
+    model alpine_rock_var1
+    model silver_fir5
+    model alpine_rock_var2
+    model silver_fir4
+}
+
+vegetation rs3_alpine_sparse_forest_win
+{
+    layout 256 rs_scrub_layout_open2.tga
+    radius 1
+    height_range 0.5 0.8
+    aspect_range 0.9 1.1
+    lod trees
+    model alpine_rock_var1
+    model silver_fir5_winter
+    model alpine_rock_var2
+    model silver_fir4_winter
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; *** Main forest used by highland climate
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+vegetation rs3_highland_forest
+{
+    layout 256 rs_forest_dense3_layout.tga
+    radius 0.8
+    height_range 0.5 0.9
+    aspect_range 0.7 1.2
+    lod trees
+    model scotspine_low_var3
+    model europeanaspen_var1
+    model scots_pine2
+    model scots_pine3
+}
+
+vegetation rs3_highland_forest_win
+{
+    layout 256 rs_forest_dense3_layout.tga
+    radius 0.8
+    height_range 0.5 0.9
+    aspect_range 0.7 1.2
+    lod trees
+    model scots_pine_winter
+    model aspen_winter
+    model scots_pine2_winter
+    model scots_pine3_winter
+}
+
+vegetation rs3_sparse_highland_forest
+{
+    layout 256 rs_rock_layout.tga
+    radius 1.25
+    height_range 0.4 0.7
+    aspect_range 0.8 1.1
+    lod trees
+    model blue_lupin_var2
+    model highland_rock_var1
+    model thistle
+    model highland_rock_var2
+}
+
+vegetation rs3_sparse_highland_forest_win
+{
+    layout 256 rs_rock_layout.tga
+    radius 1.25
+    height_range 0.4 0.7
+    aspect_range 0.8 1.1
+    lod trees
+    model blue_lupin_var2
+    model highland_rock_var1
+    model thistle
+    model downy_birch_winter
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; *** Main forest used by rs_arctic_forest - Now an Eastern Med / North African climate
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+vegetation rs3_arctic_forest
+{
+    layout 512 rs_forest_open_layout.tga
+    radius 1
+    height_range 0.9 1.3
+    aspect_range 0.8 1.2
+    lod trees
+    model mature_cedar_var2
+    model olive_tree
+    model eastern_platanus_var4
+    model almond_tree1
+}
+
+vegetation rs3_arctic_forest_win
+{
+    layout 512 rs_forest_open_layout.tga
+    radius 1
+    height_range 0.9 1.3
+    aspect_range 0.8 1.2
+    lod trees
+    model mature_cedar_var2
+    model olive_tree
+    model eastern_platanus_var4
+    model almond_tree
+}
+
+vegetation rs3_sparse_arctic_forest
+{
+    layout 512 rs_scrub_layout_open2.tga
+    radius 1
+    height_range 0.5 0.8
+    aspect_range 0.9 1.1
+    lod trees
+    model basket_grass_var5
+    model quercus_cerris
+    model rock1
+    model great_brome_var1
+}
+
+vegetation rs3_sparse_arctic_forest_win
+{
+    layout 512 rs_scrub_layout_open2.tga
+    radius 1
+    height_range 0.5 0.8
+    aspect_range 0.9 1.1
+    lod trees
+    model basket_grass_var5
+    model quercus_cerris
+    model rock1
+    model great_brome_var1
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; *** Main forest used by rs_arid_forest
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+vegetation rs3_arid_forest
+{
+    layout 256 rs_sparse_forest_general_layout.tga
+    radius 1
+    height_range 0.6 0.9
+    aspect_range 0.7 1.2
+    lod trees
+    model pinus_halepensis1
+    model pinus_halepensis2
+    model juniper
+    model quercus_cerris
+}
+
+vegetation rs3_arid_forest_win
+{
+    layout 256 rs_sparse_forest_general_layout.tga
+    radius 1
+    height_range 0.6 0.9
+    aspect_range 0.7 1.2
+    lod trees
+    model pinus_halepensis1
+    model pinus_halepensis2 
+    model juniper
+    model quercus_cerris
+}
+
+vegetation rs3_arid_shrub
+{
+    layout 512 rs_rock_layout.tga
+    radius 1.0
+    height_range 0.7 1.2
+    aspect_range 0.7 1.3
+    lod trees
+    model anatoliancherry_low_var1
+    model arid_dry_flowers 
+    model arid_forest_rock_var1
+    model arid_plant_var1
+}
+
+vegetation rs3_arid_shrub_win
+{
+    layout 512 rs_rock_layout.tga
+    radius 1.0
+    height_range 0.7 1.2
+    aspect_range 0.7 1.3
+    lod trees
+    model anatoliancherry_low_var1
+    model arid_dry_flowers 
+    model arid_plant_var1
+    model arid_forest_rock_var1
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; *** Main forest used by rs_rocky_desert
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+vegetation rs3_rocky_desert
+{
+    layout 256 rs_forest_open_layout2.tga
+    radius 1
+    height_range 0.9 1.5
+    aspect_range 0.6 1.1
+    lod trees
+    model datepalm_cluster_var2
+    model rocky_climate_rock_var1
+    model dead_finish_var8
+    model desert_acacia
+}
+
+vegetation rs3_rocky_desert_shrub
+{
+    layout 256 rs_rock_layout.tga
+    radius 1.5
+    height_range 0.6 1.5
+    aspect_range 0.7 1.3
+    lod trees
+    model rocky_climate_rock_var1
+    model rocky_climate_rock_var2
+    model cape_weed_var1
+    model dead_finish_var8
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; *** Main forest used by rs_sandy_desert.....
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+vegetation rs3_sandy_desert
+{
+    layout 256 rs_forest_open_layout2.tga
+    radius 1
+    height_range 1.1 1.5
+    aspect_range 0.7 1.3
+    lod trees
+    model datepalm_cluster_var2
+    model datepalm_low_var1
+    model palm_1v3
+    model desert_acacia
+}
+vegetation rs3_sandy_desert_shrub
+{
+    layout 256 rs_rock_layout.tga
+    radius 1.5
+    height_range 0.6 1.5
+    aspect_range 0.7 1.3
+    lod trees
+    model desert_rock_var1
+    model sandy_dried_bush_var1
+    model desert_acacia
+    model dead_sandy_shrubs_lod0
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; *** Main forest used by rs_swamp_forest
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+vegetation rs3_swamp_forest
+{
+    layout 256 rs_forest_dense3_layout.tga
+    radius 1
+    height_range 0.7 1.3
+    aspect_range 0.7 1.0
+    lod trees
+    model european_oak_var4
+    model european_beech_deep_forest
+    model oak2
+    model swamp_dense_rock
+}
+
+vegetation rs3_swamp_forest_win
+{
+    layout 256 rs_forest_dense3_layout.tga
+    radius 1
+    height_range 0.7 1.3
+    aspect_range 0.7 1.0
+    lod trees
+    model oak1_winter
+    model european_beech_deep_forest_winter
+    model oak2_winter
+    model swamp_sparse_rock
+}
+
+vegetation rs3_swamp_sparse_forest
+{
+    layout 256 rs_scrub_layout_open2.tga
+    radius 1.5
+    height_range 0.5 0.8
+    aspect_range 0.7 1.1
+    lod trees
+    model swamp_sparse_rock
+    model swamp_grass_var
+    model young_beech
+    model bog_marshcress_var1
+}
+
+vegetation rs3_swamp_sparse_forest_win
+{
+    layout 256 rs_scrub_layout_open2.tga
+    radius 1.5
+    height_range 0.4 0.8
+    aspect_range 0.7 1.1
+    lod trees
+    model swamp_dense_rock
+    model swamp_grass_var
+    model young_beech_winter
+    model bog_marshcress_var1
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Texture variations(Rome-HD)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+variant /textures/birch.tga
+{
+    /textures/birch_dark_green.tga
+    /textures/birch_light_green.tga
+    /textures/birch_orange.tga
+    /textures/birch_yellow.tga
+}
+
+variant /textures/elm.tga
+{
+    /textures/elm_dark_green.tga
+    /textures/elm_light_green.tga
+    /textures/elm_orange.tga
+    /textures/elm_yellow.tga
+}
+
+variant /textures/spruce.tga
+{
+    /textures/spruce_dark_green.tga
+    /textures/spruce_light_green.tga
+    /textures/spruce_orange.tga
+    /textures/spruce_yellow.tga
+}
+
+distribution BMO_FOREST_DENSE
+{
+    20
+    20
+    10
+    10
+}

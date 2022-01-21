@@ -1,0 +1,1 @@
+include "sounds/descrs/descr_bank_sounds.txt" ;; banked sounds

@@ -1,0 +1,2401 @@
+;descr_regions.txt
+;
+; regions list
+;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;ITALY
+Latium
+	Rome
+	romans_julii
+	Latins
+	52 13 198
+	rome, italy, Farm3, trade_hub, a4, r12, recruitment_centre
+	5
+	3
+	pagan 100
+	
+Campania
+	Capua
+	romans_julii
+	Campanians
+	198 13 174
+	italy, Farm3, a4, r11, not_rome, recruitment_centre
+	5
+	3
+	pagan 100
+
+Etruria
+	Arretium
+	romans_julii
+	Etruscans
+	157 198 13
+	italy, Farm2, a4, r14, not_rome
+	5
+	2
+	pagan 100
+
+Umbria
+	Ancona
+	romans_julii
+	Umbrians
+	198 43 13
+	italy, Farm2, a4, r13, not_rome
+	5
+	2
+	pagan 100
+	
+Picenum
+	Asculum
+	romans_julii
+	Picentes
+	132 34 101
+	italy, Farm2, a4, r15, not_rome
+	5
+	2
+	pagan 100	
+	
+Messapia
+	Tarentum
+	greek_cities
+	Tarentines
+	33 196 58
+	italy, Farm2, a4, r8, not_rome, greek
+	5
+	2
+	pagan 100
+		
+Samnium
+	Maleventum
+	romans_julii
+	Samnites
+	85 114 141
+	italy, Farm2, a4, r10, not_rome
+	5
+	2
+	pagan 100
+	
+Lucania
+	Paestum
+	greek_cities
+	Lucanians
+	6 117 45
+	italy, Farm2, a4, r16, not_rome
+	5
+	2
+	pagan 100	
+	
+Apulia
+	Venusia
+	romans_julii
+	Apulians
+	159 160 99
+	italy, Farm2, a4, r9, not_rome
+	6
+	2
+	pagan 100
+
+Croton
+	Croton
+	greek_cities
+	Crotonites
+	13 170 198
+	italy, Farm2, a4, r7, not_rome, greek
+	5
+	2
+	pagan 100
+	
+Bruttium
+	Rhegium
+	greek_cities
+	Bruttians
+	219 247 62
+	italy, Farm2, greek, a4, r17, not_rome
+	5
+	2
+	pagan 100	
+
+;SICILY
+Mamertina
+	Messana
+	greek_cities
+	Mamertines
+	177 142 58
+	Farm2, a4, r6, greek, sicily
+	5
+	2
+	pagan 100
+
+Trinacria
+	Syracuse
+	greek_cities
+	Syracusans
+	198 178 13
+	Farm3, trade_hub, a4, r5, greek, sicily, recruitment_centre
+	5
+	3
+	pagan 100
+	
+Epicratia
+	Lilybaeum
+	carthage
+	Elymians
+	65 17 202
+	Farm3, trade_hub, a4, r3, sicily, carthaginian
+	5
+	3
+	pagan 20 zoroastrian 80
+
+Sicelia
+	Agrigentum
+	greek_cities
+	Sicani
+	238 239 158
+	Farm2, a4, r4, greek, sicily
+	5
+	2
+	pagan 100
+	
+Elymia
+	Panormus
+	carthage
+	Elymians
+	59 178 107
+	Farm2, sicily, carthaginian, a4, r18, not_rome
+	5
+	2
+	pagan 20 zoroastrian 80	
+
+;SARDINIA & CORSICA
+Sardinia
+	Caralis
+	carthage
+	Sardinians
+	198 35 13
+	Farm2, trade_hub, a4, r2, AOR, corsicosardinian, carthaginian
+	5
+	2
+	zoroastrian 100
+
+Corsica
+	Aleria
+	carthage
+	Corsicans
+	115 144 78
+	Farm2, a4, r1, AOR, corsicosardinian, carthaginian
+	5
+	2
+	pagan 40 zoroastrian 60
+
+;AFRICA
+Zeugitana
+	Carthage
+	carthage
+	Carthaginians
+	202 191 17
+	Farm3, trade_hub, carthage, a2, r8, carthaginian, recruitment_centre
+	5
+	3
+	zoroastrian 100
+
+Byzacena
+	Hadrumetum
+	carthage
+	Carthaginians
+	31 202 17
+	Farm3, a2, r9, carthaginian
+	5
+	3
+	zoroastrian 100
+	
+Gaetulia
+	Gira
+	numidia
+	Gaetulians
+	33 100 131
+	barren, caravan, a2, r6, numidian
+	5
+	1
+	zoroastrian 100
+
+Tripolitania
+	Leptis
+	carthage
+	Carthaginians
+	202 17 48
+	Farm2, caravan, a2, r12, carthaginian
+	5
+	2
+	zoroastrian 100
+	
+Garamantia
+	Garama
+	numidia
+	Garamantes
+	33 131 128
+	barren, caravan, a2, r13, outside_limes
+	5
+	2
+	zoroastrian 100
+
+Numidia_Muxsi
+	Hippo
+	carthage
+	Carthaginians
+	54 132 36
+	Farm2, a2, r7, carthaginian
+	5
+	2
+	zoroastrian 100
+	
+Numidia_Massylia
+	Cirta
+	numidia
+	Massylii
+	17 83 202
+	Farm2, capital, caravan, africa, a2, r5, numidian, recruitment_centre
+	5
+	2
+	zoroastrian 100
+
+Numidia_Aurasia
+	Theveste
+	numidia
+	Massylii
+	47 121 213
+	Farm2, caravan, a2, r10, numidian
+	5
+	2
+	zoroastrian 100
+	
+Numidia_Meridionalis
+	Capsa
+	numidia
+	Massylii
+	244 13 138
+	barren, caravan, a2, r11, numidian
+	5
+	1
+	zoroastrian 100
+
+Numidia_Masaesylia
+	Iol
+	carthage
+	Masaesyli
+	189 71 91
+	Farm2, a2, r4, carthaginian
+	5
+	2
+	zoroastrian 100
+
+Mauretania_Herpeditania
+	Siga
+	carthage
+	Mauri
+	158 177 26
+	Farm2, a2, r3, carthaginian
+	5
+	2
+	zoroastrian 100
+	
+Mauretania
+	Volubilis
+	numidia
+	Mauri
+	50 220 11
+	Farm2, caravan, a2, r1, numidian
+	5
+	2
+	zoroastrian 100
+
+Mauretania_Tingitana
+	Tingi
+	carthage
+	Mauri
+	202 126 17
+	Farm2, a2, r2, carthaginian
+	5
+	2
+	zoroastrian 100
+	
+Baleares
+	Ebusus
+	carthage
+	Balearics
+	41 232 225
+	Farm2, a1, r12, balearic, carthaginian
+	5
+	2
+	christianity 30 zoroastrian 70
+	
+Contestania
+	Mastia
+	spain
+	Contestani
+	187 198 13
+	Farm2, a1, r8, balearic
+	5
+	2
+	christianity 80 zoroastrian 20
+
+Edetania
+	Arse
+	spain
+	Edetani
+	53 100 47
+	Farm2, a1, r9, balearic
+	5
+	2
+	christianity 80 pagan 10 zoroastrian 10
+
+Indigetia
+	Emporion
+	greek_cities
+	Indigetes
+	13 196 198
+	Farm2, a1, r11, greek, iberian, recruitment_centre
+	4
+	2
+	christianity 20 pagan 80
+
+Illergetia
+	Osca
+	spain
+	Illergetes
+	13 157 198
+	Farm2, a1, r10, iberian
+	5
+	2
+	christianity 100
+
+Celtiberia
+	Numantia
+	spain
+	Celtiberi
+	198 13 35
+	Farm2, capital, a1, r4, iberian, recruitment_centre
+	5
+	2
+	christianity 100
+
+Cantabria
+	Aracillum
+	spain
+	Cantabri
+	11 83 203
+	Farm2, a1, r3, iberian
+	5
+	2
+	christianity 100
+
+Gallaecia
+	Artabria
+	spain
+	Gallaeci
+	204 160 7
+	Farm2, a1, r2, iberian
+	5
+	2
+	christianity 100
+
+Lusitania
+	Olisipo
+	spain
+	Lusitani
+	13 198 30
+	Farm2, a1, r1, iberian
+	5
+	2
+	christianity 100
+	
+Vettonia
+	Hermandica
+	spain
+	Vettones
+	116 145 79
+	Farm2, iberian, a1, r13, iberian
+	5
+	2
+	christianity 100	
+
+Carpetania
+	Toletum
+	spain
+	Carpetani
+	238 106 8
+	Farm2, a1, r5, iberian
+	5
+	2
+	christianity 100
+
+Turdetania
+	Ilipa
+	spain
+	Turdetani
+	204 9 9
+	Farm3, a1, r6, iberian
+	5
+	3
+	christianity 70 zoroastrian 30
+	
+Baetica
+	Gades
+	carthage
+	Gaditani
+	17 13 198
+	Farm2, trade_hub, a1, r7, iberian
+	5
+	2
+	christianity 30 zoroastrian 70
+	
+Bastetania
+	Malaca
+	carthage
+	Bastetani
+	245 14 139
+	Farm2, iberian, a1, r14
+	5
+	2
+	christianity 30 zoroastrian 70	
+
+Gallia_Transalpina
+	Massalia
+	greek_cities
+	Massaliotes
+	117 198 13
+	Farm3, trade_hub, a3, r3, greek, celtic, recruitment_centre
+	5
+	3
+	christianity 20 pagan 80
+
+Tectosagia
+	Nemausus
+	gauls
+	Tectosages
+	196 13 198
+	Farm2, a3, r2, celtic
+	6
+	2
+	christianity 100
+
+Aquitania
+	Burdigala
+	gauls
+	Aquitani
+	154 162 97
+	Farm2, a3, r1, celtic
+	5
+	2
+	christianity 100
+
+Arvernia
+	Gergovia
+	gauls
+	Arverni
+	194 204 127
+	Farm3, capital, rivertrade, a3, r5, celtic, recruitment_centre
+	5
+	3
+	christianity 100
+
+Allobrogia
+	Vienna
+	gauls
+	Allobroges
+	188 46 46
+	Farm2, rivertrade, a3, r4, celtic
+	5
+	3
+	christianity 100
+	
+Helvetia
+	Aventicum
+	gauls
+	Helvetii
+	33 152 75
+	barren, rivertrade, a5, r5, celtic
+	5
+	1
+	christianity 100
+
+Sequania
+	Vesontio
+	gauls
+	Sequani
+	68 166 211
+	Farm2, a5, r6, celtic
+	5
+	2
+	christianity 100
+	
+Aeduia
+	Cabillonus
+	gauls
+	Aedui
+	31 75 37
+	Farm3, rivertrade, a3, r9, celtic
+	5
+	3
+	christianity 100
+	
+Pictonia
+	Lemonum
+	gauls
+	Pictones
+	68 232 41
+	Farm2, a3, r6, celtic
+	5
+	2
+	christianity 100
+	
+Aremorica
+	Osismia
+	gauls
+	Osismii
+	232 41 135
+	Farm2, a3, r7, celtic
+	5
+	2
+	christianity 100
+
+Biturigia
+	Avaricum
+	gauls
+	Bituriges
+	212 232 41
+	Farm2, rivertrade, a3, r8, celtic
+	5
+	2
+	christianity 100
+	
+Carnutia
+	Cenabum
+	gauls
+	Carnutes
+	14 197 199
+	Farm2, rivertrade, celtic, a3, r16
+	5
+	2
+	christianity 100	
+	
+Belgica
+	Gornacum
+	gauls
+	Belgae
+	232 90 41
+	Farm2, a3, r10, celtic
+	5
+	2
+	christianity 100
+
+Treveria
+	Treveri
+	gauls
+	Treveri
+	72 41 232
+	Farm3, rivertrade, a5, r7, celtic
+	5
+	3
+	christianity 100
+	
+Eburonia
+	Atuatuca
+	gauls
+	Eburones
+	233 199 42
+	Farm3, rivertrade, celtic, a3, r17
+	5
+	3
+	christianity 100	
+	
+Gallia_Cispadana
+	Bononia
+	gauls
+	Boii
+	158 159 66
+	Farm3, a5, r2, AOR, celtic
+	5
+	3
+	christianity 100
+	
+Liguria
+	Stalia
+	gauls
+	Ligurians
+	157 13 198
+	Farm2, trade_hub, a5, r1, AOR, celtic
+	5
+	2
+	christianity 100
+	
+Gallia_Transpadana
+	Mediolanum
+	gauls
+	Insubres
+	235 43 43
+	Farm3, rivertrade, a5, r4, AOR, celtic
+	5
+	3
+	christianity 100
+
+Venetia
+	Patavium
+	thrace
+	Veneti
+	13 198 117
+	Farm3, a5, r3, AOR, celtic
+	5
+	3
+	christianity 100
+
+Icenia
+	Camelodunum
+	britons
+	Iceni
+	232 41 46
+	Farm3, capital, a3, r11, celtic, brittonic, recruitment_centre
+	5
+	3
+	christianity 100
+	
+Dumnonia
+	Isca
+	britons
+	Dumnonii
+	218 89 3
+	Farm2, trade_hub, a3, r12, celtic, brittonic
+	5
+	2
+	christianity 100
+
+Siluria
+	Moridunum
+	britons
+	Silures
+	41 232 63
+	barren, a3, r13, celtic, brittonic
+	5
+	1
+	christianity 100
+	
+Brigantia
+	Eburacum
+	britons
+	Brigantes
+	53 37 207
+	Farm2, a3, r14, celtic, brittonic
+	5
+	2
+	christianity 100
+
+Caledonia
+	Alauna
+	britons
+	Caledonii
+	6 122 176
+	barren, a3, r15, outside_limes, celtic, brittonic
+	5
+	1
+	christianity 100
+	
+Hibernia
+	Tara
+	britons
+	Hiberni
+	9 196 167
+	barren, celtic, brittonic, a3, r18
+	5
+	1
+	christianity 100	
+
+Scandza
+	Laudause
+	germans
+	Gauts
+	232 41 55
+	barren, a6, r6, germanic
+	5
+	1
+	christianity 100
+
+Batavia
+	Batavodurum
+	germans
+	Batavi
+	6 141 25
+	Farm2, a6, r2, germanic
+	5
+	2
+	christianity 100
+	
+Mauringia
+	Marionis
+	germans
+	Langobards
+	39 67 171
+	Farm2, a6, r4, germanic
+	5
+	2
+	christianity 100
+
+Visurgia
+	Tulisurgium
+	germans
+	Cherusci
+	219 9 68
+	Farm2, a6, r1, germanic
+	5
+	2
+	christianity 100
+	
+Gambrivia
+	Canduum
+	germans
+	Sugambri
+	156 200 35
+	Farm2, germanic, a6, r12
+	5
+	2
+	christianity 100	
+
+Suebia
+	Lupfurdum
+	germans
+	Suebi
+	232 198 41
+	Farm2, capital, rivertrade, a6, r5, germanic, recruitment_centre
+	6
+	2
+	christianity 100
+	
+Chattia
+	Luppia
+	germans
+	Chatti
+	95 95 154
+	Farm2, germanic, a6, r13
+	5
+	2
+	christianity 100	
+
+Marcomannia
+	Casurgis
+	germans
+	Marcomannians
+	203 41 232
+	Farm2, a6, r7, germanic
+	5
+	2
+	christianity 100
+
+Lugia
+	Calisia
+	germans
+	Lugii
+	177 78 58
+	Farm2, rivertrade, a6, r8, germanic
+	5
+	2
+	christianity 100
+	
+Rhaetia
+	Damasia
+	gauls
+	Rhaeti
+	171 111 58
+	barren, rivertrade, a5, r8, celtic
+	5
+	1
+	christianity 100
+	
+Boihaemum
+	Eburodunum
+	gauls
+	Boii
+	58 150 177
+	Farm2, rivertrade, a5, r12, celtic
+	5
+	2
+	christianity 100
+	
+Codania
+	Aros
+	germans
+	Teutons
+	8 195 166
+	Farm2, a6, r3, germanic
+	5
+	2
+	christianity 100
+
+Hermunduria
+	Menosgada
+	gauls
+	Volcae
+	13 171 244
+	Farm2, rivertrade, a5, r13, celtic
+	5
+	2
+	christianity 100
+	
+Venedia
+	Drusa
+	germans
+	Venedae
+	69 127 206
+	barren, rivertrade, a6, r9, germanic
+	5
+	1
+	christianity 100
+
+Aestia
+	Duna
+	germans
+	Aestii
+	58 177 95
+	barren, a6, r10, baltic
+	5
+	1
+	christianity 100
+
+Noricum
+	Noreia
+	gauls
+	Nori
+	230 41 232
+	barren, rivertrade, a5, r9, celtic
+	5
+	1
+	christianity 100
+
+Eraviscia
+	Aquincum
+	gauls
+	Eravisci
+	250 128 151
+	Farm3, rivertrade, a5, r10, celtic
+	5
+	3
+	christianity 100
+	
+Breucia
+	Segestica
+	thrace
+	Breuci
+	5 116 44
+	Farm2, rivertrade, a7, r5, illyrian
+	5
+	2
+	christianity 90 pagan 10
+	
+Scordiscia
+	Singidunum
+	gauls
+	Scordisci
+	164 170 3
+	Farm2, rivertrade, a7, r6, celtic
+	5
+	2
+	christianity 100
+
+Liburnia
+	Iader
+	thrace
+	Liburni
+	131 61 33
+	Farm2, a7, r4, illyrian, celtic
+	5
+	2
+	christianity 80 pagan 20
+	
+Dalmatia
+	Salona
+	thrace
+	Delmatae
+	61 177 58
+	Farm2, a7, r3, illyrian, celtic
+	5
+	2
+	christianity 60 pagan 40
+
+Ardiaea
+	Scodra
+	thrace
+	Ardiaei
+	71 147 50
+	Farm2, a7, r2, illyrian, celtic
+	5
+	2
+	christianity 70 pagan 30
+	
+Dardania
+	Naissus
+	thrace
+	Dardani
+	131 33 100
+	Farm2, rivertrade, a7, r9, AOR, thracian
+	5
+	2
+	christianity 80 pagan 20
+	
+Cotinia
+	Asanca
+	gauls
+	Cotini
+	180 181 33
+	Farm2, a5, r11, celtic
+	5
+	3
+	christianity 100
+	
+Bastarnia
+	Maetonium
+	germans
+	Bastarnae
+	223 192 126
+	Farm2, rivertrade, a6, r11, germanic
+	5
+	2
+	christianity 100
+
+Dacia
+	Sarmizegetusa
+	dacia
+	Dacians
+	72 122 168
+	Farm2, a7, r7, dacian
+	5
+	2
+	christianity 100
+	
+Albocensia
+	Arcidava
+	dacia
+	Albocensii
+	157 198 195
+	Farm2, dacian, a7, r16
+	5
+	2
+	christianity 100
+
+Ansamensia
+	Dacidava
+	numidia
+	Ansamensii
+	105 113 55
+	Farm2, dacian, a7, r17
+	5
+	2
+	christianity 100
+
+Cotesia
+	Pirobridava
+	dacia
+	Cotesii
+	122 21 151
+	Farm2, dacian, a7, r18
+	5
+	2
+	christianity 100
+	
+Tyragetaia
+	Tyras
+	greek_cities
+	Tyragetae
+	72 177 58
+	Farm2, trade_hub, a7, r13, greek
+	5
+	2
+	christianity 20 pagan 80
+	
+Scythia_Minor
+	Tomis
+	greek_cities
+	Tyragetae
+	131 33 38
+	Farm2, a7, r12, greek
+	5
+	2
+	christianity 20 pagan 80
+	
+Getaia
+	Argedava
+	dacia
+	Getae
+	98 101 199
+	Farm3, capital, rivertrade, a7, r8, dacian, recruitment_centre
+	5
+	3
+	christianity 100
+	
+Triballia
+	Oiskos
+	thrace
+	Triballi
+	204 224 116
+	Farm2, thracian, a7, r15
+	5
+	2
+	christianity 90 pagan 10	
+	
+Tylisia
+	Tylis
+	galatians
+	Tylisians
+	84 207 113
+	Farm2, celtic, a7, r14
+	5
+	2
+	christianity 80 pagan 20	
+
+Bessike
+	Philippopolis
+	thrace
+	Bessi
+	218 246 61
+	Farm2, a7, r10, AOR, thracian
+	5
+	2
+	christianity 70 pagan 30
+
+Odrysia
+	Orestia
+	thrace
+	Odrysians
+	86 99 121
+	Farm2, capital, thrace, a7, r11, AOR, thracian, recruitment_centre
+	5
+	2
+	christianity 70 pagan 30
+	
+Paionia
+	Bylazora
+	thrace
+	Paionians
+	41 86 232
+	Farm2, a7, r1, AOR, thracian
+	5
+	2
+	christianity 70 pagan 30
+	
+Taulantia
+	Apollonia
+	greek_cities
+	Taulantii
+	58 173 177
+	Farm2, a8, r10, greek
+	5
+	2
+	christianity 20 pagan 80
+	
+Epeiros
+	Ambrakia
+	greek_cities
+	Epirotes
+	152 237 59
+	Farm2, greek, a8, r16
+	5
+	2
+	pagan 100	
+
+Aitolia
+	Thermon
+	greek_cities
+	Aetolians
+	13 18 244
+	Farm2, a8, r9, greek
+	5
+	2
+	pagan 100
+
+Macedon
+	Pella
+	macedon
+	Macedonians
+	177 58 145
+	Farm2, capital, a8, r12, thracian, greek, recruitment_centre
+	5
+	2
+	pagan 100
+	
+Mygdonia
+	Thessalonike
+	macedon
+	Macedonians
+	109 131 144
+	Farm2, greek, a8, r17
+	5
+	2
+	pagan 100	
+	
+Edonis
+	Amphipolis
+	macedon
+	Amphipolitans
+	232 125 29
+	Farm2, a8, r13, thracian, greek
+	5
+	2
+	pagan 100
+	
+Thracian_Chersonesos
+	Lysimachia
+	macedon
+	Lysimachians
+	205 173 88
+	Farm2, a8, r14, thracian, greek
+	5
+	2
+	pagan 100
+
+Bosporos
+	Byzantium
+	greek_cities
+	Byzantines
+	118 131 33
+	Farm3, trade_hub, a8, r15, thracian, greek
+	5
+	3
+	pagan 100
+
+Thessalia
+	Larissa
+	macedon
+	Thessalians
+	177 83 58
+	Farm2, a8, r11, greek
+	5
+	2
+	pagan 100
+	
+Boiotia
+	Orchomenos
+	greek_cities
+	Boeotians
+	43 130 47
+	Farm2, a8, r8, greek
+	5
+	2
+	pagan 100
+
+Euboia
+	Chalkis
+	greek_cities
+	Euboeans
+	232 3 67
+	Farm2, a8, r7, greek
+	5
+	2
+	pagan 100
+
+Attica
+	Athens
+	greek_cities
+	Athenians
+	58 177 106
+	Farm3, trade_hub, a8, r6, greek, recruitment_centre
+	5
+	3
+	pagan 100
+
+Korinthia
+	Corinth
+	greek_cities
+	Corinthians
+	129 40 191
+	Farm2, trade_hub, a8, r5, greek, recruitment_centre
+	5
+	2
+	pagan 100
+
+Achaia
+	Aigion
+	greek_cities
+	Achaeans
+	225 192 192
+	Farm2, a8, r4, greek
+	5
+	2
+	pagan 100
+	
+Argolis
+	Argos
+	greek_cities
+	Argives
+	7 2 29
+	Farm2, greek, a8, r19
+	5
+	2
+	pagan 100
+
+Arcadia
+	Megalopolis
+	greek_cities
+	Arcadians
+	127 234 205
+	Farm2, greek, a8, r18
+	5
+	2
+	pagan 100
+
+Lakonia
+	Sparta
+	sparta
+	Spartans
+	244 13 24
+	sparta, Farm2, a8, r3, greek, recruitment_centre
+	5
+	2
+	pagan 100
+
+Crete
+	Gortyna
+	greek_cities
+	Cretans
+	193 162 206
+	Farm2, a8, r2, greek
+	5
+	2
+	pagan 100
+
+Olbiana
+	Olbia
+	bosporan
+	Olbians
+	175 198 15
+	Farm2, a9, r3, AOR, greek, bosporan
+	5
+	2
+	pagan 100
+
+Scythia
+	Scythopolis
+	scythia
+	Scythians
+	107 156 168
+	Farm2, caravan, a9, r5, steppes
+	5
+	2
+	christianity 100
+
+Borysthenes
+	Amadoca
+	scythia
+	Scythians
+	104 184 119
+	Farm2, caravan, a9, r4, AOR, steppes
+	5
+	2
+	christianity 80 pagan 20
+	
+Alazonia
+	Azagarion
+	scythia
+	Scythians
+	230 16 180
+	Farm2, steppes, a9, r12
+	5
+	2
+	christianity 80 pagan 20	
+
+Taurica
+	Chersonesos
+	bosporan
+	Tauri
+	211 212 2
+	Farm3, trade_hub, a9, r2, AOR, greek, bosporan, recruitment_centre
+	5
+	3
+	christianity 20 pagan 80
+
+Cimmerian_Bosporos
+	Pantikapaion
+	bosporan
+	Panticapaeans
+	200 197 155
+	Farm3, a9, r1, AOR, greek, bosporan, recruitment_centre
+	5
+	3
+	christianity 10 pagan 90
+	
+Sindica
+	Phanagoreia
+	bosporan
+	Phanagorians
+	131 89 33
+	Farm2, a9, r9, AOR, greek, bosporan
+	5
+	2
+	christianity 30 pagan 70
+
+Maeotis
+	Tanais
+	bosporan
+	Maeotians
+	17 74 202
+	Farm3, a9, r8, AOR, greek, bosporan
+	5
+	3
+	christianity 30 pagan 70
+
+Siracenia
+	Siracena
+	scythia
+	Siraces
+	177 170 58
+	Farm2, capital, caravan, a9, r10, steppes, recruitment_centre
+	5
+	2
+	christianity 100
+	
+Iazygia
+	Exapolis
+	scythia
+	Iazyges
+	63 232 41
+	barren, caravan, a9, r7, steppes
+	5
+	1
+	christianity 100
+	
+Iaxamatia
+	Navaris
+	scythia
+	Roxolani
+	176 69 222
+	barren, steppes, a9, r13
+	5
+	1
+	christianity 100	
+
+Sarmatia
+	Uspe
+	scythia
+	Aorsi
+	131 33 125
+	barren, caravan, a9, r11, steppes
+	5
+	1
+	christianity 100
+	
+Budinia
+	Gelonus
+	scythia
+	Budini
+	220 106 114
+	barren, rivertrade, caravan, a9, r6, steppes
+	6
+	2
+	christianity 100
+
+Bithynia
+	Nikomedia
+	thrace
+	Bithynians
+	202 17 122
+	Farm2, a10, r6, greek, thracian
+	5
+	2
+	pagan 100
+
+Mysia
+	Pergamon
+	pergamon
+	Mysians
+	33 59 131
+	Farm3, trade_hub, a10, r5, greek, trallia, recruitment_centre
+	5
+	3
+	pagan 100
+	
+Lesbos
+	Mytilene
+	greek_cities
+	Lesbians
+	162 156 2
+	Farm2, a10, r4, greek
+	5
+	2
+	pagan 100
+
+Ionia
+	Ephesos
+	greek_cities
+	Ionians
+	126 115 178
+	Farm3, trade_hub, a10, r3, greek
+	5
+	3
+	pagan 100
+
+Lydia
+	Sardis
+	pontus
+	Lydians
+	149 109 127
+	Farm2, caravan, a10, r2, greek, trallia
+	5
+	2
+	pagan 80 zoroastrian 20
+
+Karia
+	Halikarnassos
+	pontus
+	Carians
+	131 83 77
+	Farm2, a10, r1, greek
+	5
+	2
+	pagan 80 zoroastrian 20
+	
+Rhodos
+	Rhodes
+	greek_cities
+	Rhodians
+	131 33 77
+	Farm2, trade_hub, a8, r1, greek, recruitment_centre
+	5
+	2
+	pagan 100
+
+Lykia
+	Patara
+	pontus
+	Lycians
+	147 187 95
+	Farm2, a10, r9, greek
+	5
+	2
+	pagan 80 zoroastrian 20
+
+Pisidia
+	Sagalassos
+	pontus
+	Pisidians
+	148 155 177
+	Farm2, a10, r8, greek
+	5
+	2
+	pagan 70 zoroastrian 30
+	
+Phrygia
+	Apameia
+	pontus
+	Phrygians
+	242 218 86
+	Farm2, caravan, a10, r7, AOR, trallia, greek
+	5
+	2
+	pagan 100
+
+Galatia
+	Ankyra
+	galatians
+	Galatians
+	17 165 202
+	Farm2, caravan, a10, r13, AOR, galatia
+	5
+	2
+	christianity 70 pagan 20 zoroastrian 10
+
+Lykaonia
+	Ikonion
+	pontus
+	Lycaonians
+	58 89 177
+	Farm2, caravan, a10, r12, galatia
+	5
+	2
+	pagan 80 zoroastrian 20
+
+Pamphylia
+	Side
+	pontus
+	Pamphylians
+	221 14 63
+	Farm2, a10, r10, greek
+	5
+	2
+	pagan 80 zoroastrian 20
+
+Mariandynaia
+	Herakleia_Pontike
+	greek_cities
+	Herecleians
+	202 156 17
+	Farm2, a10, r14, greek
+	5
+	2
+	pagan 90 zoroastrian 10
+
+Paphlagonia
+	Sinope
+	greek_cities
+	Paphlagonians
+	33 131 116
+	Farm3, trade_hub, a10, r15, greek
+	5
+	3
+	pagan 90 zoroastrian 10
+	
+Pontos
+	Amaseia
+	pontus
+	Pontians
+	244 171 13
+	Farm3, capital, a13, r3, AOR, greek, eastern, recruitment_centre
+	5
+	3
+	pagan 30 zoroastrian 70
+	
+Makronia
+	Trapezous
+	greek_cities
+	Trapezountines
+	26 156 4
+	Farm2, a13, r5, greek, eastern
+	5
+	2
+	pagan 70 zoroastrian 30
+
+Kappadokia
+	Mazaka
+	pontus
+	Cappadocians
+	177 58 148
+	Farm2, caravan, a13, r2, AOR, cappadocia, eastern
+	5
+	2
+	pagan 20 zoroastrian 80
+
+Kilikia
+	Tarsos
+	pontus
+	Cilicians
+	17 202 52
+	Farm2, caravan, a10, r11, greek
+	5
+	2
+	pagan 80 zoroastrian 20
+
+Armenia_Minor
+	Kamakh
+	armenia
+	Armenians
+	177 58 83
+	Farm2, a13, r4, AOR, cappadocia, eastern
+	5
+	2
+	zoroastrian 100
+
+Syria
+	Antioch
+	seleucid
+	Syrians
+	13 244 165
+	Farm3, capital, trade_hub, caravan, a12, r3, greek, eastern, recruitment_centre
+	5
+	3
+	pagan 80 zoroastrian 20
+	
+Cyprus
+	Paphos
+	egypt
+	Cyprians
+	126 144 111
+	Farm2, a12, r1, greek
+	5
+	2
+	pagan 80 zoroastrian 20
+
+Phoenicia
+	Sidon
+	carthage
+	Sidonians
+	95 186 228
+	Farm3, trade_hub, caravan, a12, r2, greek, eastern
+	5
+	3
+	pagan 40 zoroastrian 70
+	
+Tyria
+	Tyre
+	carthage
+	Tyrians
+	46 104 144
+	Farm3, trade_hub, caravan, greek, eastern, a12, r16
+	5
+	3
+	pagan 40 zoroastrian 70	
+
+Koile_Syria
+	Damascus
+	armenia
+	Syrians
+	244 203 14
+	Farm3, caravan, a12, r4, eastern
+	5
+	3
+	pagan 70 zoroastrian 30
+
+Judaea
+	Jerusalem
+	armenia
+	Judaeans
+	244 13 29
+	Farm3, caravan, a11, r13, eastern
+	5
+	3
+	pagan 20 zoroastrian 80
+
+Sinai
+	Gaza
+	egypt
+	Nabataeans
+	35 244 13
+	Farm2, caravan, a11, r12, greek, nabatean
+	5
+	2
+	pagan 30 zoroastrian 70
+	
+Pelusiaka
+	Pelusion
+	egypt
+	Nabataeans
+	188 214 14
+	Farm2, greek, nabatean, a11, r15
+	5
+	2
+	pagan 70 zoroastrian 30	
+
+Marmarike
+	Alexandria
+	egypt
+	Alexandrians
+	244 13 214
+	Farm3, capital, trade_hub, a11, r4, greek, recruitment_centre
+	5
+	3
+	pagan 80 zoroastrian 20
+
+Lower_Aigyptos
+	Memphis
+	numidia
+	Egyptians
+	189 117 112
+	Farm3, a11, r5, nubian, greek
+	5
+	3
+	pagan 30 zoroastrian 70
+
+Lower_Thebais
+	Ptolemais
+	egypt
+	Egyptians
+	168 97 112
+	Farm3, a11, r6, nubian, greek, recruitment_centre
+	5
+	3
+	pagan 70 zoroastrian 30
+
+Thebais
+	Thebes
+	nubia
+	Egyptians
+	168 97 77
+	Farm3, a11, r7, AOR, nubian, greek
+	5
+	3
+	nubian 10 zoroastrian 90
+
+Kyrenaike
+	Kyrene
+	greek_cities
+	Cyrenians
+	250 229 51
+	Farm2, caravan, a11, r2, greek
+	5
+	2
+	pagan 80 zoroastrian 20
+
+NewRegionOne
+	newCapitalOne
+	nubia
+	Egyptians
+	166 69 77
+	none
+	1
+	1
+	nubian 100
+
+NewRegionTwo
+	newCapitalTwo
+	nubia
+	Egyptians
+	153 56 61
+	none
+	1
+	1
+	nubian 100
+
+NewRegionThree
+	newCapitalThree
+	nubia
+	Egyptians
+	153 95 117
+	none
+	1
+	1
+	nubian 100
+
+NewRegionFour
+	newCapitalFour
+	nubia
+	Egyptians
+	138 41 46
+	none
+	1
+	1
+	nubian 100
+
+NewRegionFive
+	newCapitalFive
+	nubia
+	Egyptians
+	138 56 61
+	none
+	1
+	1
+	nubian 100
+
+NewRegionSix
+	Meroe
+	nubia
+	Egyptians
+	138 41 61
+	none
+	1
+	1
+	nubian 100
+
+NewRegionSeven
+	newCapitalSeven
+	nubia
+	Egyptians
+	122 26 31
+	none
+	1
+	1
+	nubian 100
+
+NewRegionEight
+	newCapitalEight
+	nubia
+	Egyptians
+	122 26 46
+	none
+	1
+	1
+	nubian 100
+
+NewRegionNine
+	newCapitalNine
+	nubia
+	Egyptians
+	122 41 46
+	none
+	1
+	1
+	pagan 100
+
+NewRegionTen
+	newCapitalTen
+	nubia
+	Egyptians
+	168 71 77
+	none
+	1
+	1
+	nubian 100
+
+NewRegionEleven
+	newCapitalEleven
+	nubia
+	Egyptians
+	138 56 87
+	none
+	1
+	1
+	nubian 30 pagan 70
+
+NewRegionTwelve
+	newCapitalTwelve
+	nubia
+	Egyptians
+	168 117 112
+	none
+	1
+	1
+	nubian 100
+	
+Libya
+	Augila
+	numidia
+	Nasamones
+	192 137 84
+	barren, caravan, a11, r1, numidian
+	5
+	1
+	zoroastrian 100
+
+Ammonia
+	Paraitonion
+	egypt
+	Libyans
+	42 232 77
+	barren, caravan, a11, r3, greek
+	5
+	1
+	pagan 80 zoroastrian 20
+
+
+Nabataea
+	Petra
+	armenia
+	Nabataeans
+	221 232 41
+	barren, trade_hub, caravan, a11, r11, nabatean
+	5
+	1
+	pagan 10 zoroastrian 90
+	
+Nabataea_Bostrana
+	Bostra
+	armenia
+	Nabataeans
+	13 244 160
+	barren, caravan, a11, r14, nabatean
+	5
+	1
+	pagan 10 zoroastrian 90
+	
+Palmyrene
+	Palmyra
+	armenia
+	Palmyrenes
+	175 171 244
+	Farm2, trade_hub, caravan, a12, r5, eastern
+	5
+	2
+	pagan 10 zoroastrian 90
+
+Maicene
+	Gerrha
+	armenia
+	Gerrhaeans
+	117 204 141
+	barren, trade_hub, caravan, a12, r14, outside_limes, eastern
+	5
+	1
+	pagan 10 zoroastrian 90
+	
+Lechienia
+	Hegra
+	armenia
+	Nabataeans
+	19 147 64
+	barren, caravan, a11, r10, outside_limes, nabatean
+	5
+	1
+	zoroastrian 100
+
+Sabaea
+	Ma'rib
+	armenia
+	Sabaeans
+	6 129 61
+	Farm2, trade_hub, caravan, a11, r9, outside_limes, nabatean
+	5
+	2
+	zoroastrian 100
+
+Omana
+	Moscha
+	armenia
+	Omani
+	240 182 100
+	barren, trade_hub, caravan, a12, r15, outside_limes, eastern
+	5
+	2
+	zoroastrian 100
+	
+Colchis
+	Sarapana
+	armenia
+	Colchians
+	199 31 143
+	Farm2, trade_hub, a13, r6, outside_limes, eastern
+	5
+	2
+	zoroastrian 100
+
+Iberia
+	Harmozica
+	armenia
+	Iberians
+	159 17 28
+	Farm2, rivertrade, a13, r7, outside_limes, eastern
+	5
+	2
+	zoroastrian 100
+
+Albania
+	Gabala
+	armenia
+	Albanians
+	251 210 147
+	Farm2, a13, r13, outside_limes, eastern
+	5
+	2
+	zoroastrian 100
+
+Ayrarat
+	Armavir
+	armenia
+	Armenians
+	202 61 17
+	Farm2, capital, a13, r8, outside_limes, eastern, recruitment_centre
+	5
+	2
+	zoroastrian 100
+	
+Atropatene
+	Gazaca
+	armenia
+	Medians
+	61 239 246
+	Farm2, a13, r11, outside_limes, eastern
+	5
+	2
+	zoroastrian 100
+	
+Media
+	Ekbatana
+	parthia
+	Medians
+	58 167 177
+	Farm2, a14, r1, eastern, media, recruitment_centre
+	5
+	2
+	pagan 30 zoroastrian 70
+
+Vaspurakan
+	Tushpa
+	armenia
+	Armenians
+	217 188 101
+	Farm2, rivertrade, a13, r9, outside_limes, eastern
+	5
+	2
+	zoroastrian 100
+
+Sophene
+	Carcathiocerta
+	armenia
+	Sophenians
+	3 57 209
+	Farm2, rivertrade, caravan, a13, r10, eastern
+	5
+	2
+	zoroastrian 100
+
+Commagene
+	Nymphaios
+	armenia
+	Commagenians
+	1 128 187
+	Farm2, rivertrade, caravan, a13, r1, eastern
+	5
+	2
+	pagan 20 zoroastrian 80
+	
+Corduene
+	Sareisa
+	armenia
+	Carduchians
+	98 90 223
+	Farm2, eastern, a13, r14
+	5
+	2
+	zoroastrian 100	
+	
+Caspiane
+	Arsarata
+	armenia
+	Caspiani
+	83 58 177
+	Farm2, a13, r12, outside_limes, eastern
+	5
+	2
+	zoroastrian 100
+
+Osrhoene
+	Edessa
+	armenia
+	Osrhoeni
+	239 240 100
+	Farm3, rivertrade, caravan, a12, r6, eastern
+	5
+	3
+	pagan 70 zoroastrian 30
+
+Mygdonia_Syria
+	Antiocheia-Mygdonia
+	armenia
+	Mygdonians
+	194 218 61
+	Farm2, rivertrade, caravan, a12, r7, outside_limes, eastern
+	5
+	2
+	pagan 70 zoroastrian 30
+
+Assyria
+	Arbela
+	armenia
+	Assyrians
+	244 122 13
+	Farm2, rivertrade, caravan, a12, r8, outside_limes, eastern
+	5
+	2
+	pagan 30 zoroastrian 70
+	
+Parapotamia
+	Doura-Europos
+	seleucid
+	Seleucids
+	205 212 157
+	Farm2, rivertrade, caravan, a12, r10, outside_limes, eastern
+	5
+	2
+	pagan 80 zoroastrian 20	
+
+Mesopotamia
+	Seleukeia
+	seleucid
+	Seleucids
+	96 114 167
+	Farm3, rivertrade, caravan, a12, r9, outside_limes, eastern, recruitment_centre
+	5
+	3
+	pagan 80 zoroastrian 20
+
+Sumer
+	Uruk
+	armenia
+	Babylonians
+	177 58 167
+	Farm3, rivertrade, caravan, a12, r11, outside_limes, eastern, recruitment_centre
+	5
+	3
+	pagan 60 zoroastrian 40
+
+Charakene
+	Charax
+	seleucid
+	Characenians
+	183 184 33
+	Farm3, trade_hub, caravan, a12, r13, outside_limes, eastern
+	5
+	3
+	pagan 70 zoroastrian 30	
+
+Susiane
+	Susa
+	parthia
+	Elamites
+	72 58 177
+	Farm3, caravan, a12, r12, outside_limes, eastern, recruitment_centre
+	5
+	3
+	pagan 50 zoroastrian 50
+
+Rhagiane
+	Rhagai
+	parthia
+	Medians
+	211 44 67
+	Farm2, caravan, a14, r2, eastern, media
+	5
+	2
+	pagan 40 zoroastrian 60
+	
+Hyrcania
+	Zadracarta
+	parthia
+	Hyrcanians
+	23 124 42
+	Farm2, caravan, a14, r3, eastern, media
+	5
+	3
+	pagan 40 zoroastrian 60
+
+Parthia
+	Hekatompylos
+	parthia
+	Parthians
+	117 162 204
+	Farm2, caravan, a14, r4, eastern, media
+	5
+	6
+	pagan 40 zoroastrian 60
+	
+Paraitakene
+	Gabai
+	parthia
+	Persians
+	161 7 109
+	Farm2, caravan, eastern, a14, r16
+	5
+	2
+	pagan 40 zoroastrian 60	
+
+Persia
+	Istakhr
+	parthia
+	Persians
+	232 172 176
+	Farm2, caravan, a14, r15, eastern, recruitment_centre
+	5
+	2
+	pagan 40 zoroastrian 60
+	
+Carmania
+	Alexandreia-Karmania
+	parthia
+	Carmanians
+	186 45 1
+	Farm2, caravan, a14, r14, eastern, media
+	5
+	2
+	pagan 40 zoroastrian 60
+	
+Tribaktria
+	Tribaktra
+	parthia
+	Sogdians
+	208 226 127
+	Farm2, caravan, eastern, media, a14, r17
+	5
+	2
+	pagan 40 zoroastrian 60	
+
+Margiana
+	Antiocheia-Margiane
+	seleucid
+	Sogdians
+	25 59 226
+	Farm2, caravan, a14, r6, eastern, media
+	5
+	2
+	pagan 40 zoroastrian 60
+
+Ariana
+	Alexandreia-Ariane
+	seleucid
+	Ariani
+	3 179 152
+	Farm2, caravan, a14, r11, eastern, media
+	5
+	2
+	pagan 40 zoroastrian 60
+
+Drangiana
+	Prophthasia
+	parthia
+	Drangae
+	41 68 140
+	Farm2, caravan, a14, r12, eastern, media
+	5
+	2
+	pagan 40 zoroastrian 60
+
+Gedrosia
+	Pura
+	parthia
+	Gedrosians
+	194 177 101
+	barren, caravan, a14, r13, eastern, media
+	5
+	1
+	pagan 40 zoroastrian 60
+
+Arachosia
+	Alexandreia-Arachosia
+	seleucid
+	Arachoti
+	110 8 8
+	Farm2, caravan, a15, r7, eastern
+	5
+	2
+	pagan 40 zoroastrian 60
+	
+Paropamisadai
+	Kophen
+	parthia
+	Paropamisadae
+	158 128 38
+	Farm2, caravan, a15, r6, eastern
+	5
+	2
+	pagan 40 zoroastrian 60
+	
+Baktria
+	Baktra_Zariaspa
+	parthia
+	Bactrians
+	20 155 2
+	Farm3, caravan, a14, r10, eastern, saka, greek, media, recruitment_centre
+	5
+	3
+	pagan 70 zoroastrian 30
+	
+Eastern_Baktria
+	Antiocheia-Oxos
+	seleucid
+	Bactrians
+	129 123 31
+	Farm3, caravan, a14, r9, eastern, saka, greek, media
+	5
+	3
+	pagan 70 zoroastrian 30
+	
+Sogdiana
+	Marakanda
+	parthia
+	Sogdians
+	133 55 61
+	Farm2, trade_hub, caravan, a14, r7, eastern, media
+	5
+	2
+	pagan 40 zoroastrian 60
+
+Sogdiana_Jaxartica
+	Antiocheia-Skythia
+	seleucid
+	Sogdians
+	166 6 33
+	Farm2, caravan, a14, r8, eastern, media
+	5
+	2
+	pagan 40 zoroastrian 60
+
+Gandara
+	Taxila
+	parthia
+	Gandharans
+	162 97 102
+	Farm3, rivertrade, caravan, a15, r5, eastern, indus
+	5
+	3
+	pagan 20 zoroastrian 80
+
+Indus
+	Alexandreia-Indike
+	parthia
+	Indians
+	41 162 232
+	Farm3, rivertrade, caravan, a15, r8, eastern, indus
+	5
+	3
+	pagan 20 zoroastrian 80
+
+Patalene
+	Patala
+	parthia
+	Indians
+	21 190 29
+	Farm3, trade_hub, caravan, a15, r9, eastern, indus
+	5
+	3
+	pagan 20 zoroastrian 80
+	
+Chorasmene
+	Chorasmia
+	parthia
+	Chorasmians
+	122 4 85
+	Farm2, caravan, a15, r1, eastern, saka
+	5
+	2
+	christianity 20 zoroastrian 80
+	
+Dahaea
+	Nisa
+	parthia
+	Dahae
+	155 255 167
+	barren, capital, caravan, a14, r5, eastern, media, recruitment_centre
+	5
+	1
+	christianity 20 zoroastrian 80
+
+Massagetaia
+	Davaba
+	scythia
+	Dahae
+	58 177 75
+	barren, caravan, a15, r2, AOR, eastern, saka
+	5
+	1
+	christianity 80 zoroastrian 20
+	
+Talatsia
+	Talats
+	scythia
+	Saka
+	77 8 182
+	barren, caravan, eastern, saka, a15, r10
+	5
+	1
+	christianity 100	
+	
+Kasiane
+	Kasia
+	scythia
+	Saka
+	249 105 109
+	barren, trade_hub, caravan, a15, r4, eastern, saka
+	5
+	1
+	christianity 100
+
+Auzakitis
+	Auzakia
+	scythia
+	Saka
+	232 41 198
+	barren, caravan, a15, r3, AOR, eastern, saka
+	5
+	1
+	christianity 100
+
+Terra_Incognita
+	Moscaflacopolis
+	numidia
+	Ahowlians
+	220 177 28
+	barren, capital, rebel
+	5
+	1
+	zoroastrian 100
+	
+Tonelandia
+	Eddopolis
+;	dummies
+	greek_cities
+	Ferals
+	10 196 167
+	barren
+	5
+	1
+	pagan 100	

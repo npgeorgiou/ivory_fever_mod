@@ -1,0 +1,1759 @@
+;; JNF 2021-07-05 - Important note, hidden resources should be defined at the end of this list, otherwise you might break backwards compatibility with older saves (as when loading old saves we just append the (now redundant) hidden mask on the end of the regular mask)
+
+"resources":
+[
+
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	;;               GOLD                ;;
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	"gold":
+	{
+		;; subtype of resource this is:
+
+		;; hidden is not displayed to the user
+		;; slaves are created when enslaving a settlement
+		;; mineable can have a mine constructed on them
+		;; none is just a normal resource
+		"subtype": "mineable",
+
+		;; the localised name and tooltip for this resource
+		"name": "SMT_RESOURCE_GOLD",
+		"tooltip": "TMT_GOLD_TOOLTIP",
+
+		;; the UI icon to use
+		"icon": "data/ui/resources/resource_gold.tga",
+
+		;; mineable resources need a seperate tooltip for when they're being mined
+		"mining tooltip": "TMT_GOLD_MINE_TOOLTIP",
+
+		;; the tier and trade value
+		"tier": 5,
+		"trade value": 7,
+
+		;; tags (groups) that this resource belongs to
+		"tags":
+			[ "precious_minerals", "all_minerals", ],
+
+		;;the model to use for this resource's mine
+		"mine model": "data/models_strat/resource_mine.CAS",
+
+		;; models to use for specific quantities
+		"quantity models":
+		{
+			"data/models_strat/resource_gold.CAS": 1,
+			"data/models_strat/resource_gold_02.CAS": 2,
+		},
+
+		;; default model to use when the quantity is not one of the ones specified above
+		"default model": "data/models_strat/resource_gold_03.CAS",
+	},
+
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	;;              SILVER               ;;
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	"silver":
+	{
+		;; subtype of resource this is:
+
+		;; hidden is not displayed to the user
+		;; slaves are created when enslaving a settlement
+		;; mineable can have a mine constructed on them
+		;; none is just a normal resource
+		"subtype": "mineable",
+
+		;; the localised name and tooltip for this resource
+		"name": "SMT_RESOURCE_SILVER",
+		"tooltip": "TMT_SILVER_TOOLTIP",
+
+		;; the UI icon to use
+		"icon": "data/ui/resources/resource_silver.tga",
+
+		;; mineable resources need a seperate tooltip for when they're being mined
+		"mining tooltip": "TMT_SILVER_MINE_TOOLTIP",
+
+		;; the tier and trade value
+		"tier": 4,
+		"trade value": 5,
+
+		;; tags (groups) that this resource belongs to
+		"tags":
+			[ "precious_minerals", "all_minerals", ],
+
+		;;the model to use for this resource's mine
+		"mine model": "data/models_strat/resource_mine.CAS",
+
+		;; models to use for specific quantities
+		"quantity models":
+		{
+			"data/models_strat/resource_silver.CAS": 1,
+			"data/models_strat/resource_silver_02.CAS": 2,
+		},
+
+		;; default model to use when the quantity is not one of the ones specified above
+		"default model": "data/models_strat/resource_silver_03.CAS",
+	},
+
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	;;              POTTERY              ;;
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	"pottery":
+	{
+		;; subtype of resource this is:
+
+		;; hidden is not displayed to the user
+		;; slaves are created when enslaving a settlement
+		;; mineable can have a mine constructed on them
+		;; none is just a normal resource
+		"subtype": "none",
+
+		;; the localised name and tooltip for this resource
+		"name":	"SMT_RESOURCE_POTTERY",
+		"tooltip": "TMT_POTTERY_TOOLTIP",
+
+		;; the UI icon to use
+		"icon": "data/ui/resources/resource_pottery.tga",
+
+		;; the tier and trade value
+		"tier":		1,
+		"trade value": 1,
+
+		;; tags (groups) that this resource belongs to
+		"tags":
+			[ "homewares", ],
+
+		;; models to use for specific quantities
+		"quantity models":
+		{
+			"data/models_strat/resource_pottery.CAS": 1,
+			"data/models_strat/resource_pottery_02.CAS": 2,
+		},
+
+		;; default model to use when the quantity is not one of the ones specified above
+		"default model": "data/models_strat/resource_pottery_03.CAS",
+	},
+
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	;;               FURS;; HORSES                ;;
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	"furs":
+	{
+		;; subtype of resource this is:
+
+		;; hidden is not displayed to the user
+		;; slaves are created when enslaving a settlement
+		;; mineable can have a mine constructed on them
+		;; none is just a normal resource
+		"subtype": "none",
+
+		;; the localised name and tooltip for this resource
+		"name":	"SMT_RESOURCE_FURS",
+		"tooltip": "TMT_FURS_TOOLTIP",
+
+		;; the UI icon to use
+		"icon": "data/ui/resources/resource_horses.tga",
+
+		;; the tier and trade value
+		"tier":		1,
+		"trade value": 1,
+
+		;; tags (groups) that this resource belongs to
+		"tags":
+			[ ],
+
+		;; models to use for specific quantities
+		"quantity models":
+		{
+		},
+
+		;; default model to use when the quantity is not one of the ones specified above
+		"default model": "data/models_strat/resource_horses.CAS",
+	},
+
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	;;               GRAIN               ;;
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	"grain":
+	{
+		;; subtype of resource this is:
+
+		;; hidden is not displayed to the user
+		;; slaves are created when enslaving a settlement
+		;; mineable can have a mine constructed on them
+		;; none is just a normal resource
+		"subtype": "none",
+
+		;; the localised name and tooltip for this resource
+		"name":	"SMT_RESOURCE_GRAIN",
+		"tooltip": "TMT_GRAIN_TOOLTIP",
+
+		;; the UI icon to use
+		"icon": "data/ui/resources/resource_grain.tga",
+
+		;; the tier and trade value
+		"tier":		3,
+		"trade value": 4,
+
+		;; how much growth should one unit of this resource provide
+		"growth modifier": 1,
+
+		;; tags (groups) that this resource belongs to
+		"tags":
+			[ "agricultural_goods", ],
+
+		;; models to use for specific quantities
+		"quantity models":
+		{
+			"data/models_strat/resource_grain.CAS": 1,
+			"data/models_strat/resource_grain_02.CAS": 2,
+		},
+
+		;; default model to use when the quantity is not one of the ones specified above
+		"default model": "data/models_strat/resource_grain_03.CAS",
+	},
+
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	;;              TIMBER               ;;
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	"timber":
+	{
+		;; subtype of resource this is:
+
+		;; hidden is not displayed to the user
+		;; slaves are created when enslaving a settlement
+		;; mineable can have a mine constructed on them
+		;; none is just a normal resource
+		"subtype": "none",
+
+		;; the localised name and tooltip for this resource
+		"name":	"SMT_RESOURCE_TIMBER",
+		"tooltip": "TMT_TIMBER_TOOLTIP",
+
+		;; the UI icon to use
+		"icon": "data/ui/resources/resource_timber.tga",
+
+		;; the tier and trade value
+		"tier":		2,
+		"trade value": 2,
+
+		;; tags (groups) that this resource belongs to
+		"tags":
+			[ "building_supplies", ],
+
+		;; models to use for specific quantities
+		"quantity models":
+		{
+			"data/models_strat/resource_timber.CAS": 1,
+			"data/models_strat/resource_timber_02.CAS": 2,
+		},
+
+		;; default model to use when the quantity is not one of the ones specified above
+		"default model": "data/models_strat/resource_timber_03.CAS",
+	},
+
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	;;               IRON                ;;
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	"iron":
+	{
+		;; subtype of resource this is:
+
+		;; hidden is not displayed to the user
+		;; slaves are created when enslaving a settlement
+		;; mineable can have a mine constructed on them
+		;; none is just a normal resource
+		"subtype": "none",
+
+		;; the localised name and tooltip for this resource
+		"name":	"SMT_RESOURCE_IRON",
+		"tooltip": "TMT_IRON_TOOLTIP",
+
+		;; the UI icon to use
+		"icon": "data/ui/resources/resource_iron.tga",
+
+		;; the tier and trade value
+		"tier":		2,
+		"trade value": 3,
+
+		;; tags (groups) that this resource belongs to
+		"tags":
+			[ "base_minerals", "all_minerals", ],
+
+		;; models to use for specific quantities
+		"quantity models":
+		{
+			"data/models_strat/resource_iron.CAS": 1,
+			"data/models_strat/resource_iron_02.CAS": 2,
+		},
+
+		;; default model to use when the quantity is not one of the ones specified above
+		"default model": "data/models_strat/resource_iron_03.CAS",
+	},
+
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	;;             OLIVE_OIL             ;;
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	"olive_oil":
+	{
+		;; subtype of resource this is:
+
+		;; hidden is not displayed to the user
+		;; slaves are created when enslaving a settlement
+		;; mineable can have a mine constructed on them
+		;; none is just a normal resource
+		"subtype": "none",
+
+		;; the localised name and tooltip for this resource
+		"name":	"SMT_RESOURCE_OLIVE_OIL",
+		"tooltip": "TMT_OLIVE_OIL_TOOLTIP",
+
+		;; the UI icon to use
+		"icon": "data/ui/resources/resource_olive_oil.tga",
+
+		;; the tier and trade value
+		"tier":		2,
+		"trade value": 2,
+
+		;; tags (groups) that this resource belongs to
+		"tags":
+			[ "agricultural_goods", ],
+
+		;; models to use for specific quantities
+		"quantity models":
+		{
+			"data/models_strat/resource_olive_oil.CAS": 1,
+			"data/models_strat/resource_olive_oil_02.CAS": 2,
+		},
+
+		;; default model to use when the quantity is not one of the ones specified above
+		"default model": "data/models_strat/resource_olive_oil_03.CAS",
+	},
+
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	;;               WINE                ;;
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	"wine":
+	{
+		;; subtype of resource this is:
+
+		;; hidden is not displayed to the user
+		;; slaves are created when enslaving a settlement
+		;; mineable can have a mine constructed on them
+		;; none is just a normal resource
+		"subtype": "none",
+
+		;; the localised name and tooltip for this resource
+		"name":	"SMT_RESOURCE_WINE",
+		"tooltip": "TMT_WINE_TOOLTIP",
+
+		;; the UI icon to use
+		"icon": "data/ui/resources/resource_wine.tga",
+
+		;; the tier and trade value
+		"tier":		2,
+		"trade value": 3,
+
+		;; tags (groups) that this resource belongs to
+		"tags":
+			[ "agricultural_goods", "fun", ],
+
+		;; models to use for specific quantities
+		"quantity models":
+		{
+			"data/models_strat/resource_wine.CAS": 1,
+			"data/models_strat/resource_wine_02.CAS": 2,
+		},
+
+		;; default model to use when the quantity is not one of the ones specified above
+		"default model": "data/models_strat/resource_wine_03.CAS",
+	},
+
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	;;              SLAVES               ;;
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	"slaves":
+	{
+		;; subtype of resource this is:
+
+		;; hidden is not displayed to the user
+		;; slaves are created when enslaving a settlement
+		;; mineable can have a mine constructed on them
+		;; none is just a normal resource
+		"subtype": "slaves",
+		;; depletable resources start disabled and reduce over time when replenished
+		"depletable": true,
+
+		;; the localised name and tooltip for this resource
+		"name":	"SMT_RESOURCE_SLAVES",
+		"tooltip": "TMT_SLAVES_TOOLTIP",
+
+		;; the UI icon to use
+		"icon": "data/ui/resources/resource_slaves.tga",
+
+		;; depleteable resources also need a tooltip for when they only have one turn left
+		"single tooltip": "TMT_SLAVES_TOOLTIP_SINGLE",
+
+		;; the tier and trade value
+		"tier":		2,
+		"trade value": 2,
+
+		;; how much growth should one unit of this resource provide
+		"growth modifier": 1,
+
+		;; slave resource parameters
+
+		;; the base number of turns to give to this after enslaving the settlement
+		"base turns": 20,
+		;; add one turn for this many pops, 0 means always use base
+		"pop impact": 0,
+
+		;; tags (groups) that this resource belongs to
+		"tags":
+			[ "live_goods", "slaves", ],
+
+		;; models to use for specific quantities
+		"quantity models":
+		{
+		},
+
+		;; default model to use when the quantity is not one of the ones specified above
+		"default model": "data/models_strat/resource_slaves.CAS",
+	},
+
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	;;               GLASS               ;;
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	"glass":
+	{
+		;; subtype of resource this is:
+
+		;; hidden is not displayed to the user
+		;; slaves are created when enslaving a settlement
+		;; mineable can have a mine constructed on them
+		;; none is just a normal resource
+		"subtype": "none",
+
+		;; the localised name and tooltip for this resource
+		"name":	"SMT_RESOURCE_GLASS",
+		"tooltip": "TMT_GLASS_TOOLTIP",
+
+		;; the UI icon to use
+		"icon": "data/ui/resources/resource_glass.tga",
+
+		;; the tier and trade value
+		"tier":		3,
+		"trade value": 4,
+
+		;; tags (groups) that this resource belongs to
+		"tags":
+			[ "homewares", ],
+
+		;; models to use for specific quantities
+		"quantity models":
+		{
+			"data/models_strat/resource_glass.CAS": 1,
+			"data/models_strat/resource_glass_02.CAS": 2,
+		},
+
+		;; default model to use when the quantity is not one of the ones specified above
+		"default model": "data/models_strat/resource_glass_03.CAS",
+	},
+
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	;;              MARBLE               ;;
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	"marble":
+	{
+		;; subtype of resource this is:
+
+		;; hidden is not displayed to the user
+		;; slaves are created when enslaving a settlement
+		;; mineable can have a mine constructed on them
+		;; none is just a normal resource
+		"subtype": "none",
+
+		;; the localised name and tooltip for this resource
+		"name":	"SMT_RESOURCE_MARBLE",
+		"tooltip": "TMT_MARBLE_TOOLTIP",
+
+		;; the UI icon to use
+		"icon": "data/ui/resources/resource_marble.tga",
+
+		;; the tier and trade value
+		"tier":		3,
+		"trade value": 4,
+
+		;; tags (groups) that this resource belongs to
+		"tags":
+			[ "building_supplies", ],
+
+		;; models to use for specific quantities
+		"quantity models":
+		{
+			"data/models_strat/resource_marble.CAS": 1,
+			"data/models_strat/resource_marble_02.CAS": 2,
+		},
+
+		;; default model to use when the quantity is not one of the ones specified above
+		"default model": "data/models_strat/resource_marble_03.CAS",
+	},
+
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	;;             TEXTILES              ;;
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	"textiles":
+	{
+		;; subtype of resource this is:
+
+		;; hidden is not displayed to the user
+		;; slaves are created when enslaving a settlement
+		;; mineable can have a mine constructed on them
+		;; none is just a normal resource
+		"subtype": "none",
+
+		;; the localised name and tooltip for this resource
+		"name":	"SMT_RESOURCE_TEXTILES",
+		"tooltip": "TMT_TEXTILES_TOOLTIP",
+
+		;; the UI icon to use
+		"icon": "data/ui/resources/resource_textiles.tga",
+
+		;; the tier and trade value
+		"tier":		1,
+		"trade value": 1,
+
+		;; tags (groups) that this resource belongs to
+		"tags":
+			[ "fabrics_dyes", "fun", ],
+
+		;; models to use for specific quantities
+		"quantity models":
+		{
+			"data/models_strat/resource_textiles.CAS": 1,
+			"data/models_strat/resource_textiles_02.CAS": 2,
+		},
+
+		;; default model to use when the quantity is not one of the ones specified above
+		"default model": "data/models_strat/resource_textiles_03.CAS",
+	},
+
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	;;            PURPLE_DYE             ;;
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	"purple_dye":
+	{
+		;; subtype of resource this is:
+
+		;; hidden is not displayed to the user
+		;; slaves are created when enslaving a settlement
+		;; mineable can have a mine constructed on them
+		;; none is just a normal resource
+		"subtype": "none",
+
+		;; the localised name and tooltip for this resource
+		"name":	"SMT_RESOURCE_PURPLE_DYE",
+		"tooltip": "TMT_PURPLE_DYE_TOOLTIP",
+
+		;; the UI icon to use
+		"icon": "data/ui/resources/resource_purple_dye.tga",
+
+		;; the tier and trade value
+		"tier":		4,
+		"trade value": 5,
+
+		;; tags (groups) that this resource belongs to
+		"tags":
+			[ "fabrics_dyes", "fun", "rarities", ],
+
+		;; models to use for specific quantities
+		"quantity models":
+		{
+			"data/models_strat/resource_purple_dye.CAS": 1,
+			"data/models_strat/resource_purple_dye_02.CAS": 2,
+		},
+
+		;; default model to use when the quantity is not one of the ones specified above
+		"default model": "data/models_strat/resource_purple_dye_03.CAS",
+	},
+
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	;;              INCENSE              ;;
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	"incense":
+	{
+		;; subtype of resource this is:
+
+		;; hidden is not displayed to the user
+		;; slaves are created when enslaving a settlement
+		;; mineable can have a mine constructed on them
+		;; none is just a normal resource
+		"subtype": "none",
+
+		;; the localised name and tooltip for this resource
+		"name":	"SMT_RESOURCE_INCENSE",
+		"tooltip": "TMT_INCENSE_TOOLTIP",
+
+		;; the UI icon to use
+		"icon": "data/ui/resources/resource_incense.tga",
+
+		;; the tier and trade value
+		"tier":		4,
+		"trade value": 5,
+
+		;; tags (groups) that this resource belongs to
+		"tags":
+			[ "rarities", "one_god", "healing", ],
+
+		;; models to use for specific quantities
+		"quantity models":
+		{
+			"data/models_strat/resource_incense.CAS": 1,
+			"data/models_strat/resource_incense_02.CAS": 2,
+		},
+
+		;; default model to use when the quantity is not one of the ones specified above
+		"default model": "data/models_strat/resource_incense_03.CAS",
+	},
+
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	;;               SILK                ;;
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	"silk":
+	{
+		;; subtype of resource this is:
+
+		;; hidden is not displayed to the user
+		;; slaves are created when enslaving a settlement
+		;; mineable can have a mine constructed on them
+		;; none is just a normal resource
+		"subtype": "none",
+
+		;; the localised name and tooltip for this resource
+		"name":	"SMT_RESOURCE_SILK",
+		"tooltip": "TMT_SILK_TOOLTIP",
+
+		;; the UI icon to use
+		"icon": "data/ui/resources/resource_silk.tga",
+
+		;; the tier and trade value
+		"tier":		3,
+		"trade value": 4,
+
+		;; tags (groups) that this resource belongs to
+		"tags":
+			[ "fabrics_dyes", "fun", "rarities", "one_god", ],
+
+		;; models to use for specific quantities
+		"quantity models":
+		{
+			"data/models_strat/resource_silk.CAS": 1,
+			"data/models_strat/resource_silk_02.CAS": 2,
+		},
+
+		;; default model to use when the quantity is not one of the ones specified above
+		"default model": "data/models_strat/resource_silk_03.CAS",
+	},
+
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	;;           WILD_ANIMALS            ;;
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	"wild_animals":
+	{
+		;; subtype of resource this is:
+
+		;; hidden is not displayed to the user
+		;; slaves are created when enslaving a settlement
+		;; mineable can have a mine constructed on them
+		;; none is just a normal resource
+		"subtype": "none",
+
+		;; the localised name and tooltip for this resource
+		"name":	"SMT_RESOURCE_WILD_ANIMALS",
+		"tooltip": "TMT_WILD_ANIMALS_TOOLTIP",
+
+		;; the UI icon to use
+		"icon": "data/ui/resources/resource_wild_animals.tga",
+
+		;; the tier and trade value
+		"tier":		1,
+		"trade value": 2,
+
+		;; tags (groups) that this resource belongs to
+		"tags":
+			[ "hunting", "live_goods", ],
+
+		;; models to use for specific quantities
+		"quantity models":
+		{
+			"data/models_strat/resource_wild_animals.CAS": 1,
+			"data/models_strat/resource_wild_animals_02.CAS": 2,
+		},
+
+		;; default model to use when the quantity is not one of the ones specified above
+		"default model": "data/models_strat/resource_wild_animals_03.CAS",
+	},
+
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	;;               HIDES               ;;
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	"hides":
+	{
+		;; subtype of resource this is:
+
+		;; hidden is not displayed to the user
+		;; slaves are created when enslaving a settlement
+		;; mineable can have a mine constructed on them
+		;; none is just a normal resource
+		"subtype": "none",
+
+		;; the localised name and tooltip for this resource
+		"name":	"SMT_RESOURCE_HIDES",
+		"tooltip": "TMT_HIDES_TOOLTIP",
+
+		;; the UI icon to use
+		"icon": "data/ui/resources/resource_hides.tga",
+
+		;; the tier and trade value
+		"tier":		1,
+		"trade value": 1,
+
+		;; tags (groups) that this resource belongs to
+		"tags":
+			[ "hunting", ],
+
+		;; models to use for specific quantities
+		"quantity models":
+		{
+			"data/models_strat/resource_hides.CAS": 1,
+			"data/models_strat/resource_hides_02.CAS": 2,
+		},
+
+		;; default model to use when the quantity is not one of the ones specified above
+		"default model": "data/models_strat/resource_hides_03.CAS",
+	},
+
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	;;                TIN                ;;
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	"tin":
+	{
+		;; subtype of resource this is:
+
+		;; hidden is not displayed to the user
+		;; slaves are created when enslaving a settlement
+		;; mineable can have a mine constructed on them
+		;; none is just a normal resource
+		"subtype": "none",
+
+		;; the localised name and tooltip for this resource
+		"name":	"SMT_RESOURCE_TIN",
+		"tooltip": "TMT_TIN_TOOLTIP",
+
+		;; the UI icon to use
+		"icon": "data/ui/resources/resource_tin.tga",
+
+		;; the tier and trade value
+		"tier":		1,
+		"trade value": 2,
+
+		;; tags (groups) that this resource belongs to
+		"tags":
+			[ "base_minerals", "all_minerals", ],
+
+		;; models to use for specific quantities
+		"quantity models":
+		{
+			"data/models_strat/resource_tin.CAS": 1,
+			"data/models_strat/resource_tin_02.CAS": 2,
+		},
+
+		;; default model to use when the quantity is not one of the ones specified above
+		"default model": "data/models_strat/resource_tin_03.CAS",
+	},
+
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	;;              COPPER               ;;
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	"copper":
+	{
+		;; subtype of resource this is:
+
+		;; hidden is not displayed to the user
+		;; slaves are created when enslaving a settlement
+		;; mineable can have a mine constructed on them
+		;; none is just a normal resource
+		"subtype": "none",
+
+		;; the localised name and tooltip for this resource
+		"name":	"SMT_RESOURCE_COPPER",
+		"tooltip": "TMT_COPPER_TOOLTIP",
+
+		;; the UI icon to use
+		"icon": "data/ui/resources/resource_copper.tga",
+
+		;; the tier and trade value
+		"tier":		2,
+		"trade value": 3,
+
+		;; tags (groups) that this resource belongs to
+		"tags":
+			[ "base_minerals", "all_minerals", ],
+
+		;; models to use for specific quantities
+		"quantity models":
+		{
+			"data/models_strat/resource_copper.CAS": 1,
+			"data/models_strat/resource_copper_02.CAS": 2,
+		},
+
+		;; default model to use when the quantity is not one of the ones specified above
+		"default model": "data/models_strat/resource_copper_03.CAS",
+	},
+
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	;;               LEAD                ;;
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	"lead":
+	{
+		;; subtype of resource this is:
+
+		;; hidden is not displayed to the user
+		;; slaves are created when enslaving a settlement
+		;; mineable can have a mine constructed on them
+		;; none is just a normal resource
+		"subtype": "none",
+
+		;; the localised name and tooltip for this resource
+		"name":	"SMT_RESOURCE_LEAD",
+		"tooltip": "TMT_LEAD_TOOLTIP",
+
+		;; the UI icon to use
+		"icon": "data/ui/resources/resource_lead.tga",
+
+		;; the tier and trade value
+		"tier":		1,
+		"trade value": 1,
+
+		;; tags (groups) that this resource belongs to
+		"tags":
+			[ "base_minerals", "all_minerals", ],
+
+		;; models to use for specific quantities
+		"quantity models":
+		{
+			"data/models_strat/resource_lead.CAS": 1,
+			"data/models_strat/resource_lead_02.CAS": 2,
+		},
+
+		;; default model to use when the quantity is not one of the ones specified above
+		"default model": "data/models_strat/resource_lead_03.CAS",
+	},
+
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	;;               AMBER               ;;
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	"amber":
+	{
+		;; subtype of resource this is:
+
+		;; hidden is not displayed to the user
+		;; slaves are created when enslaving a settlement
+		;; mineable can have a mine constructed on them
+		;; none is just a normal resource
+		"subtype": "none",
+
+		;; the localised name and tooltip for this resource
+		"name":	"SMT_RESOURCE_AMBER",
+		"tooltip": "TMT_AMBER_TOOLTIP",
+
+		;; the UI icon to use
+		"icon": "data/ui/resources/resource_amber.tga",
+
+		;; the tier and trade value
+		"tier":		3,
+		"trade value": 4,
+
+		;; tags (groups) that this resource belongs to
+		"tags":
+			[ "healing", "rarities", ],
+
+		;; models to use for specific quantities
+		"quantity models":
+		{
+			"data/models_strat/resource_amber.CAS": 1,
+			"data/models_strat/resource_amber_02.CAS": 2,
+		},
+
+		;; default model to use when the quantity is not one of the ones specified above
+		"default model": "data/models_strat/resource_amber_03.CAS",
+	},
+
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	;;             ELEPHANTS             ;;
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	"elephants":
+	{
+		;; subtype of resource this is:
+
+		;; hidden is not displayed to the user
+		;; slaves are created when enslaving a settlement
+		;; mineable can have a mine constructed on them
+		;; none is just a normal resource
+		"subtype": "none",
+
+		;; the localised name and tooltip for this resource
+		"name":	"SMT_RESOURCE_ELEPHANT",
+		"tooltip": "TMT_ELEPHANTS_TOOLTIP",
+
+		;; the UI icon to use
+		"icon": "data/ui/resources/resource_elephants.tga",
+
+		;; the tier and trade value
+		"tier":		3,
+		"trade value": 5,
+
+		;; tags (groups) that this resource belongs to
+		"tags":
+			[ ],
+
+		;; models to use for specific quantities
+		"quantity models":
+		{
+			"data/models_strat/resource_elephants.CAS": 1,
+			"data/models_strat/resource_elephants_02.CAS": 2,
+		},
+
+		;; default model to use when the quantity is not one of the ones specified above
+		"default model": "data/models_strat/resource_elephants_03.CAS",
+	},
+
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	;;              CAMELS               ;;
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	"camels":
+	{
+		;; subtype of resource this is:
+
+		;; hidden is not displayed to the user
+		;; slaves are created when enslaving a settlement
+		;; mineable can have a mine constructed on them
+		;; none is just a normal resource
+		"subtype": "none",
+
+		;; the localised name and tooltip for this resource
+		"name":	"SMT_RESOURCE_CAMEL",
+		"tooltip": "TMT_CAMELS_TOOLTIP",
+
+		;; the UI icon to use
+		"icon": "data/ui/resources/resource_camels.tga",
+
+		;; the tier and trade value
+		"tier":		1,
+		"trade value": 0,
+
+		;; tags (groups) that this resource belongs to
+		"tags":
+			[ ],
+
+		;; models to use for specific quantities
+		"quantity models":
+		{
+			"data/models_strat/resource_camels.CAS": 1,
+			"data/models_strat/resource_camels_02.CAS": 2,
+		},
+
+		;; default model to use when the quantity is not one of the ones specified above
+		"default model": "data/models_strat/resource_camels_03.CAS",
+	},
+
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	;;               DOGS ;;; SALT       ;;
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	"dogs":
+	{
+		;; subtype of resource this is:
+
+		;; hidden is not displayed to the user
+		;; slaves are created when enslaving a settlement
+		;; mineable can have a mine constructed on them
+		;; none is just a normal resource
+		"subtype": "none",
+
+		;; the localised name and tooltip for this resource
+		"name":	"SMT_RESOURCE_DOG",
+		"tooltip": "TMT_DOGS_TOOLTIP",
+
+		;; the UI icon to use
+		"icon": "data/ui/resources/resource_salt.tga",
+
+		;; the tier and trade value
+		"tier":		1,
+		"trade value": 1,
+
+		;; tags (groups) that this resource belongs to
+		"tags":
+			[ ],
+
+		;; models to use for specific quantities
+		"quantity models":
+		{
+		},
+
+		;; default model to use when the quantity is not one of the ones specified above
+		"default model": "data/models_strat/resource_salt.CAS",
+	},
+
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	;;               PIGS ;;;FISH        ;;
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	"pigs":
+	{
+		;; subtype of resource this is:
+
+		;; hidden is not displayed to the user
+		;; slaves are created when enslaving a settlement
+		;; mineable can have a mine constructed on them
+		;; none is just a normal resource
+		"subtype": "none",
+
+		;; the localised name and tooltip for this resource
+		"name":	"SMT_RESOURCE_PIG",
+		"tooltip": "TMT_PIGS_TOOLTIP",
+
+		;; the UI icon to use
+		"icon": "data/ui/resources/resource_fish.tga",
+
+		;; the tier and trade value
+		"tier":		1,
+		"trade value": 1,
+
+		;; tags (groups) that this resource belongs to
+		"tags":
+			[ ],
+
+		;; models to use for specific quantities
+		"quantity models":
+		{
+		},
+
+		;; default model to use when the quantity is not one of the ones specified above
+		"default model": "data/models_strat/resource_fish.CAS",
+	},
+	
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	;;               SHIPWRECKS          ;;
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	"shipwrecks":
+	{
+		;; subtype of resource this is:
+
+		;; hidden is not displayed to the user
+		;; slaves are created when enslaving a settlement
+		;; mineable can have a mine constructed on them
+		;; none is just a normal resource
+		"subtype": "none",
+
+		;; the localised name and tooltip for this resource
+		"name":	"SMT_RESOURCE_SHIPWRECKS",
+		"tooltip": "TMT_SHIPWRECKS_TOOLTIP",
+
+		;; the UI icon to use
+		"icon": "data/ui/resources/resource_shipwrecks.tga",
+
+		;; the tier and trade value
+		"tier":		1,
+		"trade value": 0,
+
+		;; tags (groups) that this resource belongs to
+		"tags":
+			[ ],
+
+		;; models to use for specific quantities
+		"quantity models":
+		{
+			"data/models_strat/shipwreck1.CAS": 1, 
+			"data/models_strat/shipwreck2.CAS": 2,
+			"data/models_strat/shipwreck3.CAS": 3,
+		},
+
+		;; default model to use when the quantity is not one of the ones specified above
+		"default model": "data/models_strat/shipwreck1.cas",
+	},
+
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	;;               AQUEDUCT            ;;
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	"aqueduct":
+	{
+		;; subtype of resource this is:
+
+		;; hidden is not displayed to the user
+		;; slaves are created when enslaving a settlement
+		;; mineable can have a mine constructed on them
+		;; none is just a normal resource
+		"subtype": "none",
+
+		;; the localised name and tooltip for this resource
+		"name":	"SMT_RESOURCE_AQUEDUCT",
+		"tooltip": "TMT_AQUEDUCT_TOOLTIP",
+
+		;; the UI icon to use
+		"icon": "data/ui/resources/resource_aqueduct.tga",
+
+		;; the tier and trade value
+		"tier":		1,
+		"trade value": 0,
+
+		;; tags (groups) that this resource belongs to
+		"tags":
+			[ ],
+
+		;; models to use for specific quantities
+		"quantity models":
+		{
+		},
+
+		;; default model to use when the quantity is not one of the ones specified above
+		"default model": "data/models_strat/aqueduct.CAS",
+	},
+
+
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+	;;         HIDDEN RESOURCES          ;;
+	;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+	"rome":
+	{
+		"subtype": "hidden",
+	},
+	"rome_destroyed":
+	{
+		"subtype": "hidden",
+	},	
+	"capital":
+	{
+		"subtype": "hidden",
+	},	
+	"sparta":
+	{
+		"subtype": "hidden",
+	},
+	"italy":
+	{
+		"subtype": "hidden",
+	},
+	"sicily":
+	{
+		"subtype": "hidden",
+	},
+	"trade_hub":
+	{
+		"subtype": "hidden",
+	},
+	"Farm2":
+	{
+		"subtype": "hidden",
+	},
+	"Farm3":
+	{
+		"subtype": "hidden",
+	},
+	"barren":
+	{
+		"subtype": "hidden",
+	},
+	"rivertrade":
+	{
+		"subtype": "hidden",
+	},
+	"nobuild":
+	{
+		"subtype": "hidden",
+	},
+	"caravan":
+	{
+		"subtype": "hidden",
+	},
+	"thrace":
+	{
+		"subtype": "hidden",
+	},
+	"carthage":
+	{
+		"subtype": "hidden",
+	},
+	"africa":
+	{
+		"subtype": "hidden",
+	},
+	"a1":
+	{
+		"subtype": "hidden",
+	},
+	"a2":
+	{
+		"subtype": "hidden",
+	},
+	"a3":
+	{
+		"subtype": "hidden",
+	},
+	"a4":
+	{
+		"subtype": "hidden",
+	},
+	"a5":
+	{
+		"subtype": "hidden",
+	},
+	"a6":
+	{
+		"subtype": "hidden",
+	},
+	"a7":
+	{
+		"subtype": "hidden",
+	},
+	"a8":
+	{
+		"subtype": "hidden",
+	},
+	"a9":
+	{
+		"subtype": "hidden",
+	},
+	"a10":
+	{
+		"subtype": "hidden",
+	},
+	"a11":
+	{
+		"subtype": "hidden",
+	},
+	"a12":
+	{
+		"subtype": "hidden",
+	},
+	"a13":
+	{
+		"subtype": "hidden",
+	},
+	"a14":
+	{
+		"subtype": "hidden",
+	},
+	"a15":
+	{
+		"subtype": "hidden",
+	},
+	"r1":
+	{
+		"subtype": "hidden",
+	},
+	"r2":
+	{
+		"subtype": "hidden",
+	},
+	"r3":
+	{
+		"subtype": "hidden",
+	},
+	"r4":
+	{
+		"subtype": "hidden",
+	},
+	"r5":
+	{
+		"subtype": "hidden",
+	},
+	"r6":
+	{
+		"subtype": "hidden",
+	},
+	"r7":
+	{
+		"subtype": "hidden",
+	},
+	"r8":
+	{
+		"subtype": "hidden",
+	},
+	"r9":
+	{
+		"subtype": "hidden",
+	},
+	"r10":
+	{
+		"subtype": "hidden",
+	},
+	"r11":
+	{
+		"subtype": "hidden",
+	},
+	"r12":
+	{
+		"subtype": "hidden",
+	},
+	"r13":
+	{
+		"subtype": "hidden",
+	},
+	"r14":
+	{
+		"subtype": "hidden",
+	},
+	"r15":
+	{
+		"subtype": "hidden",
+	},
+	"r16":
+	{
+		"subtype": "hidden",
+	},
+	"r17":
+	{
+		"subtype": "hidden",
+	},
+	"r18":
+	{
+		"subtype": "hidden",
+	},
+	"r19":
+	{
+		"subtype": "hidden",
+	},
+	"outside_limes":
+	{
+		"subtype": "hidden",
+	},
+	"AOR":
+	{
+		"subtype": "hidden",
+	},
+	"not_rome":
+	{
+		"subtype": "hidden",
+	},
+	"brittonic":
+	{
+		"subtype": "hidden",
+	},
+	"thracian":
+	{
+		"subtype": "hidden",
+	},
+	"germanic":
+	{
+		"subtype": "hidden",
+	},
+	"corsicosardinian":
+	{
+		"subtype": "hidden",
+	},
+	"cappadocia":
+	{
+		"subtype": "hidden",
+	},
+	"celtic":
+	{
+		"subtype": "hidden",
+	},
+	"greek":
+	{
+		"subtype": "hidden",
+	},
+	"eastern":
+	{
+		"subtype": "hidden",
+	},
+	"bosporan":
+	{
+		"subtype": "hidden",
+	},
+	"illyrian":
+	{
+		"subtype": "hidden",
+	},
+	"balearic":
+	{
+		"subtype": "hidden",
+	},
+	"trallia":
+	{
+		"subtype": "hidden",
+	},
+	"galatia":
+	{
+		"subtype": "hidden",
+	},	
+	"steppes":
+	{
+		"subtype": "hidden",
+	},	
+	"saka":
+	{
+		"subtype": "hidden",
+	},
+	"carthaginian":
+	{
+		"subtype": "hidden",
+	},
+	"numidian":
+	{
+		"subtype": "hidden",
+	},
+	"iberian":
+	{
+		"subtype": "hidden",
+	},
+	"baltic":
+	{
+		"subtype": "hidden",
+	},
+	"dacian":
+	{
+		"subtype": "hidden",
+	},
+	"nubian":
+	{
+		"subtype": "hidden",
+	},
+	"nabatean":
+	{
+		"subtype": "hidden",
+	},
+	"media":
+	{
+		"subtype": "hidden",
+	},
+	"indus":
+	{
+		"subtype": "hidden",
+	},
+	"ai_bonus":
+	{
+		"subtype": "hidden",
+	},
+	"ai_penalty":
+	{
+		"subtype": "hidden",
+	},
+	"ai_penalty2":
+	{
+		"subtype": "hidden",
+	},
+	"ai_penalty3":
+	{
+		"subtype": "hidden",
+	},
+	"ai_penalty4":
+	{
+		"subtype": "hidden",
+	},
+	"recruitment_centre":
+	{
+		"subtype": "hidden",
+	},
+	"rebel":
+	{
+		"subtype": "hidden",
+	},
+	"non_existing_resource":
+	{
+		"subtype": "hidden",
+	},
+	"buff_nubian_1":
+	{
+		"subtype": "hidden",
+	},
+	"buff_nubian_2":
+	{
+		"subtype": "hidden",
+	},
+	"buff_nubian_3":
+	{
+		"subtype": "hidden",
+	},
+	"buff_nubian_4":
+	{
+		"subtype": "hidden",
+	},
+	"buff_nubian_5":
+	{
+		"subtype": "hidden",
+	},
+	"buff_pagan_1":
+	{
+		"subtype": "hidden",
+	},
+	"buff_pagan_2":
+	{
+		"subtype": "hidden",
+	},
+	"buff_pagan_3":
+	{
+		"subtype": "hidden",
+	},
+	"buff_pagan_4":
+	{
+		"subtype": "hidden",
+	},
+	"buff_pagan_5":
+	{
+		"subtype": "hidden",
+	},
+	"buff_zoroastrian_1":
+	{
+		"subtype": "hidden",
+	},
+	"buff_zoroastrian_2":
+	{
+		"subtype": "hidden",
+	},
+	"buff_zoroastrian_3":
+	{
+		"subtype": "hidden",
+	},
+	"buff_zoroastrian_4":
+	{
+		"subtype": "hidden",
+	},
+	"buff_zoroastrian_5":
+	{
+		"subtype": "hidden",
+	},
+	"buff_christianity_1":
+	{
+		"subtype": "hidden",
+	},
+	"buff_christianity_2":
+	{
+		"subtype": "hidden",
+	},
+	"buff_christianity_3":
+	{
+		"subtype": "hidden",
+	},
+	"buff_christianity_4":
+	{
+		"subtype": "hidden",
+	},
+	"buff_christianity_5":
+	{
+		"subtype": "hidden",
+	},
+],
+
+;trade value of zero indicates it cannot be traded
+
+mine				data/models_strat/resource_mine.CAS
+
+
+type				gold
+trade_value			7
+item				data/models_strat/resource_gold.CAS
+item				data/models_strat/resource_gold_02.CAS
+item				data/models_strat/resource_gold_03.CAS
+icon				data/ui/resources/resource_gold.tga
+
+type				silver
+trade_value			5
+item				data/models_strat/resource_silver.CAS
+item				data/models_strat/resource_silver_02.CAS
+item				data/models_strat/resource_silver_03.CAS
+icon				data/ui/resources/resource_silver.tga
+
+type				pottery
+trade_value			1
+item				data/models_strat/resource_pottery.CAS
+item				data/models_strat/resource_pottery_02.CAS
+item				data/models_strat/resource_pottery_03.CAS
+icon				data/ui/resources/resource_pottery.tga
+
+type				furs;horses
+trade_value			1
+item				data/models_strat/resource_horses.CAS
+item				data/models_strat/resource_horses_02.CAS
+item				data/models_strat/resource_horses_03.CAS
+icon				data/ui/resources/resource_horses.tga
+
+type				grain
+trade_value			4
+item				data/models_strat/resource_grain.CAS
+item				data/models_strat/resource_grain_02.CAS
+item				data/models_strat/resource_grain_03.CAS
+icon				data/ui/resources/resource_grain.tga
+
+type				timber
+trade_value			2
+item				data/models_strat/resource_timber.CAS
+item				data/models_strat/resource_timber_02.CAS
+item				data/models_strat/resource_timber_03.CAS
+icon				data/ui/resources/resource_timber.tga
+
+type				iron
+trade_value			3
+item				data/models_strat/resource_iron.CAS
+item				data/models_strat/resource_iron_02.CAS
+item				data/models_strat/resource_iron_03.CAS
+icon				data/ui/resources/resource_iron.tga
+
+type				olive_oil
+trade_value			2
+item				data/models_strat/resource_olive_oil.CAS
+item				data/models_strat/resource_olive_oil_02.CAS
+item				data/models_strat/resource_olive_oil_03.CAS
+icon				data/ui/resources/resource_olive_oil.tga
+
+type				wine
+trade_value			3
+item				data/models_strat/resource_wine.CAS
+item				data/models_strat/resource_wine_02.CAS
+item				data/models_strat/resource_wine_03.CAS
+icon				data/ui/resources/resource_wine.tga
+
+type				slaves
+trade_value			2
+item				data/models_strat/resource_slaves.CAS
+icon				data/ui/resources/resource_slaves.tga
+
+type				glass
+trade_value			4
+item				data/models_strat/resource_glass.CAS
+item				data/models_strat/resource_glass_02.CAS
+item				data/models_strat/resource_glass_03.CAS
+icon				data/ui/resources/resource_glass.tga
+
+type				marble
+trade_value			4
+item				data/models_strat/resource_marble.CAS
+item				data/models_strat/resource_marble_02.CAS
+item				data/models_strat/resource_marble_03.CAS
+icon				data/ui/resources/resource_marble.tga
+
+type				textiles
+trade_value			1
+item				data/models_strat/resource_textiles.CAS
+item				data/models_strat/resource_textiles_02.CAS
+item				data/models_strat/resource_textiles_03.CAS
+icon				data/ui/resources/resource_textiles.tga
+
+type				purple_dye
+trade_value			5
+item				data/models_strat/resource_purple_dye.CAS
+item				data/models_strat/resource_purple_dye_02.CAS
+item				data/models_strat/resource_purple_dye_03.CAS
+icon				data/ui/resources/resource_purple_dye.tga
+
+type				incense
+trade_value			5
+item				data/models_strat/resource_incense.CAS
+item				data/models_strat/resource_incense_02.CAS
+item				data/models_strat/resource_incense_03.CAS
+icon				data/ui/resources/resource_incense.tga
+
+type				silk
+trade_value			4
+item				data/models_strat/resource_silk.CAS
+item				data/models_strat/resource_silk_02.CAS
+item				data/models_strat/resource_silk_03.CAS
+icon				data/ui/resources/resource_silk.tga
+
+type				wild_animals
+trade_value			2
+item				data/models_strat/resource_wild_animals.CAS
+item				data/models_strat/resource_wild_animals_02.CAS
+item				data/models_strat/resource_wild_animals_03.CAS
+icon				data/ui/resources/resource_wild_animals.tga
+
+type				hides
+trade_value			1
+item				data/models_strat/resource_hides.CAS
+item				data/models_strat/resource_hides_02.CAS
+item				data/models_strat/resource_hides_03.CAS
+icon				data/ui/resources/resource_hides.tga
+
+type				tin
+trade_value			2
+item				data/models_strat/resource_tin.CAS
+item				data/models_strat/resource_tin_02.CAS
+item				data/models_strat/resource_tin_03.CAS
+icon				data/ui/resources/resource_tin.tga
+
+type				copper
+trade_value			3
+item				data/models_strat/resource_copper.CAS
+item				data/models_strat/resource_copper_02.CAS
+item				data/models_strat/resource_copper_03.CAS
+icon				data/ui/resources/resource_copper.tga
+
+type				lead
+trade_value			1
+item				data/models_strat/resource_lead.CAS
+item				data/models_strat/resource_lead_02.CAS
+item				data/models_strat/resource_lead_03.CAS
+icon				data/ui/resources/resource_lead.tga
+
+type				amber
+trade_value			4
+item				data/models_strat/resource_amber.CAS
+item				data/models_strat/resource_amber_02.CAS
+item				data/models_strat/resource_amber_03.CAS
+icon				data/ui/resources/resource_amber.tga
+
+type				elephants
+trade_value			5
+item				data/models_strat/resource_elephants.CAS
+item				data/models_strat/resource_elephants_02.CAS
+item				data/models_strat/resource_elephants_03.CAS
+icon				data/ui/resources/resource_elephants.tga
+
+type				camels
+trade_value			0
+item				data/models_strat/resource_camels.CAS
+item				data/models_strat/resource_camels_02.CAS
+item				data/models_strat/resource_camels_03.CAS
+icon				data/ui/resources/resource_camels.tga
+
+type				pigs;fish
+trade_value			1
+item				data/models_strat/resource_fish.CAS
+item				data/models_strat/resource_fish_02.CAS
+item				data/models_strat/resource_fish_03.CAS
+icon				data/ui/resources/resource_fish.tga
+
+type				dogs;salt
+trade_value			5
+item				data/models_strat/resource_salt.CAS
+item				data/models_strat/resource_salt_02.CAS
+item				data/models_strat/resource_salt_03.CAS
+icon				data/ui/resources/resource_salt.tga
+
+
